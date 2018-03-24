@@ -10,6 +10,7 @@ package com.dao;/***************************************************************
 
 import com.domain.ClassRelation;
 import org.apache.ibatis.session.RowBounds;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,7 @@ import java.util.Map;
  * @Description 班级关系表 dao
  * @date 2018/3/23
  */
+@Repository
 public class ClassRelationDao extends BaseDao<ClassRelation> implements Dao<ClassRelation> {
     /**
      * @Title: deleteById

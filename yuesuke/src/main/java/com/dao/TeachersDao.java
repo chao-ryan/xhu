@@ -10,6 +10,7 @@ package com.dao;/***************************************************************
 
 import com.domain.Teachers;
 import org.apache.ibatis.session.RowBounds;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,7 @@ import java.util.Map;
  * @Description 教师信息 dao
  * @date 2018/3/23
  */
+@Repository
 public class TeachersDao extends BaseDao<Teachers> implements Dao<Teachers> {
     /**
      * @Title: deleteById

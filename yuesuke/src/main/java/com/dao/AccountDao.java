@@ -10,6 +10,7 @@ package com.dao;/***************************************************************
 
 import com.domain.Account;
 import org.apache.ibatis.session.RowBounds;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,7 @@ import java.util.Map;
  * @Description 学号/账号类dao实现类
  * @date 2018/3/20
  */
+@Repository
 public class AccountDao extends BaseDao<Account> implements Dao<Account>{
     /**
      * @Title: deleteById
