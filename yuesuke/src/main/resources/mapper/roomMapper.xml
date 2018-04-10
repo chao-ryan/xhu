@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.domain.Room">
+    <!-- 定义结果集 -->
+    <resultMap id="roomMap" type="com.domain.Room">
+        <id property="id" column="ID"/>
+        <result property="address" column="ADDRESS"/>
+        <result property="auntieName" column="AUNTIE_NAME"/>
+        <result property="studentsNumber" column="STUDENTS_NUMBER"/>
+        <result property="emptyRoom" column="EMPTY_ROOM"/>
+        <result property="isFull" column="IS_FULL"/>
+    </resultMap>
+    <!-- 定义sql查询列 -->
+    <sql id="columns">
+        ID,ADDRESS,AUNTIE_NAME,STUDENTS_NUMBER,EMPTY_ROOM,IS_FULL
+    </sql>
+    <!-- 根据id删除 -->
+    <delete id="deleteById" parameterType="java.lang.Long">
+        DELETE FROM room WHERE ID=#{id}
+    </delete>
+    <!-- 根据多个id删除 -->
+    <delete id="deleteByIds" parameterType="java.util.Arrays">
+        DELETE FROM room WHERE ID IN
+        <foreach collection="array" open="(" separator="," close=")">
+            #{ids}
+        </foreach>
+    </delete>
+    <!-- 保存 -->
+    <insert id="save" parameterType="com.domain.Room">
+        INSERT INTO room(<include refid="columns"/> )
+        VALUES (DEFAULT ,#{address},#{auntieName},#{studentsNumber},#{emptyRoom},#{isFull})
+    </insert>
+    <!-- 修改 -->
+    <update id="update" parameterType="com.domain.Room">
+        UPDATE room
+        SET ADDRESS=#{address},AUNTIE_NAME=#{auntieName},STUDENTS_NUMBER=#{studentsNumber},EMPTY_ROOM=#{emptyRoom},IS_FULL=#{isFull}
+        WHERE ID=#{id}
+    </update>
+    <!-- 根据id查询 -->
+    <select id="findById" parameterType="java.lang.Long">
+        SELECT <include refid="columns"/>
+        FROM room
+        WHERE id=#{id}
+    </select>
+    <!-- 根据条件（宿舍地址）查询 -->
+    <select id="findByCondition" parameterType="java.util.Map" resultMap="roomMap">
+        SELECT <include refid="columns"/>
+        FROM room
+        <where>
+            <if test="ADDRESS != null">
+                ADDRESS LIKE #{ADDRESS}
+            </if>
+        </where>
+    </select>
+    <!-- 根据条件（宿舍地址）分页查询 -->
+    <select id="findByConditionForPage" parameterType="java.util.Map" resultMap="roomMap">
+        SELECT <include refid="columns"/>
+        FROM room
+        <where>
+            <if test="ADDRESS != null">
+                ADDRESS LIKE #{ADDRESS}
+            </if>
+        </where>
+    </select>
+</mapper>
