@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.domain.Teachers">
+    <!-- 定义结果集 -->
+    <resultMap id="teachersMap" type="com.domain.Teachers">
+        <id property="id" column="ID"/>
+        <result property="name" column="NAME"/>
+        <result property="sex" column="SEX"/>
+        <result property="age" column="AGE"/>
+        <result property="origin" column="ORIFIN"/>
+        <result property="enthnic" column="ENTHNIC"/>
+        <result property="idNumber" column="ID_NUMBER"/>
+        <result property="phone" column="PHONE"/>
+        <result property="salary" column="SALARY"/>
+        <result property="saveTime" column="SAVE_TIME"/>
+        <result property="updateTime" column="UPDATE_TIME"/>
+        <association property="collegeId" column="COLLEGE_ID" javaType="com.domain.College">
+            <id property="id" column="CO_ID"/>
+            <result property="name" column="CO_NAME"/>
+            <result property="studentsNumber" column="CO_STUDENTS_NUMBER"/>
+            <result property="teachersNumber" column="CO_TEACHERS_NUMBER"/>
+            <result property="saveTime" column="CO_SAVE_TIME"/>
+            <result property="updateTime" column="CO_UPDATE_TIME"/>
+        </association>
+        <association property="jobTitleId" column="JOB_TITLE_ID" javaType="com.domain.JobTitle">
+            <id property="id" column="J_ID"/>
+            <result property="jobName" column="J_JOB_NAME"/>
+        </association>
+    </resultMap>
+    <!-- 定义sql查询列 -->
+    <sql id="columns">
+        ID,`NAME`,SEX,AGE,ORIGIN,ENTHNIC,ID_NUMBER,PHONE,SALARY,SAVE_TIME,UPDATE_TIME,COLLEGE_ID,JOB_TITLE_ID
+    </sql>
+    <!-- 根据id删除 -->
+    <delete id="deleteById" parameterType="java.lang.Long">
+        DELETE FROM teachers WHERE ID=#{id}
+    </delete>
+    <!-- 根据多个id删除 -->
+    <delete id="deleteByIds" parameterType="java.util.Arrays">
+        DELETE FROM teachers WHERE ID IN
+        <foreach collection="array" item="ids" open="(" separator="," close=")">
+            #{ids}
+        </foreach>
+    </delete>
+    <!-- 保存 -->
+    <insert id="save" parameterType="com.domain.Teachers">
+        INSERT INTO teachers(<include refid="columns"/> )
+        VALUES (DEFAULT ,#{name},#{sex},#{age},#{origin},#{enthnic},#{idNumber},#{phone},#{salary},#{saveTime},#{updateTime},#{collegeId},#{jobTitleId})
+    </insert>
+    <!-- 修改 -->
+    <update id="update" parameterType="com.domain.Teachers">
+        UPDATE teachers
+        SET `NAME`=#{name},SEX=#{sex},AGE=#{age},ORIGIN=#{origin},ENTHNIC=#{enthnic},ID_NUMBER=#{idNumber},SALARY=#{salary},SAVE_TIME=#{saveTime},UPDATE_TIME=#{updateTime},COLLEGE_ID=#{collegeId},JOB_TITLE_ID=#{jobTitleId}
+        WHERE ID=#{id}
+    </update>
+    <!-- 根据id查询 -->
+    <select id="findById" parameterType="java.lang.Long" resultType="com.domain.Teachers">
+        SELECT <include refid="columns"/>
+        FROM teachers
+        WHERE ID=#{id}
+    </select>
+    <!-- 根据条件（姓名，性别，身份证号，添加时间）查询 -->
+    <select id="findByCondition" parameterType="java.util.Map" resultMap="teachersMap">
+        SELECT T.ID T_ID,T.NAME T_NAME,T.SEX T_SEX,T.AGE T_AGE,T.ORIFIN T_ORIFIN,T.ENTHNIC T_ENTHNIC,T.ID_NUMBER T_ID_NUMBER,T.PHONE T_PHONE,T.SALARY T_SALARY,T.SAVE_TIME T_SAVE_TIME,T.UPDATE_TIME T_UPDATE_TIME,T.COLLEGE_ID T_COLLEGE_ID,T.JOB_TITLE_ID T_JOB_TITLE_ID,
+        CO.ID CO_ID,CO.NAME CO_NAME,CO.STUDENTS_NUMBER CO_STUDENTS_NUMBER,CO.TEACHERS_NUMBER CO_TEACHERS_NUMBER,CO.SAVE_TIME CO_SAVE_TIME,CO.UPDATE_TIME CO_UPDATE_TIME,
+        J.ID J_ID,J.JOB_NAME J_JOB_NAME
+        FROM teachers T
+        LEFT JOIN COLLEGE CO ON CO.ID=T.COLLEGE_ID
+        LEFT JOIN JOB_TITLE J ON J.ID=T.JOB_TITLE_ID
+        <where>
+            <if test="NAME != null">
+                `NAME` LIKE #{NAME}
+            </if>
+            <if test="SEX != null">
+                AND SEX=#{SEX}
+            </if>
+            <if test="ID_NUMBER != null">
+                AND ID_NUMBER=#{ID_NUMBER}
+            </if>
+            <if test="SAVE_TIME != null">
+                AND SAVE_TIME LIKE #{SAVE_TIME}
+            </if>
+        </where>
+    </select>
+    <!-- 根据条件（姓名，性别，身份证号，添加时间）分页查询 -->
+    <select id="findByCondition" parameterType="java.util.Map" resultMap="teachersMap">
+        SELECT T.ID T_ID,T.NAME T_NAME,T.SEX T_SEX,T.AGE T_AGE,T.ORIFIN T_ORIFIN,T.ENTHNIC T_ENTHNIC,T.ID_NUMBER T_ID_NUMBER,T.PHONE T_PHONE,T.SALARY T_SALARY,T.SAVE_TIME T_SAVE_TIME,T.UPDATE_TIME T_UPDATE_TIME,T.COLLEGE_ID T_COLLEGE_ID,T.JOB_TITLE_ID T_JOB_TITLE_ID,
+        CO.ID CO_ID,CO.NAME CO_NAME,CO.STUDENTS_NUMBER CO_STUDENTS_NUMBER,CO.TEACHERS_NUMBER CO_TEACHERS_NUMBER,CO.SAVE_TIME CO_SAVE_TIME,CO.UPDATE_TIME CO_UPDATE_TIME,
+        J.ID J_ID,J.JOB_NAME J_JOB_NAME
+        FROM teachers T
+        LEFT JOIN COLLEGE CO ON CO.ID=T.COLLEGE_ID
+        LEFT JOIN JOB_TITLE J ON J.ID=T.JOB_TITLE_ID
+        <where>
+            <if test="NAME != null">
+                `NAME` LIKE #{NAME}
+            </if>
+            <if test="SEX != null">
+                AND SEX=#{SEX}
+            </if>
+            <if test="ID_NUMBER != null">
+                AND ID_NUMBER=#{ID_NUMBER}
+            </if>
+            <if test="SAVE_TIME != null">
+                AND SAVE_TIME LIKE #{SAVE_TIME}
+            </if>
+        </where>
+    </select>
+</mapper>
