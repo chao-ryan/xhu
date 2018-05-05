@@ -31,7 +31,7 @@
     </select>
     <!-- 根据条件（职称）查询 -->
     <select id="findByCondition" parameterType="java.util.Map" resultType="com.domain.JobTitle">
-        SELECT (ID,JOB_NAME)
+        SELECT ID,JOB_NAME
         FROM job_title
         <where>
             <if test="JOB_NAME != null">
@@ -41,7 +41,7 @@
     </select>
     <!-- 根据条件（职称）分页查询 -->
     <select id="findByConditionForPage" parameterType="java.util.Map" resultType="com.domain.JobTitle">
-        SELECT (ID,JOB_NAME)
+        SELECT ID,JOB_NAME
         FROM job_title
         <where>
             <if test="JOB_NAME != null">

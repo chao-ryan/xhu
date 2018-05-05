@@ -44,7 +44,7 @@
     <!-- 根据条件（账号）查询 -->
     <select id="findByCondition" parameterType="java.util.Map" resultMap="accountMap">
         SELECT <include refid="columns"/>
-        FROM ACOCUNT
+        FROM ACCOUNT
         <where>
             <if test="ACCOUNT_NUMBER != null">
                 ACCOUNT_NUMBER=#{ACCOUNT_NUMBER}
