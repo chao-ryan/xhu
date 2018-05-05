@@ -1,0 +1,75 @@
+﻿html body{
+    width: 100%;
+    background-color: midnightblue;
+    background-image: url("../image/xhu-library.jpg");
+    font-family: 微软雅黑;
+}
+.header{
+    height: 30px;
+    padding: 10px;
+    border-bottom: 1px solid aliceblue;
+}
+/*.lod-login{*/
+    /*height: 39px;*/
+    /*padding-left: 1230px;*/
+/*}*/
+.logo-window-box{
+    padding-top: 20px;
+}
+.main-agileits{
+    width: 450px;
+    height: 325px;
+    margin: 150px auto;
+    background-color: royalblue;
+    /*background-image: url("../image/xhu_img.jpg");*/
+    border-radius: 10px;
+}
+.form-agile{
+    width: 350px;
+    height: 130px;
+    padding-top: 5px;
+    padding-left: 78px;
+    padding-bottom: 5px;
+}
+.sub-agileits-layouts{
+    padding-top: 10px;
+    padding-left:115px;
+}
+.form-agile input{
+    line-height: 20px;
+    width: 200px;
+}
+.form-agile form{
+    padding-top:18px;
+}
+.form-agile .username-box{
+    padding-bottom: 18px;
+}
+.siginup-botton{
+    padding-right: 10px;
+}
+.login-button-box{
+    padding-top: 34px;
+    padding-left: 120px;
+}
+.login-button-box button{
+    background-color: #accbff;
+    font-size: 16px;
+    border: none;
+    width: 55px;
+    height: 28px;
+}
+.siginup-button-box{
+    padding-top: 18px;
+    padding-left: 80px;
+}
+.siginup-button-box a{
+    color: aliceblue;
+    text-decoration: none;
+}
+a:hover{
+    color: coral;
+}
+label{
+    width: 30px;
+}

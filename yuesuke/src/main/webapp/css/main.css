@@ -1,0 +1,84 @@
+﻿html body{
+    width: 100%;
+    background-color: midnightblue;
+    font-family: 微软雅黑;
+}
+.beg-login-box{
+    width: 99%;
+    background-color: midnightblue;
+}
+.logo-window-box{
+    width: 100%;
+    padding-top: 20px;
+    float: left;
+}
+.logo-box{
+    width: 20%;
+}
+.to-mainpage-box{
+    width: 20%;
+    float: left;
+    margin-left: 95%;
+}
+.to-mainpage-box a{
+    color: aliceblue;
+    text-decoration: none;
+}
+.to-mainpage-box a:hover{
+    color: darkorange;
+}
+.to-mainpage-box span{
+    color: aliceblue;
+}
+ol ul{
+    list-style-type: none;
+    list-style-position: initial;
+    list-style-image: initial;
+}
+ul{
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+li{
+    width: 90px;
+    display: list-item;
+    list-style-type: none;
+    text-align: -webkit-match-parent;
+    line-height: 50px;
+    font-size: 18px;
+}
+.selection-box{
+    width: 100%;
+    float: left;
+}
+.main-level-1{
+    float: left;
+}
+.main-level-1 a{
+    color: #88a3ff;
+    text-decoration: none;
+}
+a:hover{
+    color: darkorange;
+}
+.line-level-box{
+    padding-top: 60px;
+    padding-bottom: 8px;
+}
+.show-message-box{
+    margin-top: 1px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    background-color: #accbff;
+}
+.show-column-box p{
+    text-indent: 28px;
+    line-height: 2em;
+}
+.show-column-box #help-phone{
+    color: darkorange;
+}

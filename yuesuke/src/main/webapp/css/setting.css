@@ -1,0 +1,872 @@
+﻿html body{
+    width: 100%;
+    background-color: midnightblue;
+    font-family: 微软雅黑;
+}
+/* body开始content */
+.beg-login-box{
+    width: 100%;
+    background-color: midnightblue;
+}
+/* logo开始content */
+.logo-window-box{
+    width: 100%;
+    padding-top: 20px;
+    float: left;
+}
+.logo-box{
+    width: 20%;
+}
+.to-mainpage-box{
+    width: 20%;
+    float: left;
+    margin-left: 87%;
+}
+a{
+    text-decoration: none;
+}
+.to-mainpage-box a:hover{
+    color: darkorange;
+}
+.to-mainpage-box .step-button{
+    color: aliceblue;
+}
+.to-mainpage-box span{
+    color: aliceblue;
+}
+ol ul{
+    list-style-type: none;
+    list-style-position: initial;
+    list-style-image: initial;
+}
+ul{
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 36px;
+}
+li{
+    width: 90px;
+    display: list-item;
+    list-style-type: none;
+    text-align: -webkit-match-parent;
+    line-height: 40px;
+    font-size: 18px;
+}
+.column{
+    float: left;
+    border: 1px;
+    width: 100%;
+}
+/* 列栏显示区content  */
+.show-message-box{
+    width: 11%;
+    float: left;
+    border: 2px solid #9aa193;
+    margin-top: 22px;
+    margin-left: 5px;
+    padding-top: 3px;
+    background-color: #accbff;
+}
+.column-menu-box{
+    width: 72%;
+}
+.column-head-box{
+    width: 80%;
+    padding-top: 1px;
+    padding-left: 32%;
+}
+.column-list-box{
+    width: 80%;
+    padding-bottom: 1px;
+}
+.column-list-box a{
+    color: blue;
+    text-decoration: none;
+}
+.column-list-box a:hover{
+    color: darkorange;
+}
+/* 内容显示区content */
+.content-box{
+    width: 87%;
+    height: 530px;
+    float: left;
+    display: block;
+    margin-top: 22px;
+    margin-left: 2px;
+    border: 2px solid #9aa193;
+    background-color: mintcream;
+}
+.content-wecome-box{
+    width: 60%;
+    padding-top: 12%;
+    padding-left: 34%;
+}
+.content-wecome-box #student-name{
+    font-family: 华文隶书;
+    font-size: 2em;
+    color: darkorange;
+}
+/* 个人信息 content */
+#d1{
+    float: left;
+    width: 100%;
+    padding-top: 2%;
+    padding-left:25%;
+}
+#d1 .per-form-box{
+    float: left;
+}
+#d1 .per-form-box label{
+    float: left;
+    width: 100px;
+    margin-left: 4px;
+    font-size: 14px;
+    text-align: right;
+    padding-top: 12px;
+    margin-top: 5px;
+}
+#per_pop_up_body_form_box label{
+    text-align: right;
+}
+.per-form-box .per-warning-span-box{
+    float: left;
+    width: 102px;
+    padding-top: 12px;
+}
+.per-warning-span-box span{
+    font-size: 11px;
+    color: red;
+    margin-left: 42px;
+}
+.per-form-box .content-per-input-box{
+    float: left;
+    width: 240px;
+    margin-top: 5px;
+}
+#d1 .per-form-box .content-per-input-box input{
+    width: 320px;
+    height: 26px;
+}
+#d1 .per-form-box .content-per-input-box input{
+    text-align: center;
+}
+.per-form-box span{
+    float: left;
+    font-size: 11px;
+    padding-top: 2px;
+}
+.per-form-box .char{
+    margin-left: 96px;
+}
+.content-per-input-box .per-sex-select-box{
+    float: left;
+}
+.per-select-box select{
+    float: left;
+    width: 324px;
+    height: 32px;
+    text-align: center;
+    padding-top: 5px;
+    color: chocolate;
+}
+#d1 .content-per-button-box{
+    width: 100%;
+    float: left;
+    margin-top: 12px;
+}
+#d1 .content-per-box-update{
+    width: 12%;
+    float: left;
+    margin-top: 4px;
+    margin-left: 44%;
+}
+#d1 .content-per-box-update button{
+    width: 120px;
+    height: 32px;
+    font-size: 18px;
+    border: hidden;
+    border-radius: 5px;
+    color: aliceblue;
+    background-color: royalblue;
+}
+/*修改个人信息页面弹出层*/
+#per-update-pop-up-box{
+    width: 60%;
+    height: 96%;
+    background-color: white;
+    margin-top: 2%;
+    margin-left: 18%;
+}
+.content-per-button-box{
+    padding-top: 4px;
+    padding-left: 5px;
+}
+.content-per-button-box button{
+    width: 100px;
+    height: 32px;
+    margin-top: 8px;
+    margin-left: 50px;
+    border: none;
+    border-radius: 3px;
+    background-color: cadetblue;
+}
+#per_pop_up_body_form_box input{
+    text-align: center;
+}
+#per-update-pop-up-box .content-per-button-box button span{
+    color: white;
+    font-size: 18px;
+    padding-left: 6px;
+}
+#per-update-pop-up-box .update-pop-up-head-box{
+    width: 100%;
+    float: left;
+    background-color: whitesmoke;
+}
+#per-update-pop-up-box .update-pop-up-head-word-box{
+    width: 200px;
+    float: left;
+}
+#per-update-pop-up-box .update-pop-up-head-word-box span{
+    padding-left: 8px;
+    font-size: 16px;
+    color: dimgray;
+}
+#per-update-pop-up-box .update-pop-up-head-close-box{
+    width: 120px;
+    padding-left: 95%;
+}
+.warning-span{
+    font-size: 11px;
+    color: red;
+}
+#L-per_name_update{
+    color: #9aa193;
+}
+#L-per_id_number_update{
+    color: #9aa193;
+}
+#L-per_grade_update{
+    color: #9aa193;
+}
+/* 密码修改content */
+.content-update-box{
+    padding-top: 150px;
+    padding-left:28%;
+}
+.content-update-box input{
+    width: 300px;
+    line-height: 20px;
+}
+.content-update-box-1{
+    margin-top: 18px;
+}
+ .char{
+    font-size: 11px;
+    color: red;
+}
+.content-update-box-1 span{
+    font-size: 11px;
+}
+.content-update-button-box{
+    float: left;
+    width: 100%;
+    margin-top: 16px;
+}
+.content-update-submit-button-box{
+    width: 10%;
+    float: left;
+    margin-top: 18px;
+    margin-left: 16%;
+}
+.content-update-submit-button-box button{
+    height: 30px;
+    font-size: 18px;
+    border: hidden;
+    color: aliceblue;
+    background-color: royalblue;
+}
+/* 班级信息content */
+.content-classinfo-box{
+    padding-top: 12px;
+}
+.classinfo-search-box{
+    float: left;
+    width: 1200px;
+}
+.classinfo-name-box{
+    width: 200px;
+    float: left;
+    padding-top: 12px;
+    margin-left: 340px;
+}
+#class_name{
+    border: 1px solid dodgerblue;
+}
+.classinfo-search-button-box{
+    float: left;
+    width: 48px;
+    height: 36px;
+    padding-top: 14px;
+    padding-left: 190px;
+}
+.classinfo-search-button-box .classinfo-search-button{
+    border: none;
+    width: 48px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: royalblue;
+}
+.classinfo-search-button-box span{
+    font-size: 18px;
+    color: white;
+}
+.classinfo-add-box{
+    margin-top: 1%;
+    padding-left: 2px;
+}
+.classinfo-add-box .classinfo-add-button{
+    border: none;
+    width: 48px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: royalblue;
+}
+.classinfo-add-button span{
+    font-size: 18px;
+    color: white;
+}
+.classinfo-add-button img{
+    width: 36px;
+    height: 32px;
+}
+.content-classinfo-box input{
+    background-color: aliceblue;
+    border: none;
+    line-height: 32px;
+    width: 360px;
+}
+
+.classinfo-table-box{
+    width: 100%;
+    height: 436px;
+    background: #F2F2F2  0 0 no-repeat;
+    background-color: aliceblue;
+    border-radius: 2px;
+    margin-top: 1px;
+    overflow: hidden;
+}
+.classinfo-table-box table{
+    border: 1px;
+    border-color: #88a3ff;
+}
+.classinfo-table-box u{
+    cursor: pointer;
+    color: #88a3ff;
+}
+.classinfo-table-box table thead {
+    text-align: center;
+}
+.classinfo-table-box table thead th{
+     background-color: cornflowerblue;
+     width: 400px;
+     height: 28px;
+ }
+ .classinfo-table-box table tbody td{
+     border: darkcyan;
+     text-align: center;
+     border-right: lightblue solid 1px;
+     border-bottom: lightblue solid 1px;
+ }
+ .classinfo-table-box a{
+     color: #88a3ff;
+     text-decoration: none;
+ }
+ .classinfo-option .option-img{
+     width: 18px;
+     height: 18px;
+ }
+ /*修改班级信息页面弹出层*/
+ #classinfo-update-pop-up-box{
+     width: 800px;
+     height: 440px;
+     background-color: white;
+     margin-top: 28px;
+     margin-left: 18%;
+ }
+ .update-pop-up-head-box{
+     width: 100%;
+     float: left;
+     background-color: whitesmoke;
+ }
+ .update-pop-up-head-word-box{
+     width: 200px;
+     float: left;
+ }
+ .update-pop-up-head-word-box span{
+     padding-left: 8px;
+     font-size: 16px;
+     color: dimgray;
+ }
+ .update-pop-up-head-close-box{
+     width: 120px;
+     padding-left: 764px;
+ }
+ .update-pop-up-head-close-box button{
+     border: 0px;
+     background-color: whitesmoke;
+ }
+ .update-pop-up-head-close-box span{
+     font-size: 16px;
+     color: dimgray;
+ }
+ .update-pop-up-body-box{
+     float: left;
+ }
+ .pop-up-body-form-box{
+     float: left;
+     padding-top: 12px;
+ }
+ .pop-up-body-form-box label{
+     float: left;
+     width: 100px;
+     margin-left: 4px;
+     font-size: 20px;
+     text-align: center;
+     padding-top: 16px;
+     background-color: rgba(6,3,5,0.03);
+     border-left: lightgray solid 1px;
+     border-right: lightgray solid 1px;
+     border-top: lightgray solid 1px;
+     border-bottom: lightgray solid 1px;
+ }
+ .pop-up-body-form-box .pop-up-body-input-box{
+     float: left;
+     width: 180px;
+ }
+ .pop-up-body-input-box input{
+     width: 684px;
+     height: 38px;
+     text-align: center;
+ }
+ .pop-up-body-button-box{
+     padding-top: 52px;
+     padding-left: 5px;
+ }
+ .pop-up-body-button-box button{
+     width: 100px;
+     height: 32px;
+     margin-top: 22px;
+     border: none;
+     border-radius: 3px;
+     background-color: cadetblue;
+ }
+ .pop-up-body-button-box button span{
+     color: white;
+     font-size: 18px;
+ }
+ /*添加班级信息页面弹出层*/
+#classinfo-add-pop-up-box{
+    width: 800px;
+    height: 440px;
+    background-color: white;
+    margin-top: 28px;
+    margin-left: 18%;
+}
+/*学院信息content*/
+.classinfo-table-box a:hover{
+    color: darkorange;
+}
+#college_name{
+    border: 1px solid dodgerblue;
+}
+/*修改学院信息页面弹出层*/
+#college-update-pop-up-box{
+    width: 800px;
+    height: 440px;
+    background-color: white;
+    margin-top: 28px;
+    margin-left: 18%;
+}
+.pop-up-body-button-box{
+    padding-top: 120px;
+    padding-left: 5px;
+}
+/*添加学院信息页面弹出层*/
+#college-add-pop-up-box{
+    width: 800px;
+    height: 440px;
+    background-color: white;
+    margin-top: 28px;
+    margin-left: 18%;
+}
+/* 学生信息content */
+.content-student-box{
+    padding-top: 12px;
+}
+.student-search-box{
+    float: left;
+    width: 1200px;
+}
+.student-account-box{
+    width: 180px;
+    float: left;
+    padding-top: 12px;
+    margin-left: 340px;
+}
+.student-account-box input{
+    width: 360px;
+    height: 32px;
+    background-color: aliceblue;
+}
+#student_account{
+    border: 1px solid dodgerblue;
+}
+.student-search-button-box{
+    float: left;
+    width: 48px;
+    height: 36px;
+    padding-top: 14px;
+    padding-left: 210px;
+}
+.student-search-button-box .student-search-button{
+    border: none;
+    width: 48px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: royalblue;
+}
+.student-search-button span{
+    font-size: 18px;
+    color: white;
+}
+.student-add-box{
+    margin-top: 1%;
+    padding-left: 2px;
+}
+.student-add-box .student-add-button{
+    border: none;
+    width: 48px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: royalblue;
+}
+.student-add-button span{
+    font-size: 18px;
+    color: white;
+}
+.student-add-button img{
+    width: 36px;
+    height: 32px;
+}
+.content-student-box input{
+    background-color: aliceblue;
+    border: none;
+    line-height: 32px;
+    width: 360px;
+}
+.student-table-box{
+    width: 100%;
+    height: 436px;
+    background: #F2F2F2  0 0 no-repeat;
+    background-color: aliceblue;
+    border-radius: 2px;
+    margin-top: 1px;
+    overflow: hidden;
+}
+.student-table-box table{
+    border: 1px;
+    border-color: #88a3ff;
+}
+.student-table-box u{
+    cursor: pointer;
+    color: #88a3ff;
+}
+.student-table-box table thead {
+    text-align: center;
+}
+.student-table-box table thead th{
+    font-size: 12px;
+    background-color: cornflowerblue;
+    width: 400px;
+    height: 28px;
+}
+.student-table-box table tbody td{
+    font-size: 12px;
+    border: darkcyan;
+    text-align: center;
+    border-right: lightblue solid 1px;
+    border-bottom: lightblue solid 1px;
+}
+.student-table-box a{
+    color: cornflowerblue;
+    text-decoration: none;
+}
+.student-table-box a:hover{
+    color: orange;
+}
+.student-option .option-img{
+    width: 12px;
+    height: 12px;
+}
+/*修改学生信息页面弹出层*/
+#student-update-pop-up-box{
+    width: 60%;
+    height: 132%;
+    background-color: white;
+    margin-top: 2%;
+    margin-left: 18%;
+}
+#student-update-pop-up-box .update-pop-up-head-box{
+    width: 100%;
+    float: left;
+    background-color: whitesmoke;
+}
+#student-update-pop-up-box .update-pop-up-head-word-box{
+    width: 200px;
+    float: left;
+}
+#student-update-pop-up-box .update-pop-up-head-word-box span{
+    padding-left: 8px;
+    font-size: 16px;
+    color: dimgray;
+}
+#student-update-pop-up-box .update-pop-up-head-close-box{
+    width: 120px;
+    padding-left: 95%;
+}
+.stu-update-pop-up-body-box{
+    float: left;
+}
+.stu-pop-up-body-form-box{
+    float: left;
+    padding-top: 2%;
+}
+.stu-pop-up-body-form-box label{
+    float: left;
+    width: 100px;
+    margin-left: 56px;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 14px;
+    background-color: rgba(6,3,5,0.03);
+    border-left: lightgray solid 1px;
+    border-right: lightgray solid 1px;
+    border-top: lightgray solid 1px;
+    border-bottom: lightgray solid 1px;
+}
+.stu-pop-up-body-form-box .stu-pop-up-body-input-box{
+    float: left;
+    width: 490px;
+}
+.stu-pop-up-body-input-box input{
+    width: 480px;
+    height: 30px;
+    text-align: center;
+}
+.stu-pop-up-body-button-box{
+    padding-top: 44px;
+    padding-left: 5px;
+}
+.stu-pop-up-body-button-box button{
+    width: 100px;
+    height: 32px;
+    margin-top: 16px;
+    margin-left: 50px;
+    border: none;
+    border-radius: 3px;
+    background-color: cadetblue;
+}
+#student-update-pop-up-box .stu-pop-up-body-button-box button span{
+    color: white;
+    font-size: 18px;
+    padding-left: 6px;
+}
+#student-update-pop-up-box .stu-pop-up-body-form-box span{
+    color: red;
+    font-size: 12px;
+    float: left;
+    padding-top: 12px;
+}
+#student-update-pop-up-box .stu-pop-up-body-button-box span{
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 8px;
+    padding-top: 2px;
+    padding-left: 22px;
+}
+/*添加学生信息页面弹出层*/
+#student-add-pop-up-box{
+    width: 60%;
+    height: 132%;
+    background-color: white;
+    margin-top: 2%;
+    margin-left: 18%;
+}
+#student-add-pop-up-box .update-pop-up-head-box{
+    width: 100%;
+    float: left;
+    background-color: whitesmoke;
+}
+#student-add-pop-up-box .update-pop-up-head-word-box{
+    width: 200px;
+    float: left;
+}
+#student-add-pop-up-box .update-pop-up-head-word-box span{
+    padding-left: 8px;
+    font-size: 16px;
+    color: dimgray;
+}
+#student-add-pop-up-box .update-pop-up-head-close-box{
+    width: 120px;
+    padding-left: 95%;
+}
+.stu-sex-input-block select{
+    width: 484px;
+    height: 36px;
+    color: chocolate;
+}
+.stu-enthnic-input-block select{
+    width: 484px;
+    height: 36px;
+    color: chocolate;
+}
+#student-add-pop-up-box .stu-pop-up-body-form-box span{
+    color: red;
+    font-size: 12px;
+    float: left;
+    padding-top: 12px;
+}
+#student-add-pop-up-box .stu-pop-up-body-button-box span{
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 8px;
+    padding-top: 2px;
+    padding-left: 22px;
+}
+/*宿舍信息content*/
+.content-room-box{
+    padding-top: 12px;
+}
+.room-search-box{
+    float: left;
+    width: 1200px;
+}
+.room-name-box{
+    width: 180px;
+    float: left;
+    padding-top: 12px;
+    margin-left: 340px;
+}
+#room_area{
+    border: 1px solid dodgerblue;
+}
+.room-search-button-box{
+    float: left;
+    width: 48px;
+    height: 36px;
+    padding-top: 14px;
+    padding-left: 210px;
+}
+.room-search-button-box .room-search-button{
+    border: none;
+    width: 48px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: royalblue;
+}
+.room-search-button-box span{
+    font-size: 18px;
+    color: white;
+}
+.room-add-box{
+    margin-top: 1%;
+    padding-left: 2px;
+}
+.room-add-box .room-add-button{
+    border: none;
+    width: 48px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: royalblue;
+}
+.room-add-button span{
+    font-size: 18px;
+    color: white;
+}
+.room-add-button img{
+    width: 36px;
+    height: 32px;
+}
+.content-room-box input{
+    background-color: aliceblue;
+    border: none;
+    line-height: 32px;
+    width: 360px;
+}
+
+.room-table-box{
+    width: 100%;
+    height: 436px;
+    background: #F2F2F2  0 0 no-repeat;
+    background-color: aliceblue;
+    border-radius: 2px;
+    margin-top: 1px;
+    overflow: hidden;
+}
+.room-table-box table{
+    border: 1px;
+    border-color: #88a3ff;
+}
+.room-table-box u{
+    cursor: pointer;
+    color: #88a3ff;
+}
+.room-table-box table thead {
+    text-align: center;
+}
+.room-table-box table thead th{
+    background-color: cornflowerblue;
+    width: 400px;
+    height: 28px;
+}
+.room-table-box table tbody td{
+    border: darkcyan;
+    text-align: center;
+    border-right: lightblue solid 1px;
+    border-bottom: lightblue solid 1px;
+}
+.room-table-box a{
+    color: #88a3ff;
+    text-decoration: none;
+}
+.room-option .option-img{
+    width: 18px;
+    height: 18px;
+}
+/*宿舍信息添加页面弹出层*/
+#room-add-pop-up-box{
+    width: 800px;
+    height: 440px;
+    background-color: white;
+    margin-top: 28px;
+    margin-left: 18%;
+}
+/*宿舍信息修改页面弹出层*/
+#room-update-pop-up-box{
+    width: 800px;
+    height: 440px;
+    background-color: white;
+    margin-top: 28px;
+    margin-left: 18%;
+}
+.pop-up-body-button-box{
+    padding-top: 120px;
+    padding-left: 5px;
+}
