@@ -20,9 +20,21 @@ public class Room {
      */
     private Long id;
     /**
-     * address 宿舍地址
+     * address 宿舍区域
      */
-    private String address;
+    private String area;
+    /**
+     * loudong 楼栋号
+     */
+    private String loudong;
+    /**
+     * floorNumber 楼层号
+     */
+    private String floorNumber;
+    /**
+     * roomNumber 房间号
+     */
+    private String roomNumber;
     /**
      * auntieName 宿管阿姨姓名
      */
@@ -50,9 +62,12 @@ public class Room {
 
     }
 
-    public Room(Long id, String address, String auntieName, Integer studentsNumber, Integer emptyRoom, Byte isFull) {
+    public Room(Long id, String area, String loudong, String floorNumber, String roomNumber, String auntieName, Integer studentsNumber, Integer emptyRoom, Byte isFull) {
         this.id = id;
-        this.address = address;
+        this.area = area;
+        this.loudong = loudong;
+        this.floorNumber = floorNumber;
+        this.roomNumber = roomNumber;
         this.auntieName = auntieName;
         this.studentsNumber = studentsNumber;
         this.emptyRoom = emptyRoom;
@@ -73,12 +88,36 @@ public class Room {
         this.id = id;
     }
 
-    public String getAddress() {
-        return address;
+    public String getArea() {
+        return area;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getLoudong() {
+        return loudong;
+    }
+
+    public void setLoudong(String loudong) {
+        this.loudong = loudong;
+    }
+
+    public String getFloorNumber() {
+        return floorNumber;
+    }
+
+    public void setFloorNumber(String floorNumber) {
+        this.floorNumber = floorNumber;
+    }
+
+    public String getRoomNumber() {
+        return roomNumber;
+    }
+
+    public void setRoomNumber(String roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
     public String getAuntieName() {
