@@ -18,6 +18,7 @@
        default-lazy-init="false">
     <context:component-scan base-package="com">
     </context:component-scan>
+    <context:annotation-config/>
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"  destroy-method="close">
         <!-- 数据源驱动类可不写，Druid默认会自动根据URL识别DriverClass -->
         <!--&lt;!&ndash;<property name="dataSourceName" value="${jdbc.driver}" />&ndash;&gt;-->
@@ -78,6 +79,7 @@
         <property name="maxStatements" value="100"/>
         <property name="acquireIncrement" value="2"/>
     </bean>
+    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <!-- 自动扫描mapping.xml文件，**表示迭代查找 -->
