@@ -40,7 +40,7 @@ public class Teachers {
     /**
      * enthnic 民族
      */
-    private String enthnic;
+    private String nation;
     /**
      * idNumber 身份证号
      */
@@ -76,18 +76,19 @@ public class Teachers {
      * @author dengchao
      * @date 2018/3/18
      */
-    public Teachers(){
+    public Teachers() {
 
     }
 
-    public Teachers(Long id, String name, Byte sex, Integer age, String origin, String enthnic, String idNumber, String phone, Double salary, College collegeId, JobTitle jobTitleId, Date saveTime, Date updateTime) {
+    public Teachers(Long id, String name, Byte sex, Integer age, String origin, String idNumber, String nation,
+                    String phone, Double salary, College collegeId, JobTitle jobTitleId, Date saveTime, Date updateTime) {
         this.id = id;
         this.name = name;
         this.sex = sex;
         this.age = age;
         this.origin = origin;
-        this.enthnic = enthnic;
         this.idNumber = idNumber;
+        this.nation = nation;
         this.phone = phone;
         this.salary = salary;
         this.collegeId = collegeId;
@@ -118,20 +119,20 @@ public class Teachers {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
     public Byte getSex() {
         return sex;
     }
 
     public void setSex(Byte sex) {
         this.sex = sex;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getOrigin() {
@@ -142,12 +143,12 @@ public class Teachers {
         this.origin = origin;
     }
 
-    public String getEnthnic() {
-        return enthnic;
+    public String getNation() {
+        return nation;
     }
 
-    public void setEnthnic(String enthnic) {
-        this.enthnic = enthnic;
+    public void setNation(String naiton) {
+        this.nation = naiton;
     }
 
     public String getIdNumber() {
