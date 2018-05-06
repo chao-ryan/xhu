@@ -57,7 +57,7 @@
     <constant name="struts.convention.action.suffix" value="Action"/>
     <!-- 设置action默认路径访问方式 后将将每个分部的首字母转为小写，用’-’分割
     UserAction->user  UserDetailAction ->user-detail-->
-    <constant name="struts.convention.action.name.separator" value="-" />
+    <!--<constant name="struts.convention.action.name.separator" value="-" />-->
     <!-- struts国际化配置-->
     <constant name="struts.custom.i18n.resources" value="message" />
 

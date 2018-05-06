@@ -3,33 +3,33 @@
 <mapper namespace="com.domain.Teachers">
     <!-- 定义结果集 -->
     <resultMap id="teachersMap" type="com.domain.Teachers">
-        <id property="id" column="ID"/>
-        <result property="name" column="NAME"/>
-        <result property="sex" column="SEX"/>
-        <result property="age" column="AGE"/>
-        <result property="origin" column="ORIFIN"/>
-        <result property="enthnic" column="ENTHNIC"/>
-        <result property="idNumber" column="ID_NUMBER"/>
-        <result property="phone" column="PHONE"/>
-        <result property="salary" column="SALARY"/>
-        <result property="saveTime" column="SAVE_TIME"/>
-        <result property="updateTime" column="UPDATE_TIME"/>
+        <id property="id" column="ID"></id>
+        <result property="name" column="NAME"></result>
+        <result property="sex" column="SEX"></result>
+        <result property="age" column="AGE"></result>
+        <result property="origin" column="ORIGIN"></result>
+        <result property="nation" column="NATION"></result>
+        <result property="idNumber" column="ID_NUMBER"></result>
+        <result property="phone" column="PHONE"></result>
+        <result property="salary" column="SALARY"></result>
+        <result property="saveTime" column="SAVE_TIME"></result>
+        <result property="updateTime" column="UPDATE_TIME"></result>
         <association property="collegeId" column="COLLEGE_ID" javaType="com.domain.College">
-            <id property="id" column="CO_ID"/>
-            <result property="name" column="CO_NAME"/>
-            <result property="studentsNumber" column="CO_STUDENTS_NUMBER"/>
-            <result property="teachersNumber" column="CO_TEACHERS_NUMBER"/>
-            <result property="saveTime" column="CO_SAVE_TIME"/>
-            <result property="updateTime" column="CO_UPDATE_TIME"/>
+            <id property="id" column="CO_ID"></id>
+            <result property="name" column="CO_NAME"></result>
+            <result property="studentsNumber" column="CO_STUDENTS_NUMBER"></result>
+            <result property="teachersNumber" column="CO_TEACHERS_NUMBER"></result>
+            <result property="saveTime" column="CO_SAVE_TIME"></result>
+            <result property="updateTime" column="CO_UPDATE_TIME"></result>
         </association>
         <association property="jobTitleId" column="JOB_TITLE_ID" javaType="com.domain.JobTitle">
-            <id property="id" column="J_ID"/>
-            <result property="jobName" column="J_JOB_NAME"/>
+            <id property="id" column="J_ID"></id>
+            <result property="jobName" column="J_JOB_NAME"></result>
         </association>
     </resultMap>
     <!-- 定义sql查询列 -->
     <sql id="columns">
-        ID,`NAME`,SEX,AGE,ORIGIN,ENTHNIC,ID_NUMBER,PHONE,SALARY,SAVE_TIME,UPDATE_TIME,COLLEGE_ID,JOB_TITLE_ID
+        ID,`NAME`,SEX,AGE,ORIGIN,NATION,ID_NUMBER,PHONE,SALARY,SAVE_TIME,UPDATE_TIME,COLLEGE_ID,JOB_TITLE_ID
     </sql>
     <!-- 根据id删除 -->
     <delete id="deleteById" parameterType="java.lang.Long">
@@ -43,14 +43,14 @@
         </foreach>
     </delete>
     <!-- 保存 -->
-    <insert id="save" parameterType="com.domain.Teachers">
+    <insert id="save" parameterType="com.domain.Teachers" useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
         INSERT INTO teachers(<include refid="columns"/> )
-        VALUES (DEFAULT ,#{name},#{sex},#{age},#{origin},#{enthnic},#{idNumber},#{phone},#{salary},#{saveTime},#{updateTime},#{collegeId},#{jobTitleId})
+        VALUES (DEFAULT ,#{name},#{sex},#{age},#{origin},#{nation},#{idNumber},#{phone},#{salary},#{saveTime},#{updateTime},#{collegeId.id},#{jobTitleId.id})
     </insert>
     <!-- 修改 -->
     <update id="update" parameterType="com.domain.Teachers">
         UPDATE teachers
-        SET `NAME`=#{name},SEX=#{sex},AGE=#{age},ORIGIN=#{origin},ENTHNIC=#{enthnic},ID_NUMBER=#{idNumber},SALARY=#{salary},SAVE_TIME=#{saveTime},UPDATE_TIME=#{updateTime},COLLEGE_ID=#{collegeId},JOB_TITLE_ID=#{jobTitleId}
+        SET `NAME`=#{name},SEX=#{sex},AGE=#{age},ORIGIN=#{origin},NATION=#{nation},ID_NUMBER=#{idNumber},SALARY=#{salary},SAVE_TIME=#{saveTime},UPDATE_TIME=#{updateTime},COLLEGE_ID=#{collegeId.id},JOB_TITLE_ID=#{jobTitleId.id}
         WHERE ID=#{id}
     </update>
     <!-- 根据id查询 -->
@@ -61,47 +61,47 @@
     </select>
     <!-- 根据条件（姓名，性别，身份证号，添加时间）查询 -->
     <select id="findByCondition" parameterType="java.util.Map" resultMap="teachersMap">
-        SELECT T.ID T_ID,T.NAME T_NAME,T.SEX T_SEX,T.AGE T_AGE,T.ORIFIN T_ORIFIN,T.ENTHNIC T_ENTHNIC,T.ID_NUMBER T_ID_NUMBER,T.PHONE T_PHONE,T.SALARY T_SALARY,T.SAVE_TIME T_SAVE_TIME,T.UPDATE_TIME T_UPDATE_TIME,T.COLLEGE_ID T_COLLEGE_ID,T.JOB_TITLE_ID T_JOB_TITLE_ID,
+        SELECT T.ID,T.NAME,T.SEX,T.AGE,T.ORIGIN,T.NATION,T.ID_NUMBER,T.PHONE,T.SALARY,T.SAVE_TIME,T.UPDATE_TIME,T.COLLEGE_ID,T.JOB_TITLE_ID,
         CO.ID CO_ID,CO.NAME CO_NAME,CO.STUDENTS_NUMBER CO_STUDENTS_NUMBER,CO.TEACHERS_NUMBER CO_TEACHERS_NUMBER,CO.SAVE_TIME CO_SAVE_TIME,CO.UPDATE_TIME CO_UPDATE_TIME,
         J.ID J_ID,J.JOB_NAME J_JOB_NAME
         FROM teachers T
         LEFT JOIN COLLEGE CO ON CO.ID=T.COLLEGE_ID
         LEFT JOIN JOB_TITLE J ON J.ID=T.JOB_TITLE_ID
         <where>
-            <if test="NAME != null">
-                `NAME` LIKE #{NAME}
+            <if test="teacherName != null">
+                AND T.`NAME` LIKE #{teacherName}
             </if>
-            <if test="SEX != null">
-                AND SEX=#{SEX}
+            <if test="teacherSex != null">
+                AND SEX=#{teacherSex}
             </if>
-            <if test="ID_NUMBER != null">
-                AND ID_NUMBER=#{ID_NUMBER}
+            <if test="teacherIdNumber != null">
+                AND ID_NUMBER=#{teacherIdNumber}
             </if>
-            <if test="SAVE_TIME != null">
-                AND SAVE_TIME LIKE #{SAVE_TIME}
+            <if test="teacherSaveTime != null">
+                AND SAVE_TIME LIKE #{teacherSaveTime}
             </if>
         </where>
     </select>
     <!-- 根据条件（姓名，性别，身份证号，添加时间）分页查询 -->
-    <select id="findByCondition" parameterType="java.util.Map" resultMap="teachersMap">
-        SELECT T.ID T_ID,T.NAME T_NAME,T.SEX T_SEX,T.AGE T_AGE,T.ORIFIN T_ORIFIN,T.ENTHNIC T_ENTHNIC,T.ID_NUMBER T_ID_NUMBER,T.PHONE T_PHONE,T.SALARY T_SALARY,T.SAVE_TIME T_SAVE_TIME,T.UPDATE_TIME T_UPDATE_TIME,T.COLLEGE_ID T_COLLEGE_ID,T.JOB_TITLE_ID T_JOB_TITLE_ID,
+    <select id="findByConditionForPage" parameterType="java.util.Map" resultMap="teachersMap">
+        SELECT T.ID,T.NAME,T.SEX,T.AGE,T.ORIGIN,T.NATION,T.ID_NUMBER,T.PHONE,T.SALARY,T.SAVE_TIME,T.UPDATE_TIME,T.COLLEGE_ID,T.JOB_TITLE_ID,
         CO.ID CO_ID,CO.NAME CO_NAME,CO.STUDENTS_NUMBER CO_STUDENTS_NUMBER,CO.TEACHERS_NUMBER CO_TEACHERS_NUMBER,CO.SAVE_TIME CO_SAVE_TIME,CO.UPDATE_TIME CO_UPDATE_TIME,
         J.ID J_ID,J.JOB_NAME J_JOB_NAME
         FROM teachers T
         LEFT JOIN COLLEGE CO ON CO.ID=T.COLLEGE_ID
         LEFT JOIN JOB_TITLE J ON J.ID=T.JOB_TITLE_ID
         <where>
-            <if test="NAME != null">
-                `NAME` LIKE #{NAME}
+            <if test="teacherName != null">
+                AND T.`NAME` LIKE #{teacherName}
             </if>
-            <if test="SEX != null">
-                AND SEX=#{SEX}
+            <if test="teacherSex != null">
+                AND SEX=#{teacherSex}
             </if>
-            <if test="ID_NUMBER != null">
-                AND ID_NUMBER=#{ID_NUMBER}
+            <if test="teacherIdNumber != null">
+                AND ID_NUMBER=#{teacherIdNumber}
             </if>
-            <if test="SAVE_TIME != null">
-                AND SAVE_TIME LIKE #{SAVE_TIME}
+            <if test="teacherSaveTime != null">
+                AND SAVE_TIME LIKE #{teacherSaveTime}
             </if>
         </where>
     </select>
