@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.domain.Inventory">
+    <!--定义结果集-->
+    <resultMap id="inventory" type="com.domain.Inventory">
+        <id property="id" column="ID" jdbcType="BIGINT" javaType="java.lang.Long"/>
+        <result property="storeId" column="STORE_ID" jdbcType="BIGINT" javaType="java.lang.Long"/>
+        <result property="goodsId" column="GOODS_ID" jdbcType="BIGINT" javaType="java.lang.Long"/>
+        <result property="price" column="PRICE" jdbcType="DECIMAL" javaType="java.lang.Double"/>
+        <result property="number" column="NUMBER" jdbcType="DOUBLE" javaType="java.lang.Double"/>
+    </resultMap>
+
+    <!--sql语句-->
+    <sql id="inventorySql">
+        ID,STORE_ID,GOODS_ID,PRICE,NUMBER
+    </sql>
+    <!--根据ID查询-->
+    <select id="findInventoryById" resultMap="inventory">
+        SELECT
+        <include refid="inventorySql"/>
+        FROM inventory
+        WHERE ID=#{id}
+    </select>
+    <!--查询所有-->
+    <select id="findInventoryAll" resultType="java.util.Map" resultMap="inventory">
+        SELECT
+        <include refid="inventorySql"/>
+        FROM inventory
+        GROUP BY ID
+    </select>
+    <!--根据店铺ID和商品ID查询库存-->
+    <select id="findInventoryByStoreIdAndGoodsId" resultMap="inventory">
+        SELECT
+        <include refid="inventorySql"/>
+        FROM inventory
+        WHERE STORE_ID=#{storeId,jdbcType=BIGINT}
+        AND GOODS_ID=#{goodsId,jdbcType=BIGINT}
+    </select>
+
+    <!--根据店铺ID查询店铺所有库存-->
+    <select id="findInventoryByUnSureCondition" resultMap="inventory">
+        SELECT
+        <include refid="inventorySql"/>
+        FROM inventory WHERE 1=1
+        <foreach collection="list" item="map">
+            AND ${map.name} ${map.rela} ${map.value}
+        </foreach>
+    </select>
+
+
+    <!--添加-->
+    <insert id="saveInventory">
+        INSERT INTO inventory(ID,STORE_ID,GOODS_ID,PRICE,NUMBER) VALUES(DEFAULT,
+        ${inventory.storeId},${inventory.goodsId},${inventory.price},${inventory.number})
+    </insert>
+    <!--根据ID删除-->
+    <delete id="deleteInventoryById">
+        DELETE FROM inventory WHERE ID=#{id}
+    </delete>
+    <!--根据ID进行修改-->
+    <update id="updateInventorById" parameterType="java.util.Map">
+         UPDATE inventory SET STORE_ID=${inventory.storeId},GOODS_ID=${inventory.goodsId},
+         PRICE=${inventory.price},NUMBER=${inventory.number} WHERE ID=#{id};
+    </update>
+
+</mapper>
