@@ -81,6 +81,17 @@ public class FormatUtils {
     }
 
     /**
+     * @Title: dateFormStrYmd
+     * @Description: 将 yyyy-MM-dd 形式字符串转为Date
+     * @author dengchao
+     * @date 2018/5/9
+     */
+    public static Date dateFormStrYmd(String dateStr) throws ParseException {
+        Date date=dateFormat.parse(dateStr);
+        return date;
+    }
+
+    /**
      * @Title: now
      * @Description: 获取当前系统时间并格式化输出
      * @author dengchao
