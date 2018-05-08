@@ -24,7 +24,10 @@
         <result property="updateTime" column="UPDATE_TIME"/>
         <association property="roomId" column="ROOM_ID" javaType="com.domain.Room">
             <id property="id" column="R_ID"/>
-            <result property="address" column="R_ADDRESS"/>
+            <result property="area" column="R_AREA"/>
+            <result property="loudong" column="R_LOUDONG"/>
+            <result property="floorNumber" column="R_FLOOR_NUMBER"/>
+            <result property="roomNumber" column="R_ROOM_NUMBER"/>
             <result property="auntieName" column="R_AUNTIE_NAME"/>
             <result property="studentsNumber" column="R_STUDENTS_NUMBER"/>
             <result property="emptyRoom" column="R_EMPTY_ROOM"/>
@@ -56,12 +59,12 @@
     <!-- 保存 -->
     <insert id="save" parameterType="com.domain.Students">
         INSERT INTO students(<include refid="columns"/> )
-        VALUES (DEFAULT ,#{name},#{sex},#{birthday},#{origin},#{enthnic},#{idNumber},#{university},#{achievement},#{phone},#{fatherName},#{fatherPhone},#{fatherAddress},#{motherName},#{motherPhone},#{motherAddress},#{familyPopulation},#{saveTime},#{updateTime},#{roomId},#{accountId})
+        VALUES (DEFAULT ,#{name},#{sex},#{birthday},#{origin},#{enthnic},#{idNumber},#{university},#{achievement},#{phone},#{fatherName},#{fatherPhone},#{fatherAddress},#{motherName},#{motherPhone},#{motherAddress},#{familyPopulation},#{saveTime},#{updateTime},#{roomId.id},#{accountId.id})
     </insert>
     <!-- 修改 -->
     <update id="update" parameterType="com.domain.Students">
         UPDATE students
-        SET `NAME`=#{name},SEX=#{sex},BIRTHDAY=#{birthday},ORIGIN=#{origin},ENTHNIC=#{enthnic},ID_NUMBER=#{idNumber},UNIVERSITY=#{university},ACHIEVEMENT=#{achievement},PHONE=#{phone},FATHER_NAME=#{fatherName},FATHER_PHONE=#{fatherPhone},FATHER_ADDRESS=#{fatherAddress},MOTHER_NAME=#{motherName},MOTHER_PHONE=#{motherPhone},MOTHER_ADDRESS=#{motherAddress},FAMILY_POPULATION=#{familyPopulation},SAVE_TIME=#{saveTime},UPDATE_TIME=#{updateTime},ROOM_ID=#{roomId},ACCOUNT_ID=#{accountId}
+        SET `NAME`=#{name},SEX=#{sex},BIRTHDAY=#{birthday},ORIGIN=#{origin},ENTHNIC=#{enthnic},ID_NUMBER=#{idNumber},UNIVERSITY=#{university},ACHIEVEMENT=#{achievement},PHONE=#{phone},FATHER_NAME=#{fatherName},FATHER_PHONE=#{fatherPhone},FATHER_ADDRESS=#{fatherAddress},MOTHER_NAME=#{motherName},MOTHER_PHONE=#{motherPhone},MOTHER_ADDRESS=#{motherAddress},FAMILY_POPULATION=#{familyPopulation},SAVE_TIME=#{saveTime},UPDATE_TIME=#{updateTime},ROOM_ID=#{roomId.id},ACCOUNT_ID=#{accountId.id}
         WHERE ID=#{id}
     </update>
     <!-- 根据id查询 -->
@@ -74,38 +77,38 @@
     <select id="findByCondition" parameterType="java.util.Map" resultMap="studentsMap">
         SELECT S.ID,S.NAME,S.SEX,S.BIRTHDAY,S.ORIGIN,S.ENTHNIC,S.ID_NUMBER,S.UNIVERSITY,S.ACHIEVEMENT,S.PHONE,S.FATHER_NAME,S.FATHER_PHONE,S.FATHER_ADDRESS,
         S.MOTHER_NAME,S.MOTHER_PHONE,S.MOTHER_ADDRESS,S.FAMILY_POPULATION,S.SAVE_TIME,S.UPDATE_TIME,S.ROOM_ID,S.ACCOUNT_ID,
-        R.ID R_ID,R.ADDRESS R_ADDRESS,R.AUNTIE_NAME R_AUNTIE_NAME,R.STUDENTS_NUMBER R_STUDENTS_NUMBER,R.EMPTY_ROOM R_EMPTY_ROOM,R.IS_FULL R_IS_FULL,
+        R.ID R_ID,R.AREA R_AREA,R.LOUDONG R_LOUDONG,R.FLOOR_NUMBER R_FLOOR_NUMBER,R.ROOM_NUMBER R_ROOM_NUMBER,R.AUNTIE_NAME R_AUNTIE_NAME,R.STUDENTS_NUMBER R_STUDENTS_NUMBER,R.EMPTY_ROOM R_EMPTY_ROOM,R.IS_FULL R_IS_FULL,
         A.ID A_ID,A.ACCOUNT_NUMBER A_ACCOUNT_NUMBER,A.PASSWORD A_PASSWORD,A.SAVE_TIME A_SAVE_TIME,A.UPDATE_TIME A_UPDATE_TIME
         FROM students S
         LEFT JOIN room R ON R.ID=S.ROOM_ID
         LEFT JOIN account A ON A.ID=S.ACCOUNT_ID
         <where>
             <if test="NAME != null">
-                `NAME` LIKE #{NAME}
+                S.`NAME` LIKE #{NAME}
             </if>
             <if test="SEX != null">
-                AND SEX=#{SEX}
+                AND S.SEX=#{SEX}
             </if>
             <if test="ORIGIN != null">
-                AND ORIGIN=#{ORIGIN}
+                AND S.ORIGIN=#{ORIGIN}
             </if>
             <if test="ENTHNIC != null">
-                AND ENTHNIC=#{ENTHNIC}
+                AND S.ENTHNIC=#{ENTHNIC}
             </if>
             <if test="ID_NUMBER != null">
-                AND ID_NUMBER=#{ID_NUMBER}
+                AND S.ID_NUMBER=#{ID_NUMBER}
             </if>
             <if test="UNIVERSITY != null">
-                AND UNIVERSITY LIKE #{UNIVERSITY}
+                AND S.UNIVERSITY LIKE #{UNIVERSITY}
             </if>
             <if test="PHONE != null">
-                AND PHONE=#{PHONE}
+                AND S.PHONE=#{PHONE}
             </if>
             <if test="ROOM_ID != null">
-                AND ROOM_ID=#{ROOM_ID}
+                AND S.ROOM_ID=#{ROOM_ID}
             </if>
             <if test="ACCOUNT_ID != null">
-                AND ACCOUNT_ID=#{ACCOUNT_ID}
+                AND S.ACCOUNT_ID=#{ACCOUNT_ID}
             </if>
         </where>
     </select>
@@ -113,38 +116,38 @@
     <select id="findByConditionForPage" parameterType="java.util.Map" resultMap="studentsMap">
         SELECT S.ID,S.NAME,S.SEX,S.BIRTHDAY,S.ORIGIN,S.ENTHNIC,S.ID_NUMBER,S.UNIVERSITY,S.ACHIEVEMENT,S.PHONE,S.FATHER_NAME,S.FATHER_PHONE,S.FATHER_ADDRESS,
         S.MOTHER_NAME,S.MOTHER_PHONE,S.MOTHER_ADDRESS,S.FAMILY_POPULATION,S.SAVE_TIME,S.UPDATE_TIME,S.ROOM_ID,S.ACCOUNT_ID,
-        R.ID R_ID,R.ADDRESS R_ADDRESS,R.AUNTIE_NAME R_AUNTIE_NAME,R.STUDENTS_NUMBER R_STUDENTS_NUMBER,R.EMPTY_ROOM R_EMPTY_ROOM,R.IS_FULL R_IS_FULL,
+        R.ID R_ID,R.AREA R_AREA,R.LOUDONG R_LOUDONG,R.FLOOR_NUMBER R_FLOOR_NUMBER,R.ROOM_NUMBER R_ROOM_NUMBER,R.AUNTIE_NAME R_AUNTIE_NAME,R.STUDENTS_NUMBER R_STUDENTS_NUMBER,R.EMPTY_ROOM R_EMPTY_ROOM,R.IS_FULL R_IS_FULL,
         A.ID A_ID,A.ACCOUNT_NUMBER A_ACCOUNT_NUMBER,A.PASSWORD A_PASSWORD,A.SAVE_TIME A_SAVE_TIME,A.UPDATE_TIME A_UPDATE_TIME
         FROM students S
         LEFT JOIN room R ON R.ID=S.ROOM_ID
         LEFT JOIN account A ON A.ID=S.ACCOUNT_ID
         <where>
             <if test="NAME != null">
-                `NAME` LIKE #{NAME}
+                S.`NAME` LIKE #{NAME}
             </if>
             <if test="SEX != null">
-                AND SEX=#{SEX}
+                AND S.SEX=#{SEX}
             </if>
             <if test="ORIGIN != null">
-                AND ORIGIN=#{ORIGIN}
+                AND S.ORIGIN=#{ORIGIN}
             </if>
             <if test="ENTHNIC != null">
-                AND ENTHNIC=#{ENTHNIC}
+                AND S.ENTHNIC=#{ENTHNIC}
             </if>
             <if test="ID_NUMBER != null">
-                AND ID_NUMBER=#{ID_NUMBER}
+                AND S.ID_NUMBER=#{ID_NUMBER}
             </if>
             <if test="UNIVERSITY != null">
-                AND UNIVERSITY LIKE #{UNIVERSITY}
+                AND S.UNIVERSITY LIKE #{UNIVERSITY}
             </if>
             <if test="PHONE != null">
-                AND PHONE=#{PHONE}
+                AND S.PHONE=#{PHONE}
             </if>
             <if test="ROOM_ID != null">
-                AND ROOM_ID=#{ROOM_ID}
+                AND S.ROOM_ID=#{ROOM_ID}
             </if>
             <if test="ACCOUNT_ID != null">
-                AND ACCOUNT_ID=#{ACCOUNT_ID}
+                AND S.ACCOUNT_ID=#{ACCOUNT_ID}
             </if>
         </where>
     </select>

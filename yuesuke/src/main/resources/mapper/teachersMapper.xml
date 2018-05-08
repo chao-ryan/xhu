@@ -72,13 +72,13 @@
                 AND T.`NAME` LIKE #{teacherName}
             </if>
             <if test="teacherSex != null">
-                AND SEX=#{teacherSex}
+                AND T.SEX=#{teacherSex}
             </if>
             <if test="teacherIdNumber != null">
-                AND ID_NUMBER=#{teacherIdNumber}
+                AND T.ID_NUMBER=#{teacherIdNumber}
             </if>
             <if test="teacherSaveTime != null">
-                AND SAVE_TIME LIKE #{teacherSaveTime}
+                AND T.SAVE_TIME LIKE #{teacherSaveTime}
             </if>
         </where>
     </select>
@@ -95,13 +95,13 @@
                 AND T.`NAME` LIKE #{teacherName}
             </if>
             <if test="teacherSex != null">
-                AND SEX=#{teacherSex}
+                AND T.SEX=#{teacherSex}
             </if>
             <if test="teacherIdNumber != null">
-                AND ID_NUMBER=#{teacherIdNumber}
+                AND T.ID_NUMBER=#{teacherIdNumber}
             </if>
             <if test="teacherSaveTime != null">
-                AND SAVE_TIME LIKE #{teacherSaveTime}
+                AND T.SAVE_TIME LIKE #{teacherSaveTime}
             </if>
         </where>
     </select>

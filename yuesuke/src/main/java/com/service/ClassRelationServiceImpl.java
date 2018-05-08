@@ -23,7 +23,7 @@ import java.util.Map;
  * @date 2018/3/24
  */
 @Service("classRelationService")
-public class ClassRelationServiceImpl {
+public class ClassRelationServiceImpl implements ClassRelationService {
     //注入classRelationDao
     @Autowired
     private ClassRelationDao classRelationDao;
