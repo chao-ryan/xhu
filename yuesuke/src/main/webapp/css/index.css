@@ -1,0 +1,12 @@
+html body{
+    font-family: 'Microsoft Yahei', '微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: orange;
+}
+body{
+    background-size: auto 960px;
+}
+h1{
+    text-align: center;
+    padding-top: 16%;
+    font-size: 48px;
+}
