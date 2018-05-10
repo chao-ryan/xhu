@@ -1,8 +1,10 @@
 ﻿html body{
     width: 100%;
     background-color: midnightblue;
-    background-image: url("../image/xhu-library.jpg");
     font-family: 微软雅黑;
+}
+body{
+    background-size: auto 1100px;
 }
 .header{
     height: 30px;
@@ -10,8 +12,8 @@
     border-bottom: 1px solid aliceblue;
 }
 /*.lod-login{*/
-    /*height: 39px;*/
-    /*padding-left: 1230px;*/
+/*height: 39px;*/
+/*padding-left: 1230px;*/
 /*}*/
 .logo-window-box{
     padding-top: 20px;
@@ -19,7 +21,7 @@
 .main-agileits{
     width: 450px;
     height: 325px;
-    margin: 150px auto;
+    margin: 120px auto;
     background-color: royalblue;
     /*background-image: url("../image/xhu_img.jpg");*/
     border-radius: 10px;
@@ -50,14 +52,15 @@
 }
 .login-button-box{
     padding-top: 34px;
-    padding-left: 120px;
+    padding-left: 118px;
 }
 .login-button-box button{
     background-color: #accbff;
     font-size: 16px;
     border: none;
-    width: 55px;
-    height: 28px;
+    border-radius: 5px;
+    width: 120px;
+    height: 32px;
 }
 .siginup-button-box{
     padding-top: 18px;
