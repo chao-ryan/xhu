@@ -1,18 +1,18 @@
 package com.tools;/********************************************************************
  /**
- * @Project: hellow_test
- * @Package com.test0111
- * @author yanyong
- * @date 2018/1/13 0013 16:29
+ * @Project: yuesuke
+ * @Package com.tools
+ * @author dengchao
+ * @date 2018/4/20
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
 
 /**
- * @author yanyong
+ * @author dengchao
  * @EnumName StateEnum
  * @Description 状态枚举
- * @date 2018/1/13 0013
+ * @date 2018/4/20
  */
 public enum StateEnum {
 
@@ -57,8 +57,8 @@ public enum StateEnum {
      * @Description: 根据状态值查询状态
      * @param: index 状态值
      * @return: 状态
-     * @author yanyong
-     * @date 2018-01-13
+     * @author dengchao
+     * @date 2018/4/20
      * @throw YnCorpSysException
      */
     public static String findStateByIndex(Byte index) {

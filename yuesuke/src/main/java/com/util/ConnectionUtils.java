@@ -1,10 +1,10 @@
 package com.util;/********************************************************************
  /**
- * @Project: test_maven
- * @Package jdbc
- * @author guohongjin
- * @date 2017/8/28 22:12
- * @Copyright: 2017 www.zyht.com Inc. All rights reserved.
+ * @Project: zyht_web
+ * @Package com.util
+ * @author dengchao
+ * @date 2018/3/15
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
 
@@ -15,10 +15,10 @@ import java.util.Properties;
 import java.util.concurrent.Executor;
 
 /**
- * @author guohongjin
+ * @author dengchao
  * @ClassName ConnectionUtils
  * @Description 类描述
- * @date 2017/8/28
+ * @date 2018/3/15
  */
 public class ConnectionUtils implements Connection {
     //3.定义一个变量

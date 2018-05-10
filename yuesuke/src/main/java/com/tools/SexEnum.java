@@ -1,18 +1,18 @@
 package com.tools;/********************************************************************
  /**
- * @Project: work
- * @Package work_01_18.tools
- * @author yanyong
- * @date 2018/1/19 0019 10:36
+ * @Project: yuesuke
+ * @Package com.tools
+ * @author dengchao
+ * @date 2018/4/20
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
 
 /**
- * @author yanyong
+ * @author dengchao
  * @EnumName SexEnum
  * @Description 枚举描述
- * @date 2018/1/19 0019
+ * @date 2018/4/20
  */
 public enum SexEnum {
     MAN((byte) 0, "男"), WOMAN((byte) 1, "女");
@@ -58,8 +58,8 @@ public enum SexEnum {
     /**
      * @Title: findSexByIndex
      * @Description: 查询 sex 通过 对应sex 值
-     * @author yanyong
-     * @date 2018-01-19
+     * @author dengchao
+     * @date 2018/4/20
      * @throw YnCorpSysException
      * @param: bytes sex值
      */

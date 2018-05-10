@@ -1,9 +1,9 @@
 package com.service;/********************************************************************
  /**
- * @Project: java_practice
- * @Package service
- * @author 胡志强
- * @date 2018/1/20 17:12
+ * @Project: yuesuke
+ * @Package com.service
+ * @author dengchao
+ * @date 2018/4/21
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -22,10 +22,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author 胡志强
+ * @author dengchao
  * @ClassName StoreServiceImpl
  * @Description StoreService的接口实现类
- * @date 2018/1/20
+ * @date 2018/4/21
  */
 @Service("storeService")
 @Transactional
@@ -50,8 +50,8 @@ public class StoreServiceImpl implements StoreService {
     /**
      * @Title: findStoreById
      * @Description: 通过指定Id查找商铺
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定id
      * @return: 商铺对象
      */
@@ -72,8 +72,8 @@ public class StoreServiceImpl implements StoreService {
     /**
      * @Title: findStoreByStoreNum
      * @Description: 通过指定storeNum查找商铺
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定storeNum
      * @return: 商铺对象
      */
@@ -94,8 +94,8 @@ public class StoreServiceImpl implements StoreService {
     /**
      * @Title: saveStore
      * @Description: 保存人员信息
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: Store 人员对象
      * @return: 受影响行数
      */
@@ -118,8 +118,8 @@ public class StoreServiceImpl implements StoreService {
     /**
      * @Title: showStore
      * @Description: 查看商铺信息
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: store 商铺对象
      */
     @Override
@@ -138,8 +138,8 @@ public class StoreServiceImpl implements StoreService {
     /**
      * @Title: deleteStoreById
      * @Description: 删除指定id 的商铺信息
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定id
      * @return: 受影响行数
      */
@@ -161,8 +161,8 @@ public class StoreServiceImpl implements StoreService {
     /**
      * @Title: updateStoreById
      * @Description: 更新指定商铺的信息
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定商铺id
      * @param: store 指定的商铺的信息
      * @return: 受影响行数
@@ -204,8 +204,8 @@ public class StoreServiceImpl implements StoreService {
      * @param price  如果是新进的货物，则添加价格
      * @Title: setStock
      * @Description: 商铺进货
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @return: 是否成功
      */
     @Override
@@ -259,8 +259,8 @@ public class StoreServiceImpl implements StoreService {
     /**
      * @Title: delivery
      * @Description: 商铺发货
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * //     * @param orderDetail 订单详情
      * @return: 是否成功
      */
@@ -303,8 +303,8 @@ public class StoreServiceImpl implements StoreService {
     /**
      * @Title: findStoreByUnSureCondition
      * @Description: 商铺的不确定条件查询
-     * @author hzq
-     * @date 2018/01/30
+     * @author dengchao
+     * @date 2018/4/21
      * @param map 条件和值对应key和value
      * @throw SQLException
      */
@@ -323,8 +323,8 @@ public class StoreServiceImpl implements StoreService {
     /**
      * @Title: findAllStore
      * @Description: 查询全部商铺信息
-     * @author hzq
-     * @date 2018/01/30
+     * @author dengchao
+     * @date 2018/4/21
      * @throw SQLException
      */
     @Override

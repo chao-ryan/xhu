@@ -1,9 +1,9 @@
 package com.tools;/********************************************************************
  /**
- * @Project: zyht_web
- * @Package tools
- * @author kang
- * @date 2018/3/9 11:23
+ * @Project: yuesuke
+ * @Package com.tools
+ * @author dengchao
+ * @date 2018/4/20
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -14,10 +14,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author kang
+ * @author dengchao
  * @ClassName limitMethod
  * @Description 分页
- * @date 2018/3/9
+ * @date 2018/4/20
  */
 @Transactional
 public class LimitMethod {
@@ -28,8 +28,8 @@ public class LimitMethod {
      * @param totalNum 查询表总条数
      * @Title: limitMethod
      * @Description: 分页方法
-     * @author kang
-     * @date 2018-03-09
+     * @author dengchao
+     * @date 2018/4/20
      * @throw YnCorpSysException
      */
     public static Map limitMethods(String present1, String page, Integer totalNum) {

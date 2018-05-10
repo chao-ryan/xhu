@@ -1,9 +1,9 @@
 package com.action;/********************************************************************
  /**
- * @Project: zyht_web
- * @Package controller.action
- * @author yanyong
- * @date 2018/3/7 0007 17:58
+ * @Project: yuesuke
+ * @Package com.action
+ * @author dengchao
+ * @date 2018/4/28 13:24
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -23,10 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author yanyong
+ * @author dengchao
  * @ClassName UpdatePeopleAction
  * @Description 类描述
- * @date 2018/3/7 0007
+ * @date 2018/4/28
  */
 @Action(value = "updatePeopleAction")
 @Results({
@@ -40,8 +40,8 @@ public class UpdatePeopleAction extends BaseAction {
     /**
      * @Title: updatePeople
      * @Description: 修改人员信息
-     * @author yanyong
-     * @date 2018-03-07
+     * @author dengchao
+     * @date 2018/4/28
      * @throw YnCorpSysException
      * @return: String
      */

@@ -2,9 +2,9 @@ package com.util.base;/*********************************************************
  /**
  * @Project: zyht_web
  * @Package com.base
- * @author guohongjin
- * @date 2017/9/30 11:37
- * @Copyright: 2017 www.zyht.com Inc. All rights reserved.
+ * @author dengchao
+ * @date 2018/3/15
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
 
@@ -18,10 +18,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author guohongjin
+ * @author dengchao
  * @ClassName BaseAction
  * @Description 类描述
- * @date 2017/9/30
+ * @date 2018/3/15
  */
 public class BaseAction extends ActionSupport implements ServletContextAware,ServletResponseAware,ServletRequestAware {
 

@@ -1,9 +1,9 @@
 package com.domain;/********************************************************************
  /**
- * @Project: java_practice
- * @Package domain
- * @author yanyong
- * @date 2018/1/20 0020 16:54
+ * @Project: yuesuke
+ * @Package com.domain
+ * @author dengchao
+ * @date 2018/3/18 21:34
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -11,10 +11,10 @@ package com.domain;/************************************************************
 import java.util.Date;
 
 /**
- * @author yanyong
+ * @author dengchao
  * @ClassName Goods
  * @Description 商品类 实体
- * @date 2018/1/20 0020
+ * @date 2018/3/18
  */
 public class Goods {
 

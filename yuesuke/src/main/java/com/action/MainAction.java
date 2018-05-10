@@ -1,9 +1,9 @@
 package com.action;/********************************************************************
  /**
- * @Project: zyht_web
- * @Package controller
- * @author kang
- * @date 2018/3/7 14:53
+ * @Project: yuesuke
+ * @Package com.action
+ * @author dengchao
+ * @date 2018/5/5 13:24
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -28,7 +28,7 @@ import java.util.Map;
  * @author kang
  * @ClassName MainAction
  * @Description 主页面
- * @date 2018/3/7
+ * @date 2018/5/5
  */
 @Action(value = "mainAction")
 @Results({
@@ -50,8 +50,8 @@ public class MainAction extends BaseAction {
     /**
      * @Title: main
      * @Description: 主页显示商品
-     * @author kang
-     * @date 2018-03-07
+     * @author dengchao
+     * @date 2018/5/5
      * @throw YnCorpSysException
      */
     public String main() {
@@ -73,8 +73,8 @@ public class MainAction extends BaseAction {
     /**
      * @Title:
      * @Description: 主页分页
-     * @author kang
-     * @date 2018-03-08
+     * @author dengchao
+     * @date 2018/5/5
      * @throw YnCorpSysException
      */
     public String limit() {
@@ -97,8 +97,8 @@ public class MainAction extends BaseAction {
     /**
      * @Title: cart
      * @Description: 购物车显示
-     * @author kang
-     * @date 2018-03-07
+     * @author dengchao
+     * @date 2018/5/5
      * @throw YnCorpSysException
      */
     public String cart() {
@@ -141,8 +141,8 @@ public class MainAction extends BaseAction {
     /**
      * @Title: search
      * @Description: 搜索页显示商品
-     * @author kang
-     * @date 2018-03-07
+     * @author dengchao
+     * @date 2018/5/5
      * @throw YnCorpSysException
      */
     public String search() {
@@ -182,8 +182,8 @@ public class MainAction extends BaseAction {
     /**
      * @Title:
      * @Description: 搜索分页
-     * @author kang
-     * @date 2018-03-08
+     * @author dengchao
+     * @date 2018/5/5
      * @throw YnCorpSysException
      */
     public String searchLimit() {
@@ -208,8 +208,8 @@ public class MainAction extends BaseAction {
     /**
      * @Title: classify
      * @Description: 分类查询
-     * @author kang
-     * @date 2018-03-10
+     * @author dengchao
+     * @date 2018/5/5
      * @throw YnCorpSysException
      */
     public String classify() {
@@ -242,8 +242,8 @@ public class MainAction extends BaseAction {
     /**
      * @Title:classifyLimit
      * @Description: 搜分类分页
-     * @author kang
-     * @date 2018-03-08
+     * @author dengchao
+     * @date 2018/5/5
      * @throw YnCorpSysException
      */
     public String classifyLimit() {

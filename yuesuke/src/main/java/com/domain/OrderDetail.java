@@ -1,14 +1,20 @@
-package com.domain;/**
- * Created by Roger_yu on 2018/1/20.
+package com.domain;
+/**
+ * @Project: yuesuke
+ * @Package com.domain
+ * @author dengchao
+ * @date 2018/3/18
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
+ * @version V1.0
  */
 
 import java.util.Date;
 
 /**
- * @author yuweiyang
+ * @author dengchao
  * @ClassName OrderDetail
  * @Description 订单详情 实体类
- * @date 2018/1/20
+ * @date 2018/3/18
  */
 public class OrderDetail {
     /**
@@ -104,8 +110,8 @@ public class OrderDetail {
     /**
      * @Title:
      * @Description: 封装函数
-     * @author yuweiyang
-     * @date
+     * @author dengchao
+     * @date 2018/3/18
      */
 
     public Long getId() {
@@ -255,8 +261,8 @@ public class OrderDetail {
     /**
      * @Title:
      * @Description: 构造函数
-     * @author yuweiyang
-     * @date
+     * @author dengchao
+     * @date 2018/3/18
      */
     public OrderDetail(Long id, String orderNum, Long peopleId, People people, Long storeId, Store store, Long goodsId, Goods goods, Long goodsOrderId, GoodsOrder goodsOrder, Double number, Double goodsPrice, Double goodsAmount, Date addTime, Date successTime, Date deliveryTime, Byte orderStatus, Boolean isInvalid) {
         this.id = id;

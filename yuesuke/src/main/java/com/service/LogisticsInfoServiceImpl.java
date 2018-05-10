@@ -1,8 +1,9 @@
-package com.service; /**
- * @Project: zyht_web
- * @Package service
- * @author jiangxiangwen
- * @date 2018/3/4
+package com.service;
+/**
+ * @Project: yuesuke
+ * @Package com.service
+ * @author dengchao
+ * @date 2018/4/20
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -18,10 +19,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author jiangxiangwen
+ * @author dengchao
  * @ClassName LogisticsInfoServiceImpl
  * @Description 类的描述
- * @date 2018/3/4
+ * @date 2018/4/20
  */
 @Service("logisticsInfoService")
 @Transactional
@@ -35,8 +36,8 @@ public class LogisticsInfoServiceImpl implements LogisticsInfoService {
      * @return LogisticsInfo 物流信息实体
      * @Title: findLogisticsInfoByOrderDetailId
      * @Description: 通过传入orderDetailId（订单详情 主键id）查询物流信息实体
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/4/20
      */
     @Override
     public LogisticsInfo findLogisticsInfoByOrderDetailId(Long orderDetailId) {
@@ -47,8 +48,8 @@ public class LogisticsInfoServiceImpl implements LogisticsInfoService {
      * @return List<LogisticsInfo> 物流信息实体的集合
      * @Title: findLogisticsInfoAll
      * @Description: 查询所有的物流信息
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/4/20
      */
     @Override
     public List<LogisticsInfo> findLogisticsInfoAll() {
@@ -60,8 +61,8 @@ public class LogisticsInfoServiceImpl implements LogisticsInfoService {
      * @return Integer 返回受影响的行数
      * @Title: saveLogisticsInfo
      * @Description: 添加物流信息实体
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/4/20
      */
     @Override
     public Integer saveLogisticsInfo(LogisticsInfo logisticsInfo) {
@@ -83,8 +84,8 @@ public class LogisticsInfoServiceImpl implements LogisticsInfoService {
      * @return Integer 受影响的行数
      * @Title: deleteLogisticsInfoById
      * @Description: 删除物流信息
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/4/20
      */
     @Override
     public Integer deleteLogisticsInfoById(LogisticsInfo logisticsInfo) {
@@ -96,8 +97,8 @@ public class LogisticsInfoServiceImpl implements LogisticsInfoService {
      * @return Integer 受影响的行数
      * @Title: updateLogisticsInfoByOrderDetailId
      * @Description: 更新物流信息
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/4/20
      */
     @Override
     public Integer updateLogisticsInfoByOrderDetailId(LogisticsInfo logisticsInfo) {

@@ -1,9 +1,9 @@
 package com.action;/********************************************************************
  /**
- * @Project: zyht_web
- * @Package controller.action
- * @author yanyong
- * @date 2018/3/7 0007 18:10
+ * @Project: yuesuke
+ * @Package com.action
+ * @author dengchao
+ * @date 2018/4/28 13:24
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -24,10 +24,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author yanyong
+ * @author dengchao
  * @ClassName UpdateStoreAction
  * @Description 类描述
- * @date 2018/3/7 0007
+ * @date 2018/4/28
  */
 @Action(value = "updateStoreAction")
 @Results({
@@ -41,8 +41,8 @@ public class UpdateStoreAction extends BaseAction {
     /**
      * @Title: updateStore
      * @Description: 修改店铺信息
-     * @author yanyong
-     * @date 2018-03-07
+     * @author dengchao
+     * @date 2018/4/28
      * @return: String
      */
 

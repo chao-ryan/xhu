@@ -1,9 +1,9 @@
 package com.dao;/********************************************************************
  /**
- * @Project: java_practice
- * @Package dao
- * @author 胡志强
- * @date 2018/1/20 17:07
+ * @Project: yuesuke
+ * @Package com.dao
+ * @author dengchao
+ * @date 2018/3/28
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -15,17 +15,17 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author 胡志强
+ * @author dengchao
  * @InterfaceName Store
  * @Description 操作店铺相关数据表的接口
- * @date 2018/1/20
+ * @date 2018/3/28
  */
 public interface StoreDao {
     /**
      * @Title: findStoreById
      * @Description: 通过指定Id查找商铺
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/3/28
      * @throws: SQLException
      * @param: id 指定id
      * @param: connection 连接对象
@@ -37,8 +37,8 @@ public interface StoreDao {
     /**
      * @Title: findStoreByStoreNum
      * @Description: 通过指定编号查找商铺
-     * @author hzq
-     * @date 2018-01-25
+     * @author dengchao
+     * @date 2018/3/28
      * @throws: SQLException
      * @param: storeNum 指定编号
      * @param: connection 连接对象
@@ -50,8 +50,8 @@ public interface StoreDao {
     /**
      * @Title: saveStore
      * @Description: 保存商铺信息
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/3/28
      * @throw SQLException
      * @param: people 商铺信息
      * @param: connection 连接对象
@@ -63,8 +63,8 @@ public interface StoreDao {
     /**
      * @Title: deleteStoreById
      * @Description: 删除指定id 的商铺信息
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/3/28
      * @param: id 指定id
      * @param: connection 连接对象
      * @param: prepareStatement 预编译 Statement对象
@@ -75,8 +75,8 @@ public interface StoreDao {
     /**
      * @Title: updatePeopleById
      * @Description: 更新指定商铺的信息
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/3/28
      * @param: id 指定商铺id
      * @param: people 指定商铺信息
      * @param: connection 连接对象
@@ -89,8 +89,8 @@ public interface StoreDao {
      * @param map 条件和值对应key和value
      * @Title: findStoreByUnSureCondition
      * @Description: 商铺的不确定条件查询
-     * @author hzq
-     * @date 2018/01/30
+     * @author dengchao
+     * @date 2018/3/28
      * @throw SQLException
      */
     public List<Store> findStoreByUnSureCondition(List<Map<String, Object>> map)
@@ -98,8 +98,8 @@ public interface StoreDao {
     /**
      * @Title: findAllStore
      * @Description: 查询全部商铺信息
-     * @author hzq
-     * @date 2018/01/30
+     * @author dengchao
+     * @date 2018/3/28
      * @throw SQLException
      */
     public List<Store> findAllStore()

@@ -1,9 +1,9 @@
 package com.service;/********************************************************************
  /**
- * @Project: java_practice
- * @Package service
- * @author 胡志强
- * @date 2018/1/20 17:09
+ * @Project: yuesuke
+ * @Package com.service
+ * @author dengchao
+ * @date 2018/4/21
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -17,17 +17,17 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author 胡志强
+ * @author dengchao
  * @InterfaceName StoreService
  * @Description 店铺相关业务的接口
- * @date 2018/1/20
+ * @date 2018/4/21
  */
 public interface StoreService {
     /**
      * @Title: findStoreById
      * @Description: 通过指定Id查找商铺
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定id
      * @return: 商铺对象
      */
@@ -36,8 +36,8 @@ public interface StoreService {
     /**
      * @Title: findStoreByStoreNum
      * @Description: 通过指定storeNum查找商铺
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定storeNum
      * @return: 商铺对象
      */
@@ -46,8 +46,8 @@ public interface StoreService {
     /**
      * @Title: saveStore
      * @Description: 保存人员信息
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: Store 人员对象
      * @return: 受影响行数
      */
@@ -56,8 +56,8 @@ public interface StoreService {
     /**
      * @Title: showStore
      * @Description: 查看商铺信息
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: store 商铺对象
      */
     public void showStore(Store store) throws RuntimeException;
@@ -65,8 +65,8 @@ public interface StoreService {
     /**
      * @Title: deleteStoreById
      * @Description: 删除指定id 的商铺信息
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定id
      * @return: 受影响行数
      */
@@ -75,8 +75,8 @@ public interface StoreService {
     /**
      * @Title: updateStoreById
      * @Description: 更新指定商铺的信息
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定商铺id
      * @param: store 指定的商铺的信息
      * @return: 受影响行
@@ -90,8 +90,8 @@ public interface StoreService {
      * @param price
      * @Title: setStock
      * @Description: 商铺进货
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @return: 是否成功
      */
     public boolean setStock(List<Goods> goods, Double[] number, Store store, Double[] price);
@@ -100,16 +100,16 @@ public interface StoreService {
      * @param orderDetailId 订单详情
      * @Title: delivery
      * @Description: 商铺发货
-     * @author hzq
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @return: 是否成功
      */
     public Date delivery(Long orderDetailId) throws RuntimeException;
     /**
      * @Title: findStoreByUnSureCondition
      * @Description: 商铺的不确定条件查询
-     * @author hzq
-     * @date 2018/01/30
+     * @author dengchao
+     * @date 2018/4/21
      * @param map 条件和值对应key和value
      * @throw SQLException
      */
@@ -118,8 +118,8 @@ public interface StoreService {
     /**
      * @Title: findAllStore
      * @Description: 查询全部商铺信息
-     * @author hzq
-     * @date 2018/01/30
+     * @author dengchao
+     * @date 2018/4/21
      * @throw SQLException
      */
     public List<Store> findAllStore()

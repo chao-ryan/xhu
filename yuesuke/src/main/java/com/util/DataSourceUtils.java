@@ -1,10 +1,10 @@
 package com.util;/********************************************************************
  /**
- * @Project: test_maven
- * @Package jdbc
- * @author guohongjin
- * @date 2017/8/28 22:13
- * @Copyright: 2017 www.zyht.com Inc. All rights reserved.
+ * @Project: zyht_web
+ * @Package com.util
+ * @author dengchao
+ * @date 2018/3/15
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
 
@@ -17,10 +17,10 @@ import java.util.LinkedList;
 import java.util.logging.Logger;
 
 /**
- * @author guohongjin
+ * @author dengchao
  * @ClassName DataSourceUtils
  * @Description 类描述
- * @date 2017/8/28
+ * @date 2018/3/15
  */
 public class DataSourceUtils implements DataSource {
     //1.创建1个容器用于存储Connection对象

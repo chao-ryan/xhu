@@ -1,9 +1,9 @@
 package com.dao;/********************************************************************
  /**
- * @Project: java_practice
- * @Package dao
- * @author liukang
- * @date 2018/1/25 16:57
+ * @Project: yuesuke
+ * @Package com.dao
+ * @author dengchao
+ * @date 2018/3/22 22:44
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -23,10 +23,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author liukang
+ * @author dengchao
  * @ClassName inventoryDaoImpl
  * @Description 库存数据库操作类实现inventoryDao
- * @date 2018/1/25
+ * @date 2018/3/22
  */
 @Repository("InventoryDao")
 public class InventoryDaoImpl extends BaseDaoImpl<Inventory> implements InventoryDao {
@@ -46,8 +46,8 @@ public class InventoryDaoImpl extends BaseDaoImpl<Inventory> implements Inventor
     /**
      * @Title: saveInventory
      * @Description: 保存库存信息
-     * @author yanyong
-     * @date 2018-01-25
+     * @author dengchao
+     * @date 2018/3/22
      * @param: inventory 库存对象
      * @return: 受影响行数
      */
@@ -59,8 +59,8 @@ public class InventoryDaoImpl extends BaseDaoImpl<Inventory> implements Inventor
     /**
      * @Title: findInventoryById
      * @Description: 查找库存信息通过指定id
-     * @author yanyong
-     * @date 2018-01-25
+     * @author dengchao
+     * @date 2018/3/22
      * @param: id 指定id
      * @return: 库存对象
      */
@@ -72,8 +72,8 @@ public class InventoryDaoImpl extends BaseDaoImpl<Inventory> implements Inventor
     /**
      * @Title: findInventoryById
      * @Description: 查找库存信息通过指定id
-     * @author yanyong
-     * @date 2018-01-25
+     * @author dengchao
+     * @date 2018/3/22
      * @param: id 指定id
      * @return: 库存对象
      */
@@ -85,8 +85,8 @@ public class InventoryDaoImpl extends BaseDaoImpl<Inventory> implements Inventor
     /**
      * @Title: deleteInventoryById
      * @Description: 删除库存信息 通过指定id
-     * @author yanyong
-     * @date 2018-01-25
+     * @author dengchao
+     * @date 2018/3/22
      * @param: id 指定id
      * @return: 受影响行数
      */
@@ -98,8 +98,8 @@ public class InventoryDaoImpl extends BaseDaoImpl<Inventory> implements Inventor
     /**
      * @Title: updateInventorById
      * @Description: 更新库存信息通过指定id
-     * @author yanyong
-     * @date 2018-01-25
+     * @author dengchao
+     * @date 2018/3/22
      * @param: id 指定id
      * @param: inventory 库存对象
      * @return: 受影响行数
@@ -117,8 +117,8 @@ public class InventoryDaoImpl extends BaseDaoImpl<Inventory> implements Inventor
      * @param goodsId：商品id
      * @Title: findInventoryByStoreIdAndGoodId
      * @Description: 根据商铺id和商品id查找库存信息
-     * @author hzq
-     * @date 2018-01-26
+     * @author dengchao
+     * @date 2018/3/22
      * @throw RuntimeException
      */
     @Override
@@ -133,8 +133,8 @@ public class InventoryDaoImpl extends BaseDaoImpl<Inventory> implements Inventor
      * @param map 条件和值对应key和value
      * @Title: findInventoryByUnSureCondition
      * @Description: 通过商铺id查找库存信息
-     * @author hzq
-     * @date 2018/01/30
+     * @author dengchao
+     * @date 2018/3/22
      * @throw SQLException
      */
     public List<Inventory> findInventoryByUnSureCondition(List<Map<String, Object>> map)

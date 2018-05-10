@@ -1,9 +1,9 @@
 package com.tools;/********************************************************************
  /**
- * @Project: hellow_java
- * @Package src.tools
- * @author liukang
- * @date 2018/1/18 21:29
+ * @Project: yuesuke
+ * @Package com.tools
+ * @author dengchao
+ * @date 2018/4/20
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -12,10 +12,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * @author liukang
+ * @author dengchao
  * @ClassName TimeConversion
  * @Description 时间转换工具
- * @date 2018/1/18
+ * @date 2018/4/20
  */
 public class TimeConversion {
     /**
@@ -28,8 +28,8 @@ public class TimeConversion {
      * @param time 输入时间
      * @Title: getNewDate
      * @Description: 时间转换
-     * @author liukang
-     * @date 2018-1-16 09:26:49
+     * @author dengchao
+     * @date 2018/4/20
      * @throw Exception
      */
     public static String getNewDate(Date time) throws Exception {

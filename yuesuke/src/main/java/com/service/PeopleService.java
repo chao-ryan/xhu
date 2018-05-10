@@ -1,5 +1,11 @@
-package com.service;/**
- * Created by HS on 2018/1/20.
+package com.service;
+/**
+ * @Project: yuesuke
+ * @Package com.service
+ * @author dengchao
+ * @date 2018/4/21
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
+ * @version V1.0
  */
 
 import com.domain.GoodsOrder;
@@ -13,10 +19,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author shangzhiqian
+ * @author dengchao
  * @InterfaceName PeopleService
  * @Description 接口描述
- * @date 2018/1/20
+ * @date 2018/4/21
  */
 public interface PeopleService {
 //    public List<People> getPeopleAll();
@@ -38,8 +44,8 @@ public interface PeopleService {
     /**
      * @Title: findPeopleByUserName
      * @Description: 查找用户根据用户名和密码
-     * @author yanyong
-     * @date 2018-01-30
+     * @author dengchao
+     * @date 2018/4/21
      * @param: userName 用户名
      * @param: password 密码
      * @return: 人员对象
@@ -50,8 +56,8 @@ public interface PeopleService {
     /**
      * @Title: savePeople
      * @Description: 保存人员信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: people 人员对象
      * @return: 受影响行数
      */
@@ -60,8 +66,8 @@ public interface PeopleService {
     /**
      * @Title: showPeople
      * @Description: 查看人员信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: people 人员对象
      */
     public void showPeople(People people);
@@ -69,8 +75,8 @@ public interface PeopleService {
     /**
      * @Title: deletePeopleById
      * @Description: 删除指定id 的人员信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定id
      * @return: 受影响行数
      */
@@ -79,8 +85,8 @@ public interface PeopleService {
     /**
      * @Title: updatePeople
      * @Description: 更新指定人员的信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定人员id
      * @param: people 指定人员信息
      * @return: 受影响行数
@@ -91,8 +97,8 @@ public interface PeopleService {
     /**
      * @Title: receivedGoods
      * @Description: 接收订购商品
-     * @author yanyong
-     * @date 2018-01-23
+     * @author dengchao
+     * @date 2018/4/21
      * @param: goods 商品
      * @param: isRecv 是否收货
      * @return: 是否收货
@@ -102,8 +108,8 @@ public interface PeopleService {
     /**
      * @Title: buyGoods
      * @Description: 批量购买商品
-     * @author yanyong
-     * @date 2018-01-23
+     * @author dengchao
+     * @date 2018/4/21
      * @param: peopleId 购买人员id
      * @param: goodsList 商品集合
      * @param: buyNumList 购买数量集合
@@ -113,8 +119,8 @@ public interface PeopleService {
     /**
      * @Title: judgeMoneyIsEnough
      * @Description: 判断人员余额是否足够
-     * @author yanyong
-     * @date 2018-01-23
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 人员id
      * @param: needMoney 需要花费的金额
      * @return: 余额是否足够 false--否，true--是
@@ -124,8 +130,8 @@ public interface PeopleService {
     /**
      * @Title: payGoodsMoneyById
      * @Description: 支付指定订单购物金额
-     * @author yanyong
-     * @date 2018-01-28
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定id
      * @return:
      */
@@ -134,8 +140,8 @@ public interface PeopleService {
     /**
      * @Title: descMoney
      * @Description: 减少金额，对指定人员id
-     * @author yanyong
-     * @date 2018-01-28
+     * @author dengchao
+     * @date 2018/4/21
      * @param: peopleId 指定人员id
      * @param: money 金额数
      * @return: 是否减少成功
@@ -146,8 +152,8 @@ public interface PeopleService {
     /**
      * @Title: ascMoney
      * @Description: 增加金额，对指定人员id
-     * @author yanyong
-     * @date 2018-01-28
+     * @author dengchao
+     * @date 2018/4/21
      * @param: peopleId 指定人员id
      * @param: money 金额数
      * @return: 是否增加成功
@@ -156,8 +162,8 @@ public interface PeopleService {
     /**
      * @Title: findPeopleByUnSureCondition
      * @Description: 方法描述
-     * @author hzq
-     * @date 2018/01/30
+     * @author dengchao
+     * @date 2018/4/21
      * @param map 条件和值对应key和value
      * @throw SQLException
      */

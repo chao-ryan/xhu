@@ -2,9 +2,9 @@ package com.util.base;/*********************************************************
  /**
  * @Project: zyht_web
  * @Package com.base
- * @author guohongjin
- * @date 2017/10/20 10:27
- * @Copyright: 2017 www.zyht.com Inc. All rights reserved.
+ * @author dengchao
+ * @date 2018/3/15
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
 
@@ -15,10 +15,10 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 /**
- * @author guohongjin
+ * @author dengchao
  * @ClassName BaseDaoImpl
  * @Description 类描述
- * @date 2017/10/20
+ * @date 2018/3/15
  */
 public class BaseDaoImpl<T> {
 
@@ -39,8 +39,8 @@ public class BaseDaoImpl<T> {
     /**
      * @Title: getMybaitsNameSpace
      * @Description: 命名空间+“.”+id
-     * @author guohongjin
-     * @date 2017-10-20
+     * @author dengchao
+     * @date 2018/3/15
      */
     public String getMybaitsNameSpace(){
         return cls.getName()+".";

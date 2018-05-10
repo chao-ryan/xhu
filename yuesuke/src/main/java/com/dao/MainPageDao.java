@@ -1,9 +1,9 @@
 package com.dao;/********************************************************************
  /**
- * @Project: zyht_web
- * @Package dao
- * @author kang
- * @date 2018/3/1 8:58
+ * @Project: yuesuke
+ * @Package com.dao
+ * @author dengchao
+ * @date 2018/3/25 22:44
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -13,17 +13,17 @@ import com.domain.MainPage;
 import java.util.List;
 
 /**
- * @author kang
+ * @author dengchao
  * @InterfaceName MainPageDao
  * @Description 接口描述
- * @date 2018/3/1
+ * @date 2018/3/25
  */
 public interface MainPageDao {
     /**
      * @Title: findMainPageInventoryAll
      * @Description: 查询所有订单的价格，数量，以及商品的ID
-     * @author liukang
-     * @date
+     * @author dengchao
+     * @date 2018/3/25
      * @throw YnCorpSysException
      */
     public List<MainPage> findMainPageInventoryAll();
@@ -31,8 +31,8 @@ public interface MainPageDao {
     /**
      * @Title: findMainPageInventory
      * @Description: 查询指定订单的价格，数量，以及商品的ID
-     * @author liukang
-     * @date
+     * @author dengchao
+     * @date 2018/3/25
      * @throw YnCorpSysException
      */
     public List<MainPage> findMainPageInventory(Long start, Long end);
@@ -40,8 +40,8 @@ public interface MainPageDao {
     /**
      * @Title: findMainPageCondition
      * @Description: 根据条件查询主页面的显示
-     * @author kang
-     * @date 2018-03-06
+     * @author dengchao
+     * @date 2018/3/25
      * @throw YnCorpSysException
      */
     public List<MainPage> findMainPageCondition(String condition);
@@ -49,8 +49,8 @@ public interface MainPageDao {
     /**
      * @Title: findMainPageByStoreId
      * @Description: 根据商品id查找商品信息
-     * @author hzq
-     * @date 2018-03-06
+     * @author dengchao
+     * @date 2018/3/25
      * @throw YnCorpSysException
      */
     public List<MainPage> findMainPageByStoreId(Long storeId);
@@ -59,8 +59,8 @@ public interface MainPageDao {
      * @param type 商品类型
      * @Title: findMainPageClassify
      * @Description: 分类查询
-     * @author kang
-     * @date 2018-03-10
+     * @author dengchao
+     * @date 2018/3/25
      * @throw YnCorpSysException
      */
     public List<MainPage> findMainPageClassify(Byte type);

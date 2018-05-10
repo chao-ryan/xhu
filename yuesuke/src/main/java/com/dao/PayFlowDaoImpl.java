@@ -1,9 +1,9 @@
 package com.dao;/********************************************************************
  /**
- * @Project: java_practice
- * @Package dao
- * @author liukang
- * @date 2018/1/20 17:19
+ * @Project: yuesuke
+ * @Package com.dao
+ * @author dengchao
+ * @date 2018/3/26
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -21,10 +21,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author liukang
+ * @author dengchao
  * @ClassName PayFlowDaoImpl
  * @Description 流水表SQL的实现
- * @date 2018/1/20
+ * @date 2018/3/26
  */
 @Repository("payFlowDao")
 public class PayFlowDaoImpl extends BaseDaoImpl<PayFlow> implements PayFlowDao {
@@ -93,8 +93,8 @@ public class PayFlowDaoImpl extends BaseDaoImpl<PayFlow> implements PayFlowDao {
 //    /**
 //     * @Title: findPayFlowById
 //     * @Description: 流水表的ID查询实现
-//     * @author liukang
-//     * @date
+//     * @author denghcao
+//     * @date 2018/3/26
 //     * @throw YnCorpSysException
 //     */
 //    @Override
@@ -127,8 +127,8 @@ public class PayFlowDaoImpl extends BaseDaoImpl<PayFlow> implements PayFlowDao {
 //     * @param flowNum 流水号
 //     * @Title: findPayFlowByPayFlowNum
 //     * @Description: 通过流水号查询流水表
-//     * @author kang
-//     * @date 2018-02-06
+//     * @author dengchao
+//     * @date 2018/3/26
 //     * @throw YnCorpSysException
 //     */
 //    @Override
@@ -161,8 +161,8 @@ public class PayFlowDaoImpl extends BaseDaoImpl<PayFlow> implements PayFlowDao {
 //    /**
 //     * @Title: savePayFlow
 //     * @Description: 流水表的插入的实现
-//     * @author liukang
-//     * @date
+//     * @author dengchao
+//     * @date 2018/3/26
 //     * @throw YnCorpSysException
 //     */
 //    @Override
@@ -177,8 +177,8 @@ public class PayFlowDaoImpl extends BaseDaoImpl<PayFlow> implements PayFlowDao {
 //     * @param peopleId
 //     * @Title: MonthConsumption
 //     * @Description: 指定人员的当月消费情况
-//     * @author liukang
-//     * @date
+//     * @author dengchao
+//     * @date 2018/3/26
 //     * @throw YnCorpSysException
 //     */
 //    @Override
@@ -192,8 +192,8 @@ public class PayFlowDaoImpl extends BaseDaoImpl<PayFlow> implements PayFlowDao {
 //    /**
 //     * @Title: MonthEarnings
 //     * @Description: 指定卖家的本月盈利
-//     * @author liukang
-//     * @date
+//     * @author dengchao
+//     * @date 2018/3/26
 //     * @throw YnCorpSysException
 //     */
 //    @Override
@@ -208,8 +208,8 @@ public class PayFlowDaoImpl extends BaseDaoImpl<PayFlow> implements PayFlowDao {
 //    /**
 //     * @Title: YearConsumption
 //     * @Description: 指定买家的本年消费
-//     * @author liukang
-//     * @date
+//     * @author dengchao
+//     * @date 2018/3/26
 //     * @throw YnCorpSysException
 //     */
 //    @Override
@@ -223,8 +223,8 @@ public class PayFlowDaoImpl extends BaseDaoImpl<PayFlow> implements PayFlowDao {
 //    /**
 //     * @Title: YearEarnings
 //     * @Description: 指定卖家的本年盈利
-//     * @author liukang
-//     * @date
+//     * @author dengchao
+//     * @date 2018/3/26
 //     * @throw YnCorpSysException
 //     */
 //    @Override

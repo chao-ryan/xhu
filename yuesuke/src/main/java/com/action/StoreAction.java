@@ -1,9 +1,9 @@
 package com.action;/********************************************************************
  /**
- * @Project: zyht_web
- * @Package controller
- * @author 胡志强
- * @date 2018/3/6 10:34
+ * @Project: yuesuke
+ * @Package com.action
+ * @author dengchao
+ * @date 2018/4/28 13:24
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -32,8 +32,8 @@ import java.util.Map;
 /**
  * @ClassName StoreAction
  * @Description 商铺相关action
- * @author 胡志强
- * @date 2018/3/6
+ * @author dengchao
+ * @date 2018/4/28
 */
 @Action( value = "storeAction")
 
@@ -54,8 +54,8 @@ public class StoreAction extends BaseAction{
     /**
      * @Title: storeHome
      * @Description: 跳转到store的主页
-     * @author hzq
-     * @date
+     * @author dengchao
+     * @date 2018/4/28
      * @throw YnCorpSysException
      */
     public String storeHome(){
@@ -100,8 +100,8 @@ public class StoreAction extends BaseAction{
     /**
      * @Title: OffLoading
      * @Description: 商品下架
-     * @author hzq
-     * @date
+     * @author dengchao
+     * @date 2018/4/28
      */
 
     public String offLoading(){

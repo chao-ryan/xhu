@@ -1,23 +1,22 @@
 package com.util;/********************************************************************
  /**
- * @Project: test_maven
- * @Package jdbc
- * @author guohongjin
- * @date 2017/8/28 22:12
- * @Copyright: 2017 www.zyht.com Inc. All rights reserved.
+ * @Project: zyht_web
+ * @Package com.util
+ * @author dengchao
+ * @date 2018/3/15
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
 /**
- * @author guohongjin
+ * @author dengchao
  * @ClassName JdbcUtils
  * @Description 类描述
- * @date 2017/8/28
+ * @date 2018/3/15
  */
 public class JdbcUtils {
     private static String driver;

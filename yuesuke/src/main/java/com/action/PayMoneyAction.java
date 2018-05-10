@@ -1,9 +1,9 @@
 package com.action;/********************************************************************
  /**
- * @Project: zyht_web
- * @Package controller.action
- * @author yanyong
- * @date 2018/3/9 0009 11:58
+ * @Project: yuesuke
+ * @Package com.action
+ * @author dengchao
+ * @date 2018/5/5 13:24
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -26,10 +26,10 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- * @author yanyong
+ * @author dengchao
  * @ClassName PayMoneyAction
  * @Description 类描述
- * @date 2018/3/9 0009
+ * @date 2018/5/5
  */
 @Action(value = "payMoneyAction")
 @Results({
@@ -50,8 +50,8 @@ public class PayMoneyAction extends BaseAction{
     /**
      * @Title: PayGoodsOrderShow
      * @Description: 查询支付信息到支付页面显示
-     * @author yanyong
-     * @date 2018-03-09
+     * @author dengchao
+     * @date 2018/5/5
      * @return: String
      */
     public String PayGoodsOrderShow(){
@@ -91,8 +91,8 @@ public class PayMoneyAction extends BaseAction{
     /**
      * @Title: PayGoodsOrderMoney
      * @Description: 确认支付订单金额
-     * @author yanyong
-     * @date 2018-03-09
+     * @author dengchao
+     * @date 2018/5/5
      * @return:
      */
     public String PayGoodsOrderMoney(){

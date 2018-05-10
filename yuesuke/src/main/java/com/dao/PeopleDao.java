@@ -1,5 +1,11 @@
-package com.dao;/**
- * Created by HS on 2018/1/20.
+package com.dao;
+/**
+ * @Project: yuesuke
+ * @Package com.dao
+ * @author dengchao
+ * @date 2018/3/27
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
+ * @version V1.0
  */
 
 import com.domain.People;
@@ -7,10 +13,10 @@ import com.domain.People;
 import java.util.List;
 
 /**
- * @author shangzhiqian
+ * @author dengchao
  * @InterfaceName PeopleDao
  * @Description 人员数据库表 接口
- * @date 2018/1/20
+ * @date 2018/3/27
  */
 public interface PeopleDao {
 
@@ -18,8 +24,8 @@ public interface PeopleDao {
     /**
      * @Title: findPeopleById
      * @Description: 通过指定Id查找人员
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/3/27
      * @param: id 指定id
      * @return: 人员对象
      */
@@ -28,8 +34,8 @@ public interface PeopleDao {
     /**
      * @Title: savePeople
      * @Description: 保存人员信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/3/27
      * @param: people 人员对象
      * @return: 受影响行数
      */
@@ -38,8 +44,8 @@ public interface PeopleDao {
     /**
      * @Title: deletePeopleById
      * @Description: 删除指定id 的人员信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/3/27
      * @param: id 指定id
      * @return: 受影响行数
      */
@@ -48,8 +54,8 @@ public interface PeopleDao {
     /**
      * @Title: updatePeople
      * @Description: 更新指定人员的信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/3/27
      * @param: id 指定人员id
      * @param: people 指定人员信息
      * @return: 受影响行数
@@ -59,8 +65,8 @@ public interface PeopleDao {
     /**
      * @Title: findPeopleByUserName
      * @Description: 查找用户根据用户名和密码
-     * @author yanyong
-     * @date 2018-01-30
+     * @author dengchao
+     * @date 2018/3/27
      * @param: userName 用户名
      * @param: password 密码
      * @return: 人员对象
@@ -76,8 +82,8 @@ public interface PeopleDao {
 //    /**
 //     * @Title: findPeopleById
 //     * @Description: 通过指定Id查找人员
-//     * @author shangzhiqian
-//     * @date 2018-01-21
+//     * @author dengchao
+//     * @date 2018/3/27
 //     * @throws: SQLException
 //     * @param: id 指定id
 //     * @param: connection 连接对象
@@ -89,8 +95,8 @@ public interface PeopleDao {
 //    /**
 //     * @Title: findPeopleByUserName
 //     * @Description: 查找用户根据用户名和密码
-//     * @author yanyong
-//     * @date 2018-01-30
+//     * @author dengchao
+//     * @date 2018/3/27
 //     * @param: userName 用户名
 //     * @param: password 密码
 //     * @return: 人员对象
@@ -99,8 +105,8 @@ public interface PeopleDao {
 //    /**
 //     * @Title: savePeople
 //     * @Description: 插入人员信息
-//     * @author shangzhiqian
-//     * @date 2018-01-21
+//     * @author dengchao
+//     * @date 2018/3/27
 //     * @throw SQLException
 //     * @param: people 人员信息
 //     * @param: connection 连接对象
@@ -112,8 +118,8 @@ public interface PeopleDao {
 //    /**
 //     * @Title: deletePeopleById
 //     * @Description: 删除指定id 的人员信息
-//     * @author shangzhiqian
-//     * @date 2018-01-21
+//     * @author dengchao
+//     * @date 2018/3/27
 //     * @param: id 指定id
 //     * @param: connection 连接对象
 //     * @param: prepareStatement 预编译 Statement对象
@@ -124,8 +130,8 @@ public interface PeopleDao {
 //    /**
 //     * @Title: updatePeopleById
 //     * @Description: 更新指定人员的信息
-//     * @author shangzhiqian
-//     * @date 2018-01-21
+//     * @author dengchao
+//     * @date 2018/3/27
 //     * @param: id 指定人员id
 //     * @param: people 指定人员信息
 //     * @param: connection 连接对象
@@ -137,8 +143,8 @@ public interface PeopleDao {
 //    /**
 //     * @Title: findPeopleByUnSureCondition
 //     * @Description: 方法描述
-//     * @author hzq
-//     * @date 2018/01/30
+//     * @author dengchao
+//     * @date 2018/3/27
 //     * @param map 条件和值对应key和value
 //     * @param connection 连接对象
 //     * @param prepareStatement 预编译 Statement对象

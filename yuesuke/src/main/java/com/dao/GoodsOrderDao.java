@@ -1,12 +1,9 @@
 package com.dao;/**
- * Created by Kaiser on 2018/1/20.
- */
-/********************************************************************
  /**
- * @Project: java_practice
- * @Package dao
- * @author zuorui
- * @date 2018/1/20 17:24
+ * @Project: yuesuke
+ * @Package com.dao
+ * @author dengchao
+ * @date 2018/3/20 22:44
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -16,10 +13,10 @@ import com.domain.GoodsOrder;
 import java.util.List;
 
 /**
- * @author zuorui
+ * @author dengchao
  * @InterfaceName GoodsOrderDao
  * @Description 接口描述
- * @date 2018/1/20
+ * @date 2018/3/20
  */
 public interface GoodsOrderDao {
 
@@ -27,8 +24,8 @@ public interface GoodsOrderDao {
      * @throws java.sql.SQLException
      * @Title: findGoodsOrderById
      * @Description: 根据ID查询
-     * @author zuorui
-     * @date 2018-01-22
+     * @author dengchao
+     * @date 2018/3/20
      * @param: id 指定id
      * @param: connection 连接对象
      * @param: preparedStatement 预编译Statement对象
@@ -41,8 +38,8 @@ public interface GoodsOrderDao {
      * @throws java.sql.SQLException
      * @Title addGoodsOrderById
      * @Description 根据ID增加订单信息
-     * @author zuorui
-     * @date 2018-01-22
+     * @author dengchao
+     * @date 2018/3/20
      * @param: goodsOrder goodsOrder
      */
     public Integer saveGoodsOrderById(GoodsOrder goodsOrder);
@@ -51,8 +48,8 @@ public interface GoodsOrderDao {
      * @return 受影响的行
      * @Title 修改订单信息
      * @Description updateGoodsOrder
-     * @author zuorui
-     * @date 2018-01-22
+     * @author dengchao
+     * @date 2018/3/20
      * @param: goodsOrde 订单对象
      */
     public Integer updateGoodsOrder(GoodsOrder goodsOrde);
@@ -60,8 +57,8 @@ public interface GoodsOrderDao {
     /**
      * @Title: findGoodsOrderByNum
      * @Description: 查过订单编号查询订单
-     * @author yanyong
-     * @date 2018-01-26
+     * @author dengchao
+     * @date 2018/3/20
      * @param: goodsNum 商品编号
      * @param: connection 连接对象
      * @param: preparedStatement 预编译Statement对象
@@ -73,8 +70,8 @@ public interface GoodsOrderDao {
     /**
      * @Title: findGoodsOrderByPeopleId
      * @Description:  通过人员id  获取订单信息
-     * @author yanyong
-     * @date 2018-01-31
+     * @author dengcchao
+     * @date 2018/3/20
      * @param: peopleId指定人员id
      * @param: goodsNum 商品编号
      * @param: connection 连接对象

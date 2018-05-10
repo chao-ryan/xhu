@@ -1,7 +1,12 @@
-package com.service;/**
- * Created by HS on 2018/1/20.
+package com.service;
+/**
+ * @Project: yuesuke
+ * @Package com.service
+ * @author dengchao
+ * @date 2018/4/21
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
+ * @version V1.0
  */
-
 import com.dao.PeopleDao;
 import com.domain.*;
 import com.tools.GoodsException;
@@ -23,10 +28,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author shangzhiqian
+ * @author dengchao
  * @ClassName PeopleServiceImpl
  * @Description 人员类 操作类，实现PeopleService接口
- * @date 2018/1/20
+ * @date 2018/4/21
  */
 @Service("peopleService")
 @Transactional
@@ -54,8 +59,8 @@ public class PeopleServiceImpl implements PeopleService {
     /**
      * @Title: findPeopleById
      * @Description: 通过指定Id查找人员
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定id
      * @return: 人员对象
      */
@@ -67,8 +72,8 @@ public class PeopleServiceImpl implements PeopleService {
     /**
      * @Title: deletePeopleById
      * @Description: 删除指定id 的人员信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定id
      * @return: 受影响行数
      */
@@ -78,8 +83,8 @@ public class PeopleServiceImpl implements PeopleService {
     /**
      * @Title: updatePeople
      * @Description: 更新指定人员的信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定人员id
      * @param: people 指定人员信息
      * @return: 受影响行数
@@ -91,8 +96,8 @@ public class PeopleServiceImpl implements PeopleService {
     /**
      * @Title: savePeople
      * @Description: 保存人员信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: people 人员对象
      * @return: 受影响行数
      */
@@ -105,8 +110,8 @@ public class PeopleServiceImpl implements PeopleService {
     /**
      * @Title: findPeopleByUserName
      * @Description: 查找用户根据用户名和密码
-     * @author yanyong
-     * @date 2018-01-30
+     * @author dengchao
+     * @date 2018/4/21
      * @param: userName 用户名
      * @param: password 密码
      * @return: 人员对象
@@ -124,8 +129,8 @@ public class PeopleServiceImpl implements PeopleService {
     /**
      * @Title: showPeople
      * @Description: 查看人员信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/21
      * @param: people 人员对象
      */
     @Override
@@ -145,9 +150,9 @@ public class PeopleServiceImpl implements PeopleService {
      * @return
      * @throws
      * @Title:
-     * @Description: 方法描述
-     * @author shangzhiqian
-     * @date 买东西方法 buyGoods
+     * @Description: 买东西方法 buyGoods
+     * @author dengchao
+     * @date 2018/4/21
      */
     @Override
     public GoodsOrder buyGoods(long peopleId, List<Long> idList, List<Double> buyNumList) throws PeopleException, GoodsException {
@@ -195,8 +200,8 @@ public class PeopleServiceImpl implements PeopleService {
     /**
      * @Title: receivedGoods
      * @Description: 接收订购商品
-     * @author yanyong
-     * @date 2018-01-23
+     * @author dengchao
+     * @date 2018/4/21
      * @param: goods 商品
      * @param: isRecv 是否收货
      * @return: 是否收货
@@ -216,8 +221,8 @@ public class PeopleServiceImpl implements PeopleService {
     /**
      * @Title: judgeMoneyIsEnough
      * @Description: 判断人员余额是否足够
-     * @author yanyong
-     * @date 2018-01-23
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 人员id
      * @param: needMoney 需要花费的金额
      * @return: 余额是否足够 false--否，true--是
@@ -235,8 +240,8 @@ public class PeopleServiceImpl implements PeopleService {
     /**
      * @Title: payGoodsMoneyById
      * @Description: 支付指定订单购物金额
-     * @author yanyong
-     * @date 2018-01-28
+     * @author dengchao
+     * @date 2018/4/21
      * @param: id 指定id
      * @return:
      */
@@ -291,8 +296,8 @@ public class PeopleServiceImpl implements PeopleService {
     /**
      * @Title: descMoney
      * @Description: 减少金额，对指定人员id
-     * @author yanyong
-     * @date 2018-01-28
+     * @author dengchao
+     * @date 2018/4/21
      * @param: peopleId 指定人员id
      * @param: money 金额数
      * @return: 是否减少成功
@@ -312,8 +317,8 @@ public class PeopleServiceImpl implements PeopleService {
     /**
      * @Title: ascMoney
      * @Description: 增加金额，对指定人员id
-     * @author yanyong
-     * @date 2018-01-28
+     * @author dengchao
+     * @date 2018/4/21
      * @param: peopleId 指定人员id
      * @param: money 金额数
      * @return: 是否增加成功
@@ -331,8 +336,8 @@ public class PeopleServiceImpl implements PeopleService {
     /**
      * @Title: findPeopleByUnSureCondition
      * @Description: 方法描述
-     * @author hzq
-     * @date 2018/01/30
+     * @author dengchao
+     * @date 2018/4/21
      * @param map 条件和值对应key和value
      * @throw SQLException
      */

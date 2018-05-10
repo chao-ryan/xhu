@@ -1,9 +1,9 @@
 package com.tools;/********************************************************************
  /**
- * @Project: zyht_web
- * @Package tools
- * @author kang
- * @date 2018/3/5 19:08
+ * @Project: yuesuke
+ * @Package com.tools
+ * @author dengchao
+ * @date 2018/4/20
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author kang
+ * @author dengchao
  * @ClassName StringToArray
  * @Description 字符串转换为数组
- * @date 2018/3/5
+ * @date 2018/4/20
  */
 public class StringToArray {
 

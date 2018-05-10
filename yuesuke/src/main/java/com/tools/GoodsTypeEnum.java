@@ -1,18 +1,18 @@
 package com.tools;/********************************************************************
  /**
- * @Project: java_practice
- * @Package tools
- * @author yanyong
- * @date 2018/1/21 0021 22:55
+ * @Project: yuesuke
+ * @Package com.tools
+ * @author dengchao
+ * @date 2018/4/20
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
 
 /**
- * @author yanyong
+ * @author dengchao
  * @EnumName GoodsTypeEnum
  * @Description 商品类型枚举
- * @date 2018/1/21 0021
+ * @date 2018/4/20
  */
 public enum GoodsTypeEnum {
 

@@ -1,18 +1,18 @@
 package com.domain;/********************************************************************
  /**
- * @Project: java_practice
- * @Package domain
- * @author 胡志强
- * @date 2018/1/20 16:44
+ * @Project: yuesuke
+ * @Package com.domain
+ * @author dengchao
+ * @date 2018/3/18
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
 
 /**
- * @author 胡志强
+ * @author dengchao
  * @ClassName Store
  * @Description 商铺实体类，对应的是数据库的store表
- * @date 2018/1/20
+ * @date 2018/3/18
  */
 public class Store {
     /**

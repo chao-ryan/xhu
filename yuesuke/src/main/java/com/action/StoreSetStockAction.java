@@ -1,5 +1,11 @@
-package com.action;/**
- * Created by Roger_yu on 2018/3/9.
+package com.action;
+/**
+ * @Project: yuesuke
+ * @Package com.action
+ * @author dengchao
+ * @date 2018/4/28 13:24
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
+ * @version V1.0
  */
 
 import com.domain.Goods;
@@ -20,10 +26,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author yuweiyang
+ * @author dengchao
  * @ClassName StoreSetStockAction
  * @Description 类描述
- * @date 2018/3/9
+ * @date 2018/4/28
  */
 @Action(value = "storeSetStockAction")
 @Results({
@@ -41,8 +47,8 @@ public class StoreSetStockAction  extends BaseAction {
     /**
      * @Title:
      * @Description: 进入进货页面方法
-     * @author yuweiyang
-     * @date
+     * @author dengchao
+     * @date 2018/4/28
      */
     public String selectStoreGoods(){
         //设置编码集
@@ -84,8 +90,8 @@ public class StoreSetStockAction  extends BaseAction {
     /**
      * @Title:
      * @Description: 进货页面方法
-     * @author yuweiyang
-     * @date
+     * @author dengchao
+     * @date 2018/4/28
      */
     public String storeSetStock(){
         //设置编码集
@@ -95,11 +101,6 @@ public class StoreSetStockAction  extends BaseAction {
             e.printStackTrace();
         }
         resp.setCharacterEncoding("utf-8");
-
-
-
-
-
 
         return "storeSetStock";
     }

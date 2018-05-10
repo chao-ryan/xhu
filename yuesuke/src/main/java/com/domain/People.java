@@ -1,12 +1,17 @@
-package com.domain;/**
- * Created by HS on 2018/1/20.
- */
-
+package com.domain;
 /**
- * @author shangzhiqian
+ * @Project: yuesuke
+ * @Package com.domain
+ * @author dengchao
+ * @date 2018/3/18
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
+ * @version V1.0
+ */
+/**
+ * @author dengchao
  * @ClassName People
  * @Description 类描述
- * @date 2018/1/20
+ * @date 2018/3/18
  */
 public class People {
     /**

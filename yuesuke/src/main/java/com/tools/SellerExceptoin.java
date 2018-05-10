@@ -1,18 +1,18 @@
 package com.tools;/********************************************************************
  /**
- * @Project: java_practice
- * @Package tools
- * @author yanyong
- * @date 2018/1/19 0019 21:55
+ * @Project: yuesuke
+ * @Package com.tools
+ * @author dengchao
+ * @date 2018/4/20
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
 
 /**
- * @author yanyong
+ * @author dengchao
  * @ClassName SellerExceptoin
  * @Description 类描述
- * @date 2018/1/19 0019
+ * @date 2018/4/20
  */
 public class SellerExceptoin extends Exception {
 

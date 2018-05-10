@@ -1,10 +1,10 @@
 package com.util;/********************************************************************
  /**
- * @Project: test_maven
- * @Package jdbc
- * @author guohongjin
- * @date 2017/8/28 22:14
- * @Copyright: 2017 www.zyht.com Inc. All rights reserved.
+ * @Project: zyht_web
+ * @Package com.util
+ * @author dengchao
+ * @date 2018/3/15
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
 
@@ -13,10 +13,10 @@ import javax.sql.DataSource;
 import java.sql.*;
 
 /**
- * @author guohongjin
+ * @author dengchao
  * @ClassName JdbcPoolMain
  * @Description 类描述
- * @date 2017/8/28
+ * @date 2018/3/15
  */
 public class JdbcPoolMain {
 
@@ -92,8 +92,8 @@ public class JdbcPoolMain {
     /**
      * @Title: main
      * @Description: 主函数
-     * @author yanyong
-     * @date 2018-1-19 14:52:25
+     * @author dengchao
+     * @date 2018/3/15
      * @throw YnCorpSysException
      */
 

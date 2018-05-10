@@ -1,12 +1,9 @@
 package com.domain;/**
- * Created by Kaiser on 2018/1/20.
- */
-/********************************************************************
  /**
- * @Project: java_practice
- * @Package domain
- * @author zuorui
- * @date 2018/1/20 16:43
+ * @Project: yuesuke
+ * @Package com.domain
+ * @author dengchao
+ * @date 2018/3/18 21:44
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -15,10 +12,10 @@ package com.domain;/**
 import java.util.Date;
 
 /**
- * @author zuorui
+ * @author dengchao
  * @ClassName GoodsOrder
  * @Description 类描述
- * @date 2018/1/20
+ * @date 2018/3/18
  */
 public class GoodsOrder {
 

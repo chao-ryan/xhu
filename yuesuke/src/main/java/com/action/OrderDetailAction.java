@@ -1,7 +1,12 @@
-package com.action;/**
- * Created by Roger_yu on 2018/3/8.
+package com.action;
+/**
+ * @Project: yuesuke
+ * @Package com.action
+ * @author dengchao
+ * @date 2018/5/5 13:24
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
+ * @version V1.0
  */
-
 
 import com.domain.OrderDetail;
 import com.domain.Store;
@@ -23,10 +28,10 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * @author yuweiyang
+ * @author dengchao
  * @ClassName OrderDetailAction
  * @Description 类描述
- * @date 2018/3/8
+ * @date 2018/5/5
  */
 @Action (value = "orderDetailAction")
 @Results({
@@ -43,8 +48,8 @@ public class OrderDetailAction extends BaseAction{
     /**
      * @Title:
      * @Description: 跳转到订单详情页面
-     * @author yuweiyang
-     * @date
+     * @author dengchao
+     * @date 2018/5/5
      */
     public String storeOrder(){
         //修改编码方式
@@ -75,8 +80,8 @@ public class OrderDetailAction extends BaseAction{
     /**
      * @Title:
      * @Description: 发货按钮 订单详情页面
-     * @author yuweiyang
-     * @date
+     * @author dengchao
+     * @date 2018/5/5
      */
     public String storeDelivery() throws IOException {
         //修改编码方式

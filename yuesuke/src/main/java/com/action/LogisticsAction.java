@@ -1,8 +1,9 @@
-package com.action; /**
- * @Project: zyht_web
- * @Package controller
- * @author jiangxiangwen
- * @date 2018/3/6
+package com.action;
+/**
+ * @Project: yuesuke
+ * @Package com.action
+ * @author dengchao
+ * @date 2018/5/5 13:24
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -28,7 +29,7 @@ import java.util.List;
  * @author jiangxiangwen
  * @ClassName LogisticsAction
  * @Description 物流详情
- * @date 2018/3/6
+ * @date 2018/5/5
  */
 @Action( value = "logisticsAction")
 
@@ -48,8 +49,8 @@ public class LogisticsAction extends BaseAction {
     /**
      * @Title: logisticsPage
      * @Description: 物流页，传入一个订单详情的id
-     * @author jiangxiangwen
-     * @date 2018/3/11
+     * @author dengchao
+     * @date 2018/5/5
      * @param
      * @return
      *
@@ -74,8 +75,8 @@ public class LogisticsAction extends BaseAction {
     /**
      * @Title: addLogistics
      * @Description: 添加物流信息，需要传入一个订单详情的id
-     * @author jiangxiangwen
-     * @date 2018/3/11
+     * @author dengchao
+     * @date 2018/5/5
      * @param
      * @return
      *

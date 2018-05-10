@@ -1,9 +1,9 @@
 package com.service;/********************************************************************
  /**
- * @Project: java_practice
- * @Package service
- * @author liukang
- * @date 2018/1/20 17:01
+ * @Project: yuesuke
+ * @Package com.service
+ * @author dengchao
+ * @date 2018/4/20
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -15,18 +15,18 @@ import java.util.Map;
 
 
 /**
- * @author liukang
+ * @author dengchao
  * @InterfaceName PayFlowService
  * @Description 流水接口
- * @date 2018/1/20
+ * @date 2018/4/20
  */
 public interface PayFlowService {
 
     /**
      * @Title: findPayFlowById
      * @Description: 通过id查找流水信息
-     * @author liukang
-     * @date 2018-01-24
+     * @author dengchao
+     * @date 2018/4/20
      * @param: id 指定id
      * @return: 流水信息
      */
@@ -36,8 +36,8 @@ public interface PayFlowService {
     /**
      * @Title: findPayFlowById
      * @Description: 通过流水号查ID
-     * @author liukang
-     * @date 2018-01-24
+     * @author dengchao
+     * @date 2018/4/20
      * @param: id 指定id
      * @return: 流水信息
      */
@@ -47,8 +47,8 @@ public interface PayFlowService {
     /**
      * @Title: savePayFlow
      * @Description: 保存流水信息
-     * @author liukang
-     * @date 2018-01-24
+     * @author dengchao
+     * @date 2018/4/20
      * @param: payFlow 流水信息
      * @return: 受影响行数
      */
@@ -59,8 +59,8 @@ public interface PayFlowService {
      * @param peopleId
      * @Title: MonthConsumption
      * @Description: 指定人员的当月消费情况
-     * @author liukang
-     * @date
+     * @author dengchao
+     * @date 2018/4/20
      * @throw YnCorpSysException
      */
     public List<Map<String, Object>> MonthConsumption(Long peopleId);
@@ -68,8 +68,8 @@ public interface PayFlowService {
     /**
      * @Title: MonthEarnings
      * @Description: 指定卖家的本月盈利
-     * @author liukang
-     * @date
+     * @author dengchao
+     * @date 2018/4/20
      * @throw YnCorpSysException
      */
     public List<Map<String, Object>> MonthEarnings(Long storeId);
@@ -77,8 +77,8 @@ public interface PayFlowService {
     /**
      * @Title: YearConsumption
      * @Description: 指定买家的本年消费
-     * @author liukang
-     * @date
+     * @author dengchao
+     * @date 2018/4/20
      * @throw YnCorpSysException
      */
     public List<Map<String, Object>> YearConsumption(Long peopleId);
@@ -86,8 +86,8 @@ public interface PayFlowService {
     /**
      * @Title: YearEarnings
      * @Description: 指定卖家的本年盈利
-     * @author liukang
-     * @date
+     * @author dengchao
+     * @date 2018/4/20
      * @throw YnCorpSysException
      */
     public List<Map<String, Object>> YearEarnings(Long storeId);

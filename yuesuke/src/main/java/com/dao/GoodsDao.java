@@ -1,9 +1,9 @@
 package com.dao;/********************************************************************
  /**
- * @Project: java_practice
- * @Package dao
- * @author yanyong
- * @date 2018/1/20 0020 16:56
+ * @Project: yuesuke
+ * @Package com.dao
+ * @author dengchao
+ * @date 2018/3/20 22:44
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -13,18 +13,18 @@ import com.domain.Goods;
 import java.util.List;
 
 /**
- * @author yanyong
+ * @author dengchao
  * @InterfaceName GoodsDao
  * @Description 商品数据库操作接口
- * @date 2018/1/20 0020
+ * @date 2018/3/20
  */
 public interface GoodsDao {
 
     /**
      * @Title: findGoodsById
      * @Description: 查找指定id商品信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/3/20
      * @throws: SQLException
      * @param: id 指定id
      * @param: connection 连接对象
@@ -38,8 +38,8 @@ public interface GoodsDao {
     /**
      * @Title: saveGoods
      * @Description: 保存商品信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/3/20
      * @throws: SQLException
      * @param: goods 商品信息
      * @param: connection 连接对象
@@ -51,8 +51,8 @@ public interface GoodsDao {
     /**
      * @Title: deleteGoodsById
      * @Description: 删除指定id的商品信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/3/20
      * @throws: SQLException
      * @param: id 指定id
      * @param: connection 连接对象
@@ -64,8 +64,8 @@ public interface GoodsDao {
     /**
      * @Title: updateGoodsById
      * @Description: 更新指定id商品信息
-     * @author yanyong
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/3/20
      * @throws: SQLException
      * @param: id 指定id
      * @param: goods 商品信息
@@ -84,8 +84,8 @@ public interface GoodsDao {
 //    /**
 //     * @Title: findGoodsById
 //     * @Description: 查找指定id商品信息
-//     * @author yanyong
-//     * @date 2018-01-21
+//     * @author dengchao
+//     * @date 2018/3/20
 //     * @throws: SQLException
 //     * @param: id 指定id
 //     * @param: connection 连接对象
@@ -97,8 +97,8 @@ public interface GoodsDao {
 //    /**
 //     * @Title: saveGoods
 //     * @Description: 保存商品信息
-//     * @author yanyong
-//     * @date 2018-01-21
+//     * @author dengchao
+//     * @date 2018/3/20
 //     * @throws: SQLException
 //     * @param: goods 商品信息
 //     * @param: connection 连接对象
@@ -110,8 +110,8 @@ public interface GoodsDao {
 //    /**
 //     * @Title: deleteGoodsById
 //     * @Description: 删除指定id的商品信息
-//     * @author yanyong
-//     * @date 2018-01-21
+//     * @author dengchao
+//     * @date 2018/3/20
 //     * @throws: SQLException
 //     * @param: id 指定id
 //     * @param: connection 连接对象
@@ -123,8 +123,8 @@ public interface GoodsDao {
 //    /**
 //     * @Title: updateGoodsById
 //     * @Description: 更新指定id商品信息
-//     * @author yanyong
-//     * @date 2018-01-21
+//     * @author dengchao
+//     * @date 2018/3/20
 //     * @throws: SQLException
 //     * @param: id 指定id
 //     * @param: goods 商品信息

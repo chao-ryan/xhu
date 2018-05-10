@@ -1,9 +1,9 @@
 package com.dao;/********************************************************************
  /**
- * @Project: zyht_web
- * @Package dao
- * @author kang
- * @date 2018/3/1 8:59
+ * @Project: yuesuke
+ * @Package com.dao
+ * @author dengchao
+ * @date 2018/3/25
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -17,10 +17,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author kang
+ * @author dengchao
  * @ClassName MaiPageDaoImpl
  * @Description 类描述
- * @date 2018/3/1
+ * @date 2018/3/25
  */
 @Repository("MainPageDao")
 public class MaiPageDaoImpl extends BaseDaoImpl<MainPage> implements MainPageDao {
@@ -28,8 +28,8 @@ public class MaiPageDaoImpl extends BaseDaoImpl<MainPage> implements MainPageDao
     /**
      * @Title: findMainPageInventoryAll
      * @Description: 查询所有订单的价格，数量，以及商品的ID
-     * @author liukang
-     * @date
+     * @author dengchao
+     * @date 2018/3/25
      * @throw SQLException
      */
     @Override
@@ -40,8 +40,8 @@ public class MaiPageDaoImpl extends BaseDaoImpl<MainPage> implements MainPageDao
     /**
      * @Title: findMainPageInventory
      * @Description: 查询指定订单的价格，数量，以及商品的ID
-     * @author liukang
-     * @date
+     * @author dengchao
+     * @date 2018/3/25
      * @throw SQLException
      */
     @Override
@@ -55,8 +55,8 @@ public class MaiPageDaoImpl extends BaseDaoImpl<MainPage> implements MainPageDao
     /**
      * @Title: findMainPageCondition
      * @Description: 根据条件查询主页面的显示
-     * @author kang
-     * @date 2018-03-08
+     * @author dengchao
+     * @date 2018/3/25
      * @throw YnCorpSysException
      */
     @Override
@@ -66,8 +66,8 @@ public class MaiPageDaoImpl extends BaseDaoImpl<MainPage> implements MainPageDao
     /**
      * @Title: findMainPageByStoreId
      * @Description: 根据商品id查找商品信息
-     * @author hzq
-     * @date 2018-03-06
+     * @author dengchao
+     * @date 2018/3/25
      * @throw YnCorpSysException
      */
     @Override
@@ -79,8 +79,8 @@ public class MaiPageDaoImpl extends BaseDaoImpl<MainPage> implements MainPageDao
      * @param type 商品类型
      * @Title: findMainPageClassify
      * @Description: 分类查询
-     * @author kang
-     * @date 2018-03-10
+     * @author dengchao
+     * @date 2018/3/25
      * @throw YnCorpSysException
      */
     @Override

@@ -1,9 +1,9 @@
 package com.domain;/********************************************************************
  /**
- * @Project: java_practice
- * @Package domain
- * @author liukang
- * @date 2018/1/20 16:42
+ * @Project: yuesuke
+ * @Package com.domain
+ * @author dengchao
+ * @date 2018/3/18
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -11,10 +11,10 @@ package com.domain;/************************************************************
 import java.util.Date;
 
 /**
- * @author liukang
+ * @author dengchao
  * @ClassName PayFlow
  * @Description 流水表实体类
- * @date 2018/1/20
+ * @date 2018/3/18
  */
 public class PayFlow {
     /**

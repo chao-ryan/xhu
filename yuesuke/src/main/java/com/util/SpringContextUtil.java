@@ -5,10 +5,10 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 /**
- * @author guohongjin
+ * @author dengchao
  * @ClassName SpringContextUtil
  * @Description 获取springmvc的容器帮助类
- * @date 2016/8/25
+ * @date 2018/3/15
  */
 @Component
 public class SpringContextUtil implements ApplicationContextAware {
@@ -28,8 +28,8 @@ public class SpringContextUtil implements ApplicationContextAware {
     /**
      * @Title: getApplicationContext
      * @Description: 保证线程同步
-     * @author guohongjin
-     * @date 2016-08-25
+     * @author dengchao
+     * @date 2018/3/15
      */
 
     public synchronized  static ApplicationContext getApplicationContext() {
@@ -40,7 +40,7 @@ public class SpringContextUtil implements ApplicationContextAware {
     /**
      * @Title: getBean
      * @Description: 根据beanId获取bean对象
-     * @author guohongjin
+     * @author dengchao
      * @throw BeansException
      */
 

@@ -1,9 +1,9 @@
 package com.action;/********************************************************************
  /**
- * @Project: zyht_web
- * @Package controller.action
- * @author yanyong
- * @date 2018/3/7 0007 14:36
+ * @Project: yuesuke
+ * @Package com.action
+ * @author dengchao
+ * @date 2018/5/5 13:24
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -28,10 +28,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author yanyong
+ * @author dengchao
  * @ClassName AdminUserAction
- * @Description 类描述
- * @date 2018/3/7 0007
+ * @Description 用户管理
+ * @date 2018/5/5
  */
 @Action(value = "adminUserAction")
 @Results({
@@ -45,8 +45,8 @@ public class AdminUserAction extends BaseAction {
     /**
      * @Title: findPeopleAll
      * @Description: 查找所有人员信息
-     * @author yanyong
-     * @date 2018-03-07
+     * @author dengchao
+     * @date 2018/5/5
      * @return: SUCCESS
      */
     public String findPeopleAll(){
@@ -74,8 +74,8 @@ public class AdminUserAction extends BaseAction {
     /**
      * @Title: findStore
      * @Description: 查找店铺信息并保存到session中
-     * @author yanyong
-     * @date 2018-03-07
+     * @author dengchao
+     * @date 2018/5/5
      * @return: SUCCESS
      */
     public String findStoreAll(){
@@ -104,8 +104,8 @@ public class AdminUserAction extends BaseAction {
     /**
      * @Title: deletePeople
      * @Description: 删除指定id的人员
-     * @author yanyong
-     * @date 2018-03-07
+     * @author dengchao
+     * @date 2018/5/5
      * @return: SUCCESS
      */
 
@@ -136,8 +136,8 @@ public class AdminUserAction extends BaseAction {
     /**
      * @Title: deleteStore
      * @Description: 删除指定id店铺
-     * @author yanyong
-     * @date 2018-03-07
+     * @author dengchao
+     * @date 2018/5/5
      * @return: SUCCESS
      */
 
@@ -174,8 +174,8 @@ public class AdminUserAction extends BaseAction {
     /**
      * @Title: updatePeople
      * @Description: 修改人员信息
-     * @author yanyong
-     * @date 2018-03-07
+     * @author dengchao
+     * @date 2018/5/5
      * @return: String structs删选值
      */
 
@@ -204,8 +204,8 @@ public class AdminUserAction extends BaseAction {
     /**
      * @Title: updateStore
      * @Description: 修改店铺信息
-     * @author yanyong
-     * @date 2018-03-07
+     * @author dengchao
+     * @date 2018/5/5
      * @return: String structs删选值
      */
 

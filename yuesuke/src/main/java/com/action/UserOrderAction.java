@@ -1,9 +1,9 @@
 package com.action;/********************************************************************
  /**
- * @Project: zyht_web
- * @Package controller.action
- * @author yanyong
- * @date 2018/3/8 0008 9:52
+ * @Project: yuesuke
+ * @Package com.action
+ * @author dengchao
+ * @date 2018/4/29 13:24
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -25,10 +25,10 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 /**
- * @author yanyong
+ * @author dengchao
  * @ClassName UserOrderAction
  * @Description 类描述
- * @date 2018/3/8 0008
+ * @date 2018/4/29
  */
 @Action(value = "userOrderAction")
 @Results({
@@ -73,8 +73,8 @@ public class UserOrderAction extends BaseAction {
     /**
      * @Title: findOrderAll
      * @Description: 查看所有订单信息
-     * @author yanyong
-     * @date 2018-03-08
+     * @author dengchao
+     * @date 2018/4/29
      * @return: String
      */
     public String findOrderAll(){
@@ -101,8 +101,8 @@ public class UserOrderAction extends BaseAction {
     /**
      * @Title: findNotPayOrder
      * @Description: 查询未支付的订单信息
-     * @author yanyong
-     * @date 2018-03-08
+     * @author dengchao
+     * @date 2018/4/29
      * @return: SUCCESS
      */
 
@@ -137,8 +137,8 @@ public class UserOrderAction extends BaseAction {
     /**
      * @Title: findNotDeliveryOrder
      * @Description: 查询未发货的订单信心
-     * @author yanyong
-     * @date 2018-03-08
+     * @author dengchao
+     * @date 2018/4/29
      * @return: SUCCESS
      */
     public String findNotDeliveryOrder(){
@@ -173,8 +173,8 @@ public class UserOrderAction extends BaseAction {
     /**
      * @Title: findNotReceiveOrder
      * @Description: 查看未收货订单信息
-     * @author yanyong
-     * @date 2018-03-08
+     * @author dengchao
+     * @date 2018/4/29
      * @return: SUCCESS
      */
 
@@ -211,8 +211,8 @@ public class UserOrderAction extends BaseAction {
     /**
      * @Title: deleteOrder
      * @Description: 删除订单
-     * @author yanyong
-     * @date 2018-03-09
+     * @author dengchao
+     * @date 2018/4/29
      * @return:
      */
 
@@ -237,8 +237,8 @@ public class UserOrderAction extends BaseAction {
     /**
      * @Title: cancelOrder
      * @Description: 取消订单
-     * @author yanyong
-     * @date 2018-03-09
+     * @author dengchao
+     * @date 2018/4/29
      * @return: SUCCESS
      */
     public String cancelOrder(){
@@ -264,8 +264,8 @@ public class UserOrderAction extends BaseAction {
     /**
      * @Title: recevieGoods
      * @Description: 收货
-     * @author yanyong
-     * @date 2018-03-09
+     * @author dengchao
+     * @date 2018/4/29
      * @return: SUCCESS
      */
     public String recevieGoods(){

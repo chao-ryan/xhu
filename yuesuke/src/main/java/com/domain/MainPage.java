@@ -1,18 +1,18 @@
 package com.domain;/********************************************************************
  /**
- * @Project: bigstar_online_mall
- * @Package domain
- * @author liukang
- * @date 2018/1/31 21:10
+ * @Project: yuesuke
+ * @Package com.domain
+ * @author dengchao
+ * @date 2018/3/18
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
 
 /**
- * @author liukang
+ * @author dengchao
  * @ClassName MainPage
  * @Description 虚拟实体类
- * @date 2018/1/31
+ * @date 2018/3/18
  */
 public class MainPage {
 

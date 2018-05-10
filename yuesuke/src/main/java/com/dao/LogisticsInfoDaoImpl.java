@@ -1,8 +1,9 @@
-package com.dao; /**
- * @Project: zyht_web
- * @Package dao
- * @author jiangxiangwen
- * @date 2018/3/3
+package com.dao;
+/**
+ * @Project: yuesuke
+ * @Package com.dao
+ * @author dengchao
+ * @date 2018/3/24 22:44
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -17,10 +18,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author jiangxiangwen
+ * @author dengchao
  * @ClassName LogisticsInfoDaoImpl
  * @Description 类的描述
- * @date 2018/3/3
+ * @date 2018/3/24
  */
 @Repository("LogisticsInfoDao")
 public class LogisticsInfoDaoImpl extends BaseDaoImpl<LogisticsInfo> implements LogisticsInfoDao {
@@ -29,8 +30,8 @@ public class LogisticsInfoDaoImpl extends BaseDaoImpl<LogisticsInfo> implements 
      * @return LogisticsInfo 物流信息实体
      * @Title: findLogisticsInfoByOrderDetailId
      * @Description: 通过传入orderDetailId（订单详情 主键id）查询物流信息实体
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/3/24
      */
     @Override
     public LogisticsInfo findLogisticsInfoByOrderDetailId(Long orderDetailId) {
@@ -43,8 +44,8 @@ public class LogisticsInfoDaoImpl extends BaseDaoImpl<LogisticsInfo> implements 
      * @return List<LogisticsInfo> 物流信息实体的集合
      * @Title: findLogisticsInfoAll
      * @Description: 查询所有的物流信息
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/3/24
      */
     @Override
     public List<LogisticsInfo> findLogisticsInfoAll() {
@@ -56,8 +57,8 @@ public class LogisticsInfoDaoImpl extends BaseDaoImpl<LogisticsInfo> implements 
      * @return Integer 返回受影响的行数
      * @Title: saveLogisticsInfo
      * @Description: 添加物流信息实体
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/3/24
      */
     @Override
     public Integer saveLogisticsInfo(LogisticsInfo logisticsInfo) {
@@ -69,8 +70,8 @@ public class LogisticsInfoDaoImpl extends BaseDaoImpl<LogisticsInfo> implements 
      * @return Integer 受影响的行数
      * @Title: deleteLogisticsInfoById
      * @Description: 删除物流信息
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/3/24
      */
     @Override
     public Integer deleteLogisticsInfoById(LogisticsInfo logisticsInfo) {
@@ -82,8 +83,8 @@ public class LogisticsInfoDaoImpl extends BaseDaoImpl<LogisticsInfo> implements 
      * @return Integer 受影响的行数
      * @Title: updateLogisticsInfoByOrderDetailId
      * @Description: 更新物流信息
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/3/24
      */
     @Override
     public Integer updateLogisticsInfoByOrderDetailId(LogisticsInfo logisticsInfo) {

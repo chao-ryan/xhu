@@ -1,8 +1,9 @@
-package com.dao; /**
- * @Project: zyht_web
- * @Package dao
- * @author jiangxiangwen
- * @date 2018/3/4
+package com.dao;
+/**
+ * @Project: yuesuke
+ * @Package com.dao
+ * @author dengchao
+ * @date 2018/3/24 22:44
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -21,7 +22,7 @@ import java.util.List;
  * @author jiangxiangwen
  * @ClassName LogisticsGobyDaoImpl
  * @Description 类的描述
- * @date 2018/3/4
+ * @date 2018/3/24
  */
 @Repository("logisticsGobyDaoImpl")
 public class LogisticsGobyDaoImpl extends BaseDaoImpl<LogisticsGoby> implements LogisticsGobyDao {
@@ -30,8 +31,8 @@ public class LogisticsGobyDaoImpl extends BaseDaoImpl<LogisticsGoby> implements 
      * @return List<LogisticsGoby.xml> 返回物流过程的集合
      * @Title: findLogisticsGobyLogisticsnfoId
      * @Description: 通过传入 logisticsInfoId（物流信息 主键id）查询物流过程实体
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/3/24
      */
     @Override
     public List<LogisticsGoby> findLogisticsGobyLogisticsnfoId(Long logisticsInfoId) {
@@ -45,8 +46,8 @@ public class LogisticsGobyDaoImpl extends BaseDaoImpl<LogisticsGoby> implements 
      * @return Integer 返回受影响的行数
      * @Title: saveLogisticsGoby
      * @Description: 添加物流过程实体
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/3/24
      */
     @Override
     public Integer saveLogisticsGoby(LogisticsGoby logisticsGoby) {
@@ -58,8 +59,8 @@ public class LogisticsGobyDaoImpl extends BaseDaoImpl<LogisticsGoby> implements 
      * @return Integer 受影响的行数
      * @Title: deleteLogisticsGobyById
      * @Description: 删除物流过程
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/3/24
      */
     @Override
     public Integer deleteLogisticsGobyById(LogisticsGoby logisticsGoby) {
@@ -71,8 +72,8 @@ public class LogisticsGobyDaoImpl extends BaseDaoImpl<LogisticsGoby> implements 
      * @return Integer 受影响的行数
      * @Title: updateLogisticsGobyId
      * @Description: 更新物流信息
-     * @author jiangxiangwen
-     * @date 2018/3/3
+     * @author dengchao
+     * @date 2018/3/24
      */
     @Override
     public Integer updateLogisticsGobyId(LogisticsGoby logisticsGoby) {

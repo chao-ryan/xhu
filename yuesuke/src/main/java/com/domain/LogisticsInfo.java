@@ -1,15 +1,21 @@
-package com.domain;/**
- * Created by Roger_yu on 2018/3/2.
+package com.domain;
+/**
+ * @Project: yuesuke
+ * @Package com.domain
+ * @author dengchao
+ * @date 2018/3/18
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
+ * @version V1.0
  */
 
 
 import java.util.Date;
 
 /**
- * @author jiangxiangwen
+ * @author dengchao
  * @ClassName LogisticsInfo
  * @Description 物流信息表
- * @date 2018/3/2
+ * @date 2018/3/18
  */
 public class LogisticsInfo {
   /**

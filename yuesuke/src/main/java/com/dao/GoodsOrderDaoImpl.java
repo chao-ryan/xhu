@@ -1,12 +1,9 @@
 package com.dao;/**
- * Created by Kaiser on 2018/1/20.
- */
-/********************************************************************
  /**
- * @Project: java_practice
- * @Package dao
- * @author zuorui
- * @date 2018/1/20 17:24
+ * @Project: yuesuke
+ * @Package com.dao
+ * @author dengchao
+ * @date 2018/3/22 22:44
  * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
  * @version V1.0
  */
@@ -20,10 +17,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author zuorui
+ * @author dengchao
  * @ClassName GoodsOrderImpl
  * @Description 类描述
- * @date 2018/02/26
+ * @date 2018/3/22
  */
 @Repository("goodsOrderDao")
 public class GoodsOrderDaoImpl extends BaseDaoImpl<GoodsOrder> implements GoodsOrderDao {
@@ -32,8 +29,8 @@ public class GoodsOrderDaoImpl extends BaseDaoImpl<GoodsOrder> implements GoodsO
      * @throws java.sql.SQLException
      * @Title: findGoodsOrderById
      * @Description: 通过id查询订单详情
-     * @author zuorui
-     * @date 2018-02-26
+     * @author dengchao
+     * @date 2018/3/22
      * @param: id 指定id
      * @param: connection 连接对象
      * @param: preparedStatement 预编译Statement对象
@@ -45,8 +42,8 @@ public class GoodsOrderDaoImpl extends BaseDaoImpl<GoodsOrder> implements GoodsO
     /**
      * @Title: addGoodsOrderById
      * @Description: 通过id添加订单详情
-     * @author zuorui
-     * @date 2018-02-26
+     * @author dengchao
+     * @date 2018/3/22
      * @param: goodsOrder 指定goodsOrder
      */
     @Override
@@ -57,8 +54,8 @@ public class GoodsOrderDaoImpl extends BaseDaoImpl<GoodsOrder> implements GoodsO
      * @throws java.sql.SQLException
      * @Title: updateGoodsOrderById
      * @Description: 通过id修改订单详情
-     * @author zuorui
-     * @date 2018-02-26
+     * @author dengchao
+     * @date 2018/3/22
      * @param: id 指定id
      * @param: connection 连接对象
      * @param: preparedStatement 预编译Statement对象
@@ -74,8 +71,8 @@ public class GoodsOrderDaoImpl extends BaseDaoImpl<GoodsOrder> implements GoodsO
      * @throws java.sql.SQLException
      * @Title: findGoodsOrderByNum
      * @Description: 通过Num查询订单详情
-     * @author zuorui
-     * @date 2018-02-26
+     * @author dengchao
+     * @date 2018/3/22
      * @param: id 指定id
      * @param: connection 连接对象
      * @param: preparedStatement 预编译Statement对象
@@ -88,8 +85,8 @@ public class GoodsOrderDaoImpl extends BaseDaoImpl<GoodsOrder> implements GoodsO
      * @throws java.sql.SQLException
      * @Title: findGoodsOrderByPeopleId
      * @Description: 通过peopleId查询订单详情
-     * @author zuorui
-     * @date 2018-02-26
+     * @author dengchao
+     * @date 2018/3/22
      * @param: id 指定id
      * @param: connection 连接对象
      * @param: preparedStatement 预编译Statement对象
@@ -105,8 +102,8 @@ public class GoodsOrderDaoImpl extends BaseDaoImpl<GoodsOrder> implements GoodsO
 //     * @throws java.sql.SQLException
 //     * @Title: findGoodsOrderById
 //     * @Description: 通过id查询订单详情
-//     * @author zuorui
-//     * @date 2018-01-22
+//     * @author dengchao
+//     * @date 2018/3/22
 //     * @param: id 指定id
 //     * @param: connection 连接对象
 //     * @param: preparedStatement 预编译Statement对象
@@ -144,8 +141,8 @@ public class GoodsOrderDaoImpl extends BaseDaoImpl<GoodsOrder> implements GoodsO
 //    /**
 //     * @Title: addGoodsOrderById
 //     * @Description: 添加订单信息
-//     * @author zuorui
-//     * @date 2018-01-22
+//     * @author dengchao
+//     * @date 2018/3/22
 //     * @throws: SQLException
 //     * @param: id 制定id
 //     * @param: connection 连接对象
@@ -186,8 +183,8 @@ public class GoodsOrderDaoImpl extends BaseDaoImpl<GoodsOrder> implements GoodsO
 //    /**
 //     * @Title: updateGoodsOrderById
 //     * @Description: 更改订单信息
-//     * @author zuorui
-//     * @date 2018-01-22
+//     * @author dengchao
+//     * @date 2018/3/22
 //     * @throws: SQLException
 //     * @param: id 制定id
 //     * @param: connection 连接对象
@@ -216,8 +213,8 @@ public class GoodsOrderDaoImpl extends BaseDaoImpl<GoodsOrder> implements GoodsO
 //    /**
 //     * @Title: findGoodsOrderByNum
 //     * @Description: 查过订单编号查询订单
-//     * @author yanyong
-//     * @date 2018-01-26
+//     * @author dengchao
+//     * @date 2018/3/22
 //     * @param: goodsNum 商品编号
 //     * @param: connection 连接对象
 //     * @param: preparedStatement 预编译Statement对象
@@ -253,8 +250,8 @@ public class GoodsOrderDaoImpl extends BaseDaoImpl<GoodsOrder> implements GoodsO
 //    /**
 //     * @Title: findGoodsOrderByPeopleId
 //     * @Description: 获取订单信息通过人员id
-//     * @author yanyong
-//     * @date 2018-01-31
+//     * @author dengchao
+//     * @date 2018/3/22
 //     * @param: peopleId指定人员id
 //     * @param: goodsNum 商品编号
 //     * @param: connection 连接对象

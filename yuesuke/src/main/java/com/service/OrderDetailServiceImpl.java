@@ -1,5 +1,11 @@
-package com.service;/**
- * Created by Roger_yu on 2018/1/20.
+package com.service;
+/**
+ * @Project: yuesuke
+ * @Package com.service
+ * @author dengchao
+ * @date 2018/4/20
+ * @Copyright: 2018 www.zyht.com Inc. All rights reserved.
+ * @version V1.0
  */
 
 import com.domain.GoodsOrder;
@@ -12,10 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author yuweiyang
+ * @author dengchao
  * @ClassName OrderDetailServiceImpl
  * @Description 订单详情service接口实现
- * @date 2018/1/20
+ * @date 2018/4/20
  */
 
 
@@ -29,8 +35,8 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     /**
      * @Title: saveOrderDetail
      * @Description: 新增订单详情信息
-     * @author yuweiyang
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/20
      * @throw SQLException
      * @param: people 人员信息
      * @param: connection 连接对象
@@ -54,8 +60,8 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     /**
      * @Title: saveOrderDetail
      * @Description: 新增订单详情信息
-     * @author yuweiyang
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/20
      * @throw SQLException
      * @param: people 人员信息
      * @param: connection 连接对象
@@ -76,8 +82,8 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     /**
      * @Title: updateOrderDetailById
      * @Description: 更新指定订单详情的信息
-     * @author yuweiyang
-     * @date 2018-01-21
+     * @author dengchao
+     * @date 2018/4/20
      * @param: id 指定人员id
      * @param: orderDetail 指定订单详情
      * @param: connection 连接对象
@@ -98,8 +104,8 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     /**
      * @Title: getGoodsDetailListByOrderId
      * @Description: 获取指定订单id 的订单详情
-     * @author yanyong
-     * @date 2018-01-28
+     * @author dengchao
+     * @date 2018/4/20
      * @param: orderId 指定订单id
      * @return: 订单详情集合
      */
@@ -111,8 +117,8 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     /**
      * @Title: findOrderDetailByPeopleId
      * @Description: 通过店铺id查找订单详情
-     * @author yanyong
-     * @date 2018-01-31
+     * @author dengchao
+     * @date 2018/4/20
      * @param: peopleId 指定人员id
      * @return: 订单详情集合
      */
@@ -129,8 +135,8 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     /**
      * @Title: findOrderDetailByPeopleId
      * @Description: 通过人员id查找订单详情
-     * @author yanyong
-     * @date 2018-01-31
+     * @author dengchao
+     * @date 2018/4/20
      * @param: peopleId 指定人员id
      * @return: 订单详情集合
      */
@@ -147,8 +153,8 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     /**
      * @Title: showOrderDetailMessage
      * @Description: 订单详情查看
-     * @author yanyong
-     * @date 2018-01-31
+     * @author dengchao
+     * @date 2018/4/20
      * @param: orderDetail 订单详情对象
      */
 
@@ -172,8 +178,8 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     /**
      * @Title: findOrderDetailByOrderList
      * @Description: 查找指定List<GoodsOrder>的订单详情集合
-     * @author yanyong
-     * @date 2018-03-12
+     * @author dengchao
+     * @date 2018/4/20
      * @param: goodsOrderList 指定List<GoodsOrder>
      * @return:  List<OrderDetail>
      */
