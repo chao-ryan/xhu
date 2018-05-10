@@ -1,19 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2018/2/28 0028
-  Time: 16:00
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title></title>
-    <link href="${basePath}/css/admin_page_css.css" rel="stylesheet" />
-    <script src="${basePath}../js/jquery-1.7.2.js" type="text/javascript"></script>
+    <link href="${pageContext.request.contextPath}/css/admin_page_css.css" rel="stylesheet" />
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.js" type="text/javascript"></script>
 </head>
 <body>
 <jsp:include page="head_page.jsp"/>
@@ -59,55 +52,54 @@
 
 </div>
 
-<%--<script type="text/javascript">--%>
-    <%--$("#upd_store_btn").click(function(){--%>
-        <%--var storeId=$(".store_id").val();--%>
-        <%--var storeNum=$(".store_store_num").val();--%>
-        <%--var storeName=$(".store_store_name").val();--%>
-        <%--var credit=$(".store_credit").val();--%>
-        <%--var peopleId=$(".store_people_id").val();--%>
-        <%--alert(id+" "+storeName);--%>
-        <%--$.ajax({--%>
-            <%--type:'POST',--%>
-            <%--url:"${pageContext.request.contextPath}/test/updateStore.htm",--%>
-            <%--data:{storeId:storeId,storeNum:storeNum,storeName:storeName,credit:credit,peopleId:peopleId},--%>
-            <%--dataType:'json',--%>
-            <%--success:function(){--%>
-                <%--window.location.href="${pageContext.request.contextPath}/administrator_page.jsp";--%>
-            <%--},--%>
-            <%--error:function(){--%>
-                <%--alert("修改失败");--%>
-            <%--}--%>
-        <%--});--%>
-    <%--});--%>
-<%--</script>--%>
+<script type="text/javascript">
+    $("#upd_store_btn").click(function(){
+        var storeId=$(".store_id").val();
+        var storeNum=$(".store_store_num").val();
+        var storeName=$(".store_store_name").val();
+        var credit=$(".store_credit").val();
+        var peopleId=$(".store_people_id").val();
+        alert(id+" "+storeName);
+        $.ajax({
+            type:'POST',
+            url:"${pageContext.request.contextPath}/test/updateStore.htm",
+            data:{storeId:storeId,storeNum:storeNum,storeName:storeName,credit:credit,peopleId:peopleId},
+            dataType:'json',
+            success:function(){
+                window.location.href="administrator_page.jsp";
+            },
+            error:function(){
+                alert("修改失败");
+            }
+        });
+    });
+</script>
 
-<%--<script type="text/javascript">--%>
-<%--$(document).ready(function(){--%>
-<%--alert("开始");--%>
-<%--});--%>
-<%--$("#admin-user").click(function(){--%>
-<%--$.ajax({--%>
-<%--type:'POST',--%>
-<%--url:'/test/adminUser.htm',--%>
-<%--data:{command:"findPeople"},--%>
-<%--dataType:"text",--%>
-<%--success:function(data){--%>
-<%--alert(data)--%>
-<%--alert("success");--%>
-<%--},--%>
-<%--error:function(data){--%>
-<%--alert(data);--%>
-<%--alert("error")--%>
-<%--}--%>
+<script type="text/javascript">
+$(document).ready(function(){
+alert("开始");
+});
+$("#admin-user").click(function(){
+$.ajax({
+type:'POST',
+url:'${pageContext.request.contextPath}/test/adminUser.htm',
+data:{command:"findPeople"},
+dataType:"text",
+success:function(data){
+alert(data)
+alert("success");
+},
+error:function(data){
+alert(data);
+alert("error")
+}
 
-<%--});--%>
-<%--});--%>
-<%--$("admin-seller").click(function(){--%>
+});
+});
+$("admin-seller").click(function(){
 
-<%--});--%>
-<%--</script>--%>
-
+});
+</script>
 
 </body>
 </html>

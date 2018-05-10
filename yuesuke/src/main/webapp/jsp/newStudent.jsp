@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <title>YS欢迎您</title>
-    <link href="../css/main.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
 </head>
 <body>
 <div class="beg-login-box">
@@ -17,7 +17,7 @@
         <div class="logo-window-box">
             <div class="logo-box">
                 <a class="site-url" href="##">
-                    <img class="site-logo" src="../image/logo-site.png">
+                    <img class="site-logo" src="${pageContext.request.contextPath}/image/logo-site.png">
                 </a>
             </div>
             <div class="to-mainpage-box">

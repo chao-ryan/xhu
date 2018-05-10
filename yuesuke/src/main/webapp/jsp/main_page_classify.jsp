@@ -1,11 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--&lt;%&ndash;--%>
-<%--Created by IntelliJ IDEA.--%>
-<%--User: lionk--%>
-<%--Date: 2018/1/29--%>
-<%--Time: 17:33--%>
-<%--To change this template use File | Settings | File Templates.--%>
-<%--&ndash;%&gt;--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="common.jsp" %>
 <!DOCTYPE html>
@@ -13,9 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <title>商品分类页面</title>
-    <script src="${basePath}../js/jquery-1.7.2.min.js"></script>
-    <script src="${basePath}../js/jquery-1.7.2.js"></script>
-    <link rel="stylesheet" href="${basePath}../css/main_page_css.css">
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main_page_css.css"/>
 </head>
 
 <body>
@@ -32,10 +25,10 @@
     <ul class="goods-display">
         <%--//循环输出一个商品框，数据由数据库查询包含名字.价格.库存--%>
         <c:forEach items="${mainList}" var="entry">
-            <form id="cratGoods" name="cratGoods" action="/mainAction!cart.do?op=add" target="posthere" method="post">
+            <form id="cratGoods" name="cratGoods" action="${pageContext.request.contextPath}/mainAction!cart.do?op=add" target="posthere" method="post">
                 <ui class="view">
                     <div class="imgLink">
-                        <img src="${basePath}../img/beauty.jpg"/></div>
+                        <img src="${pageContext.request.contextPath}/img/beauty.jpg"/></div>
                     <div class="info">
                         <span class="price">¥  <strong class="price_st">${entry.price}</strong></span>
 
@@ -71,7 +64,7 @@
         var goodsCart = "商品:" + nameStr + "\n添加到购物车成功!";
         alert(goodsCart);
         //将数据传到另一个页面
-        var url = 'mainAction!cart.do?op=add';
+        var url = '${pageContext.request.contextPath}/mainAction!cart.do?op=add';
         var data = {
             'nameStr': entry.name,
             'priceStr': entry.price,
@@ -91,14 +84,14 @@
 
 <div class="wit">
     <div class="limit">
-        <form class="form" name="f1" method="POST" action="/mainAction!classifyLimit.do?present=${present}&&type=${type}">
+        <form class="form" name="f1" method="POST" action="${pageContext.request.contextPath}/mainAction!classifyLimit.do?present=${present}&&type=${type}">
             <table border="0" align="center" class="tb">
                 <tr>
                     <td><span class="page-size">当前第 ${present} 页       共 ${total} 页</span>></td>
-                    <td><a href="mainAction!classifyLimit.do?page=start&&present=${present}&&type=${type}">首页</a></td>
-                    <td><a href="mainAction!classifyLimit.do?page=last&&present=${present}&&type=${type}"> 上一页</a></td>
-                    <td><a href="mainAction!classifyLimit.do?page=next&&present=${present}&&type=${type}"> 下一页</a></td>
-                    <td><a href="mainAction!classifyLimit.do?page=end&&present=${present}&&type=${type}">最后一页</a></td>
+                    <td><a href="${pageContext.request.contextPath}/mainAction!classifyLimit.do?page=start&&present=${present}&&type=${type}">首页</a></td>
+                    <td><a href="${pageContext.request.contextPath}/mainAction!classifyLimit.do?page=last&&present=${present}&&type=${type}"> 上一页</a></td>
+                    <td><a href="${pageContext.request.contextPath}/mainAction!classifyLimit.do?page=next&&present=${present}&&type=${type}"> 下一页</a></td>
+                    <td><a href="${pageContext.request.contextPath}/mainAction!classifyLimit.do?page=end&&present=${present}&&type=${type}">最后一页</a></td>
                     <td>转到第:<input type="text" name="page" size="8"
                                    onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/"/>页
                         <input type="submit" value="GO" name="GO"></td>

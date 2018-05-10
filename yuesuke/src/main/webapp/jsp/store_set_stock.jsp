@@ -1,21 +1,14 @@
-<%@ page import="domain.OrderDetail" %>
+<%@ page import="com.domain.OrderDetail" %>
 <%@ page import="java.util.List" %>
-<%@ page import="domain.Goods" %>
+<%@ page import="com.domain.Goods" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Roger_yu
-  Date: 2018/1/29
-  Time: 16:23
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>进货</title>
-    <script src="${basePath}../js/jquery-1.7.2.min.js"></script>
-    <script src="${basePath}../js/jquery-1.7.2.js"></script>
-    <link rel="stylesheet" href="${basePath}../css/store_order_css.css">
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/store_order_css.css">
 </head>
 <body align="center">
 <jsp:include page="head_page.jsp" flush="true"/>
@@ -89,10 +82,10 @@
             data:{
                 stockNum:stockNum
             },
-            url:"${basePath}/storeSetStockAction!storeSetStock.do",
+            url:"${pageContext.request.contextPath}/storeSetStockAction!storeSetStock.do",
             success:function (x) {
                 alert("进货成功！！！");
-                window.location.replace("${basePath}/storeSetStockAction!storeSetStock.do");
+                window.location.replace("${pageContext.request.contextPath}/storeSetStockAction!storeSetStock.do");
             },
             error:function(XMLResponse){
                 alert("发货失败！！！")

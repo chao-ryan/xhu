@@ -1,20 +1,13 @@
-<%@ page import="domain.Store" %>
+<%@ page import="com.domain.Store" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: HZQ
-  Date: 2018/1/29
-  Time: 17:51
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="common.jsp" %>
 <html>
 <head>
     <title>store_home_page</title>
-    <link href="${basePath}/css/store_home_page_css.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="${basePath}../css/head_page_css.css">
+    <link href="${pageContext.request.contextPath}/css/store_home_page_css.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/head_page_css.css">
 </head>
 <body>
 <jsp:include page="head_page.jsp"></jsp:include>
@@ -30,16 +23,16 @@
                 </div>
             </div>
             <div class="store_home_delivery">
-                <a href="${basePath}/storeSetStockAction!selectStoreGoods.do?storeId=${stores[0].id}"><h4>我要进货</h4></a>
+                <a href="${pageContext.request.contextPath}/storeSetStockAction!selectStoreGoods.do?storeId=${stores[0].id}"><h4>我要进货</h4></a>
             </div>
             <div class="store_home_delivery">
-                <a href="${basePath}/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>我要发货</h4></a>
+                <a href="${pageContext.request.contextPath}/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>我要发货</h4></a>
             </div>
             <div class="store_home_delivery">
-                <a href="${basePath}/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>历史订单</h4></a>
+                <a href="${pageContext.request.contextPath}/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>历史订单</h4></a>
             </div>
             <div class="store_home_delivery">
-                <a href="${basePath}/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>最近订单</h4></a>
+                <a href="${pageContext.request.contextPath}/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>最近订单</h4></a>
             </div>
         </div>
         <div class="store_home-right">
@@ -52,11 +45,11 @@
             <c:forEach items="${mainPages}" var="mainPages" varStatus="status">
                 <div class="store_home_good">
                     <div class="store_home_goodImg">
-                        <img src="${basePath}/img/1.jpg"></src>
+                        <img src="${pageContext.request.contextPath}/img/1.jpg"></src>
                     </div>
                     <div class="store_home_goodInfo">
                         <div class="store_home_goodName">
-                        <a href="${basePath}/storeAction!offLoading.do?peopleId=${person.id}&&inventoryId=${mainPages.inventoryId}">
+                        <a href="${pageContext.request.contextPath}/storeAction!offLoading.do?peopleId=${person.id}&&inventoryId=${mainPages.inventoryId}">
                             <input type="button" value="商品下架" />
                             </a>
                             <a href="javascript:void(0)"

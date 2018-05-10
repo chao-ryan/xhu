@@ -1,16 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: zuorui
-  Date: 2018/1/29
-  Time: 17:23
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="common.jsp" %>
 <html>
 <head>
     <title>注册页面</title>
-    <link rel="stylesheet" href="${basePath}../css/registration_page_css.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/registration_page_css.css">
 </head>
 <body>
 
@@ -20,7 +13,7 @@
     <div class="div">
         <span class="span">WELCOME!</span>
 
-        <form id="registration" name="Registration" action="/servlet/registration.htm" method="post">
+        <form id="registration" name="Registration" action="${pageContext.request.contextPath}/servlet/registration.htm" method="post">
             <table border="0" class="table">
                 <tr>
                     <td>用户名：</td>
@@ -81,7 +74,7 @@
             <br/>
             <input type="submit" value="免费注册" class="button"/>
         </form>
-        <input type="button" onclick="window.location.href='../login_page.jsp'" value="返回登录" class="button"/>
+        <input type="button" onclick="window.location.href='login_page.jsp'" value="返回登录" class="button"/>
     </div>
 </div>
 

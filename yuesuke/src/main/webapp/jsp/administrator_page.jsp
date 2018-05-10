@@ -1,20 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2018/2/28 0028
-  Time: 16:00
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
 <head>
     <title>管理账户</title>
-    <link href="${basePath}/css/admin_page_css.css" rel="stylesheet" />
-    <script src="${basePath}../js/jquery-1.7.2.js" type="text/javascript"></script>
+    <link href="${pageContext.request.contextPath}/css/admin_page_css.css" rel="stylesheet" />
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.js" type="text/javascript"></script>
 </head>
 <body>
 <jsp:include page="head_page.jsp"/>
@@ -101,34 +94,34 @@
 </div>
 <script type="text/javascript">
     $("#admin-user").click(function(){
-        window.location.href="${basePath}/action/adminUserAction!findPeopleAll.do";
+        window.location.href="${pageContext.request.contextPath}/action/adminUserAction!findPeopleAll.do";
     });
     $("#admin-seller").click(function(){
-        window.location.href="${basePath}/action/adminUserAction!findStoreAll.do";
+        window.location.href="${pageContext.request.contextPath}/action/adminUserAction!findStoreAll.do";
     });
     $("#table_people").find(".del_btn").click(function(){
         alert("del_btn");
         var people_id=$(this).parent("td").siblings(".people_id").text();
         alert(people_id);
-        window.location.href="${basePath}/action/adminUserAction!deletePeople.do?peopleId="+people_id;
+        window.location.href="${pageContext.request.contextPath}/action/adminUserAction!deletePeople.do?peopleId="+people_id;
     });
     $("#table_people").find(".upd_btn").click(function(){
         alert("upd_btn");
         var people_id=$(this).parent("td").siblings(".people_id").text();
         alert(people_id);
-        window.location.href="${basePath}/action/adminUserAction!updatePeople.do?peopleId="+people_id
+        window.location.href="${pageContext.request.contextPath}/action/adminUserAction!updatePeople.do?peopleId="+people_id
     });
     $("#table_store").find(".del_btn").click(function(){
         alert("del_btn");
         var store_id=$(this).parent("td").siblings(".store_id").text();
         alert(store_id);
-        window.location.href="${basePath}/action/adminUserAction!deleteStore.do?storeId="+store_id;
+        window.location.href="${pageContext.request.contextPath}}/action/adminUserAction!deleteStore.do?storeId="+store_id;
     });
     $("#table_store").find(".upd_btn").click(function(){
         alert("upd_btn");
         var store_id=$(this).parent("td").siblings(".store_id").text();
         alert(store_id);
-        window.location.href="${basePath}/action/adminUserAction!updateStore.do?storeId="+store_id;
+        window.location.href="${pageContext.request.contextPath}/action/adminUserAction!updateStore.do?storeId="+store_id;
     });
 </script>
 

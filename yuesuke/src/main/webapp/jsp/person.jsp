@@ -1,23 +1,16 @@
 ﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--&lt;%&ndash;--%>
-<%--Created by IntelliJ IDEA.--%>
-<%--User: lionk--%>
-<%--Date: 2018/1/29--%>
-<%--Time: 17:33--%>
-<%--To change this template use File | Settings | File Templates.--%>
-<%--&ndash;%&gt;--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="common.jsp" %>
-<link rel="stylesheet" href="css/person_css.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/person_css.css">
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>个人信息</title>
-    <script src="${basePath}../js/jquery-1.7.2.min.js"></script>
-    <script src="${basePath}../js/jquery-1.7.2.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="${basePath}../css/person_css.css">
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/person_css.css">
     <meta name="referrer" content="always">
 </head>
 <jsp:include page="head_page.jsp"></jsp:include>

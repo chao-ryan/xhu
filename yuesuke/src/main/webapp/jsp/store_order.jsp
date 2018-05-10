@@ -1,20 +1,13 @@
-<%@ page import="domain.OrderDetail" %>
+<%@ page import="com.domain.OrderDetail" %>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Roger_yu
-  Date: 2018/3/6
-  Time: 15:21
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>订单详情页面</title>
-    <script src="${basePath}../js/jquery-1.7.2.min.js"></script>
-    <script src="${basePath}../js/jquery-1.7.2.js"></script>
-    <link rel="stylesheet" href="${basePath}../css/store_order_css.css">
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/store_order_css.css">
 </head>
 <body>
 <jsp:include page="head_page.jsp" flush="true"/>
@@ -149,11 +142,11 @@
                 storeId:s,
                 storeId1:b
             },
-            url:"${basePath}/orderDetailAction!storeDelivery.do?storeId="+s,
+            url:"${pageContext.request.contextPath}/orderDetailAction!storeDelivery.do?storeId="+s,
             //                contentType:"text",
             success:function (x) {
                 alert("发货成功！！！");
-                window.location.replace("${basePath}/orderDetailAction!storeOrder.do?storeId="+b);
+                window.location.replace("${pageContext.request.contextPath}/orderDetailAction!storeOrder.do?storeId="+b);
             },
             error:function(XMLResponse){
                 alert("发货失败！！！")

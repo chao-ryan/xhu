@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <title>信息管理</title>
-    <link href="../css/setting.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/setting.css" rel="stylesheet">
     <!--<script type="text/javascript" src="../js/setting.js"></script>-->
-    <script src="../js/jquery.js" charset="utf-8"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.js" charset="utf-8"></script>
 </head>
 <body>
 <div class="beg-login-box">
@@ -19,7 +19,7 @@
         <div class="logo-window-box">
             <div class="logo-box">
                 <a class="site-url" href="##">
-                    <img class="site-logo" src="../image/logo-site.png">
+                    <img class="site-logo" src="${pageContext.request.contextPath}/img/logo-site.png">
                 </a>
             </div>
             <div class="to-mainpage-box">
@@ -342,11 +342,11 @@
                             </td>
                             <td class="classinfo-option">
                                 <a title="编辑" href="javascript:void(0);" onclick="update()" id="update_class">
-                                    <img src="../image/look.png" class="option-img"/>
+                                    <img src="${pageContext.request.contextPath}/img/look.png" class="option-img"/>
                                 </a>
                                 &emsp;|&emsp;
                                 <a title="删除" href="javascript:void(0);" id="delete_classinfo">
-                                    <img src="../image/delete.jpg" class="option-img"/>
+                                    <img src="${pageContext.request.contextPath}/img/delete.jpg" class="option-img"/>
                                 </a>
                             </td>
                         </tr>
@@ -528,11 +528,11 @@
                             </td>
                             <td class="classinfo-option">
                                 <a title="编辑" href="javascript:void(0);" onclick="updatecollege()" id="update_college">
-                                    <img src="../image/look.png" class="option-img"/>
+                                    <img src="${pageContext.request.contextPath}/img/look.png" class="option-img"/>
                                 </a>
                                 &emsp;|&emsp;
                                 <a title="删除" href="javascript:void(0);" id="delete_college">
-                                    <img src="../image/delete.jpg" class="option-img"/>
+                                    <img src="${pageContext.request.contextPath}/img/delete.jpg" class="option-img"/>
                                 </a>
                             </td>
                         </tr>
@@ -760,11 +760,11 @@
                             </td>
                             <td class="student-option">
                                 <a title="编辑" href="javascript:void(0);" onclick="update_student()" id="update_student">
-                                    <img src="../image/look.png" class="option-img"/>
+                                    <img src="${pageContext.request.contextPath}/img/look.png" class="option-img"/>
                                 </a>
                                 <!--&emsp;|&emsp;-->|
                                 <a title="删除" href="javascript:void(0);" id="delete_student">
-                                    <img src="../image/delete.jpg" class="option-img"/>
+                                    <img src="${pageContext.request.contextPath}/img/delete.jpg" class="option-img"/>
                                 </a>
                             </td>
                         </tr>
@@ -1082,11 +1082,11 @@
                             </td>
                             <td class="room-option">
                                 <a title="编辑" href="javascript:void(0);" onclick="updateroom()" id="update_room">
-                                    <img src="../image/look.png" class="option-img"/>
+                                    <img src="${pageContext.request.contextPath}/img/look.png" class="option-img"/>
                                 </a>
                                 &emsp;|&emsp;
                                 <a title="删除" href="javascript:void(0);" id="delete_room">
-                                    <img src="../image/delete.jpg" class="option-img"/>
+                                    <img src="${pageContext.request.contextPath}/img/delete.jpg" class="option-img"/>
                                 </a>
                             </td>
                         </tr>

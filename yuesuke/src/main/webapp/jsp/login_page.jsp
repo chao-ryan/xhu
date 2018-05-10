@@ -1,20 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: zuorui
-  Date: 2018/1/29
-  Time: 16:16
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="common.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>登录界面</title>
-    <script src="${basePath}../js/jquery-1.7.2.min.js"></script>
-    <script src="${basePath}../js/jquery-1.7.2.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="${basePath}../css/login_page_css.css">
+    <title>欢迎登录</title>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login_page_css.css">
 </head>
 <body>
 
@@ -22,9 +15,9 @@
 
 <div class="ground">
     <div class="div">
-        <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;星光购物商城</span>
+        <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YS跳蚤市场</span>
 
-        <form id="login" name="Login" action="/servlet/loginPage.htm" method="post" class="form">
+        <form id="login" name="Login" action="${pageContext.request.contextPath}/servlet/loginPage.htm" method="post" class="form">
             <table border="0" class="table">
                 <tr>
                     <td>账号：</td>
@@ -37,9 +30,7 @@
                 </tr>
             </table>
             <br>&nbsp;&nbsp;
-            <%--<button type="button" id="login_button" >登录</button>--%>
-            <%--<input formaction="../registration_page.jsp" type="submit1" value="注册"/>--%>
-            <input type="button" onclick='location.href=("../registration_page.jsp")' value="注册"/>
+            <input type="button" onclick='location.href=("${pageContext.request.contextPath}/jsp/registration_page.jsp")' value="注册"/>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <input type="button" name="login" value="登录" id="submit" onclick="submit"/>
         </form>
@@ -77,7 +68,7 @@
                 //                contentType:"text",
                 success: function (x) {
                     alert("登陆成功！！！");
-                    window.location.replace("/mainAction!main.do");
+                    window.location.replace("${pageContext.request.contextPath}/mainAction!main.do");
                 },
                 error: function (XMLResponse) {
                     alert("登陆失败！用户名或者密码错误！或者该账户未注册！")

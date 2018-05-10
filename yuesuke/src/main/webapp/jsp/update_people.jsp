@@ -1,19 +1,11 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2018/2/28 0028
-  Time: 18:11
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title></title>
-    <script src="${basePath}../js/jquery-1.7.2.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.7.2.js" type="text/javascript"></script>
 </head>
 <body>
 <jsp:include page="head_page.jsp"/>
@@ -76,37 +68,37 @@
 </div>
 
 
-<%--<script type="text/javascript">--%>
+<script type="text/javascript">
 
-    <%--$("#upd_people_btn").click(function(){--%>
-        <%--var id=$(".people_id").val();--%>
-        <%--var name=$(".people_name").val();--%>
-        <%--var cardId=$(".people_card_id").val();--%>
-        <%--var sex=$(".people_sex").val();--%>
-        <%--var age=$(".people_age").val();--%>
-        <%--var money=$(".people_money").val();--%>
-        <%--var address=$(".people_address").val();--%>
-        <%--var username=$(".people_user_name").val();--%>
-        <%--var password=$(".people_password").val();--%>
-        <%--alert(id+" "+name);--%>
-        <%--$.ajax({--%>
-            <%--type:'POST',--%>
-            <%--url:"${pageContext.request.contextPath}/test/updatePeople.htm",--%>
-<%--//            data:{peopleId:id,name:name,cardId:cardId,sex:sex,age:age},--%>
-<%--//            data:{peopleId:id},--%>
-            <%--data:{peopleId:id,name:name,cardId:cardId,sex:sex,--%>
-                <%--age:age,money:money,address:address,username:username,--%>
-                <%--password:password},--%>
-            <%--dataType:'json',--%>
-            <%--success:function(){--%>
-                <%--window.location.href="${pageContext.request.contextPath}/administrator_page.jsp";--%>
-            <%--},--%>
-            <%--error:function(){--%>
-                <%--alert("修改失败");--%>
-            <%--}--%>
-        <%--});--%>
-    <%--});--%>
-<%--</script>--%>
+    $("#upd_people_btn").click(function(){
+        var id=$(".people_id").val();
+        var name=$(".people_name").val();
+        var cardId=$(".people_card_id").val();
+        var sex=$(".people_sex").val();
+        var age=$(".people_age").val();
+        var money=$(".people_money").val();
+        var address=$(".people_address").val();
+        var username=$(".people_user_name").val();
+        var password=$(".people_password").val();
+        alert(id+" "+name);
+        $.ajax({
+            type:'POST',
+            url:"${pageContext.request.contextPath}/test/updatePeople.htm",
+            data:{peopleId:id,name:name,cardId:cardId,sex:sex,age:age},
+            data:{peopleId:id},
+            data:{peopleId:id,name:name,cardId:cardId,sex:sex,
+                age:age,money:money,address:address,username:username,
+                password:password},
+            dataType:'json',
+            success:function(){
+                window.location.href="administrator_page.jsp";
+            },
+            error:function(){
+                alert("修改失败");
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

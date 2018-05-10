@@ -1,17 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2018/1/29 0029
-  Time: 18:08
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="common.jsp"%>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>支付页面</title>
-    <link href="css/order_page_css.css" rel="stylesheet" type="text/css"/>
+    <link href="${pageContext.request.contextPath}/css/order_page_css.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.js"/>
 </head>
 <body>
@@ -27,7 +20,7 @@
             <th><button id="pay-self">自己支付</button></th>
             <th>
                 <button id="pay-other">
-                    <a href="http://localhost:8080/pay/pay.htm?peopleId=1&&orderNum=${orderNum}">
+                    <a href="${pageContext.request.contextPath}/pay/pay.htm?peopleId=1&&orderNum=${orderNum}">
                         替他人支付
                     </a>
                 </button>
