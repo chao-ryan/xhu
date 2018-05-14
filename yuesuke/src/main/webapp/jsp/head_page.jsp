@@ -10,18 +10,18 @@
 <div id="K_SiteNav" class="site-nav">
     <div id="K_SiteNavBd" class="site-nav-bd">
         <ul class="site-nav-bd-one">
-            <li><a href="${pageContext.request.contextPath}/login_page.jsp" target="_top">登录/注册</a></li>
-            <li><a href="${pageContext.request.contextPath}/person.jsp" target="_blank">用户：${person.name}</a></li>
+            <li><a href="${pageContext.request.contextPath}/jsp/login_page.jsp" target="_top">登录/注册</a></li>
+            <li><a href="${pageContext.request.contextPath}/jsp/person.jsp" target="_blank">用户：${person.name}</a></li>
             <li>
                 <a href="${pageContext.request.contextPath}/action/userOrderAction!findOrderAll.do?peopleId=${person.id}"
                    target="_blank">查看订单</a></li>
-            <li><a href="${pageContext.request.contextPath}storeAction!storeHome.do?peopleId=${person.id}" target="_blank">卖家中心</a></li>
-            <li><a href="/mainAction!main.do" target="_blank">商品分类</a></li>
+            <li><a href="${pageContext.request.contextPath}/action/storeAction!storeHome.do?peopleId=${person.id}" target="_blank">卖家中心</a></li>
+            <li><a href="${pageContext.request.contextPath}/action/mainAction!main.do" target="_blank">商品分类</a></li>
             <li><a href="javascript:void(0)"
                onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
                 商品分类</a></li>
-            <li><a href="${pageContext.request.contextPath}/mainAction!cart.do?op=list" target="_blank">购物车</a></li>
-            <li><a href="${pageContext.request.contextPath}/mainAction!main.do" target="_blank">市场首页</a></li>
+            <li><a href="${pageContext.request.contextPath}/action/mainAction!cart.do?op=list" target="_blank">购物车</a></li>
+            <li><a href="${pageContext.request.contextPath}/action/mainAction!main.do" target="_blank">市场首页</a></li>
         </ul>
     </div>
     <div class="site-nav-two">
@@ -36,10 +36,10 @@
 <%--分类悬浮框--%>
 <div id="light" class="white_content">
     <ul class="ul-sort">
-        <li><p><a href="${pageContext.request.contextPath}/mainAction!classify.do?type=0">电脑</a></p></li>
-        <li><p><a href="${pageContext.request.contextPath}/mainAction!classify.do?type=1">清洁用品</a></p></li>
-        <li><p><a href="${pageContext.request.contextPath}/mainAction!classify.do?type=3">服装</a></p></li>
-        <li><p><a href="${pageContext.request.contextPath}/mainAction!classify.do?type=2">运动器材</a></p></li>
+        <li><p><a href="${pageContext.request.contextPath}/action/mainAction!classify.do?type=0">电脑</a></p></li>
+        <li><p><a href="${pageContext.request.contextPath}/action/mainAction!classify.do?type=1">清洁用品</a></p></li>
+        <li><p><a href="${pageContext.request.contextPath}/action/mainAction!classify.do?type=3">服装</a></p></li>
+        <li><p><a href="${pageContext.request.contextPath}/action/mainAction!classify.do?type=2">运动器材</a></p></li>
     </ul>
     <p class="close"><a href="javascript:void(0)"
                         onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">点击关闭本窗口</a></p>
@@ -62,7 +62,7 @@
         </div>
         <!--搜索框主体-->
         <div class="search-pannel">
-            <form action="${pageContext.request.contextPath}/mainAction!search.do" method="post" target="_blank">
+            <form action="${pageContext.request.contextPath}/action/mainAction!search.do" method="post" target="_blank">
                 <div class="search-button">
                     <button class="btn-search" id="submit">
                         <li style="color: #cccccc">搜索</li>

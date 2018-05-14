@@ -62,11 +62,11 @@
         alert(id+" "+storeName);
         $.ajax({
             type:'POST',
-            url:"${pageContext.request.contextPath}/test/updateStore.htm",
+            url:"${pageContext.request.contextPath}/action/updateStoreAction!updateStore.do",
             data:{storeId:storeId,storeNum:storeNum,storeName:storeName,credit:credit,peopleId:peopleId},
             dataType:'json',
             success:function(){
-                window.location.href="administrator_page.jsp";
+                window.location.href="${pageContext.request.contextPath}/jsp/administrator_page.jsp";
             },
             error:function(){
                 alert("修改失败");
@@ -82,7 +82,7 @@ alert("开始");
 $("#admin-user").click(function(){
 $.ajax({
 type:'POST',
-url:'${pageContext.request.contextPath}/test/adminUser.htm',
+url:'${pageContext.request.contextPath}/action/adminUserAction!findPeopleAll.do',
 data:{command:"findPeople"},
 dataType:"text",
 success:function(data){

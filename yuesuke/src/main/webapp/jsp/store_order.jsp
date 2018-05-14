@@ -142,11 +142,11 @@
                 storeId:s,
                 storeId1:b
             },
-            url:"${pageContext.request.contextPath}/orderDetailAction!storeDelivery.do?storeId="+s,
+            url:"${pageContext.request.contextPath}/action/orderDetailAction!storeDelivery.do?storeId="+s,
             //                contentType:"text",
             success:function (x) {
                 alert("发货成功！！！");
-                window.location.replace("${pageContext.request.contextPath}/orderDetailAction!storeOrder.do?storeId="+b);
+                window.location.replace("${pageContext.request.contextPath}/action/orderDetailAction!storeOrder.do?storeId="+b);
             },
             error:function(XMLResponse){
                 alert("发货失败！！！")

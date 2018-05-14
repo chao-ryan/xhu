@@ -1,11 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--&lt;%&ndash;--%>
-<%--Created by IntelliJ IDEA.--%>
-<%--User: lionk--%>
-<%--Date: 2018/1/29--%>
-<%--Time: 17:33--%>
-<%--To change this template use File | Settings | File Templates.--%>
-<%--&ndash;%&gt;--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="common.jsp" %>
 <!DOCTYPE html>
@@ -28,7 +21,7 @@
     <ul class="goods-display">
         <%--//循环输出一个商品框，数据由数据库查询包含名字.价格.库存--%>
         <c:forEach items="${mainList}" var="entry">
-            <form id="cartGoods" name="cartGoods" action="${pageContext.request.contextPath}/mainAction!cart.do?op=add" target="posthere" method="post">
+            <form id="cartGoods" name="cartGoods" action="${pageContext.request.contextPath}/action/mainAction!cart.do?op=add" target="posthere" method="post">
                 <ui class="view">
                     <div class="imgLink">
                         <img src="${pageContext.request.contextPath}/img/beauty.jpg"/></div>
@@ -67,7 +60,7 @@
         var goodsCart = "商品:" + nameStr + "\n添加到购物车成功!";
         alert(goodsCart);
         //将数据传到另一个页面
-        var url = 'mainAction!cart?op=add';
+        var url = '${pageContext.request.contextPath}/action/mainAction!cart.do?op=add';
         var data = {
             'nameStr': entry.name,
             'priceStr': entry.price,
@@ -87,7 +80,7 @@
 
 <div class="wit">
     <div class="limit">
-        <form class="form" name="f1" method="POST" action="${pageContext.request.contextPath}/mainAction!limit.do?present=${present}">
+        <form class="form" name="f1" method="POST" action="${pageContext.request.contextPath}/action/mainAction!limit.do?present=${present}">
             <table border="0" align="center" class="tb">
                 <tr>
                     <td><span class="page-size">当前第 ${present} 页       共 ${total} 页</span>></td>

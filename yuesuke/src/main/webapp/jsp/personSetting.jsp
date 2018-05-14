@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,7 @@
             <div class="to-mainpage-box">
                 <span class="to-mainpage-button"><a href="personSetting.jsp" class="step-button">信息管理</a>
                     <<
-                    <a href="mainPage.jsp" class="step-button">返回首页</a></span>
+                    <a href="${pageContext.request.contextPath}/jsp/mainPage.jsp" class="step-button">返回首页</a></span>
             </div>
         </div>
     </div>
@@ -46,32 +47,32 @@
                 <div class="column-list-box">
                     <ul class="column-list-item-person">
                         <li class="column-list-item-1">
-                            <a href="#" onclick="show(1)" name="by" id="b1">
+                            <a href="${pageContext.request.contextPath}/action/personSetting!person.do" onclick="show(1)" name="by" id="b1">
                                 <span class="column-name">个人信息</span>
                             </a>
                         </li>
                         <li class="column-list-item-2">
-                            <a  href="##" title="密码修改" class="column-item-link" name="by" id="b2" onclick="show(2)">
+                            <a  href="${pageContext.request.contextPath}/jsp/passwordUpdatePage.jsp" title="密码修改" class="column-item-link" name="by" id="b2" onclick="show(2)">
                                 <span class="column-name">密码修改</span>
                             </a>
                         </li>
                         <li class="column-list-item-3">
-                            <a  href="###" title="班级信息" class="column-item-link" name="by" id="b3" onclick="show(3)">
+                            <a  href="${pageContext.request.contextPath}/action/classInfo!classInfoShow.do" title="班级信息" class="column-item-link" name="by" id="b3" onclick="show(3)">
                                 <span class="column-name">班级信息</span>
                             </a>
                         </li>
                         <li class="column-list-item-4">
-                            <a  href="####" title="学院信息" class="column-item-link" name="by" id="b4" onclick="show(4)">
+                            <a  href="${pageContext.request.contextPath}/action/college!collegeShow.do" title="学院信息" class="column-item-link" name="by" id="b4" onclick="show(4)">
                                 <span class="column-name">学院信息</span>
                             </a>
                         </li>
                         <li class="column-list-item-5">
-                            <a  href="#####" title="学生信息" class="column-item-link" name="by" id="b5" onclick="show(5)">
+                            <a  href="${pageContext.request.contextPath}/action/student!stuShow.do" title="学生信息" class="column-item-link" name="by" id="b5" onclick="show(5)">
                                 <span class="column-name">学生信息</span>
                             </a>
                         </li>
                         <li class="column-list-item-6">
-                            <a href="######" title="宿舍信息" class="column-item-link" name="by" id="b6" onclick="show(6)">
+                            <a href="${pageContext.request.contextPath}/action/room!roomShow.do" title="宿舍信息" class="column-item-link" name="by" id="b6" onclick="show(6)">
                                 <span class="column-name">宿舍信息</span>
                             </a>
                         </li>
@@ -82,7 +83,7 @@
         <!-- 内容显示 -->
         <div class="content-box" id="content_box">
             <!-- 欢迎信息 -->
-            <div class="content-wecome-box" id="d0" name="dv" style="display: none">
+            <div class="content-wecome-box" id="d0" name="dv" style="display: block">
                 <h2>欢迎<span> </span><span id="student-name">邓超</span><span> </span>童鞋来到西华大学！</h2>
             </div>
             <!-- 个人信息content -->
@@ -90,54 +91,54 @@
                 <div class="per-form-box">
                     <label class="per-name" for="L-per_name">姓 名：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_name" value="张三" readonly="readonly" type="text"/>
+                        <input id="L-per_name" value="${personStudent.getName()}" readonly="readonly" type="text"/>
                     </div>
                     <br/>
                     <label class="per-sex" for="L-per_sex">性 别：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_sex" value="男" readonly="readonly" type="text"/>
+                        <input id="L-per_sex" value="${personStudent.getSex()}" readonly="readonly" type="text"/>
                     </div><br/>
                     <label class="per-enthnic" for="L-per_enthnic">民 族：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_enthnic" value="汉族" readonly="readonly" type="text"/>
+                        <input id="L-per_enthnic" value="${personStudent.getEnthnic()}" readonly="readonly" type="text"/>
                     </div><br/>
-                    <label class="per-age" for="L-per_age">年 龄：</label>
+                    <label class="per-age" for="L-per_age">出生年月：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_age" value="22" readonly="readonly" type="text"/>
+                        <input id="L-per_age" value="${personStudent.getBirthday()}" readonly="readonly" type="text"/>
                     </div><br/>
                     <label class="per-origin" for="L-per_origin">生源地：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_origin" value="四川南充" readonly="readonly" type="text"/>
+                        <input id="L-per_origin" value="${personStudent.getOrigin()}" readonly="readonly" type="text"/>
                     </div><br/>
                     <label class="per-phone" for="L-per_phone">手机号：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_phone" value="13568921658" readonly="readonly" type="text"/>
+                        <input id="L-per_phone" value="${personStudent.getPhone()}" readonly="readonly" type="text"/>
                     </div>
                     <br/>
                     <label class="per-id_number" for="L-per_id_number">身份证号：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_id_number" value="514648199505258672" readonly="readonly" type="text"/>
+                        <input id="L-per_id_number" value="${personStudent.getIdNumber()}" readonly="readonly" type="text"/>
                     </div>
                     <br/>
                     <label class="per-grade" for="L-per_grade">高考成绩：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_grade" value="560" readonly="readonly" type="text"/>
+                        <input id="L-per_grade" value="${personStudent.getAchievement()}" readonly="readonly" type="text"/>
                     </div><br/>
                     <label class="per-father" for="L-per_father">父亲姓名：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_father" value="张鼎" readonly="readonly" type="text"/>
+                        <input id="L-per_father" value="${personStudent.getFatherName()}" readonly="readonly" type="text"/>
                     </div><br/>
                     <label class="per-father_phone" for="L-per_father_phone">父亲联系方式：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_father_phone" value="13789652288" readonly="readonly" type="text"/>
+                        <input id="L-per_father_phone" value="${personStudent.getFatherPhone()}" readonly="readonly" type="text"/>
                     </div><br/>
                     <label class="per-mother" for="L-per_mother">母亲姓名：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_mother" value="李秀颖" readonly="readonly" type="text"/>
+                        <input id="L-per_mother" value="${personStudent.getMotherName()}" readonly="readonly" type="text"/>
                     </div><br/>
                     <label class="per-mother_phone" for="L-per_mother_phone">母亲联系方式：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_mother_phone" value="15526855354" readonly="readonly" type="text"/>
+                        <input id="L-per_mother_phone" value="${personStudent.getMotherPhone()}" readonly="readonly" type="text"/>
                     </div><br/>
                     <div class="content-per-button-box">
                         <div class="content-per-box-update">
@@ -163,7 +164,7 @@
                         <form>
                             <label class="stu-name" for="L-per_name_update">姓名：</label>
                             <div class="stu-pop-up-body-input-box">
-                                <input type="text" id="L-per_name_update" value="张三" readonly="readonly" name="title" autocomplete="off" placeholder="此项为必填项"/>
+                                <input type="text" id="L-per_name_update" value="${studentUpdate.getName()}" readonly="readonly" name="L-per_name_update" autocomplete="off" placeholder="此项为必填项"/>
                             </div><span class="warning-span">**</span><br/>
                             <label class="stu-sex" for="L-per_sex_update">性 别：</label>
                             <div class="stu-pop-up-body-input-box">
@@ -185,55 +186,55 @@
                                     <select name="stu_enthnic" lay-verify="required" id="L-per_enthnic_update">
                                         <option></option>
                                         <optgroup label="民族">
-                                            <option value="0">汉族</option>
-                                            <option value="1">藏族</option>
-                                            <option value="2">苗族</option>
-                                            <option value="3">羌族</option>
-                                            <option value="4">维吾尔族</option>
+                                            <option value="汉族">汉族</option>
+                                            <option value="藏族">藏族</option>
+                                            <option value="苗族">苗族</option>
+                                            <option value="羌族">羌族</option>
+                                            <option value="维吾尔族">维吾尔族</option>
                                         </optgroup>
                                     </select>
                                 </div>
                             </div>
                             <span class="warning-span">**</span>
                             <br/>
-                            <label class="stu-birth" for="L-per_age_update">年 龄：</label>
+                            <label class="stu-birth" for="L-per_age_update">出生年月：</label>
                             <div class="stu-pop-up-body-input-box">
-                                <input type="text" id="L-per_age_update" value="22" name="title" autocomplete="off"/>
+                                <input type="text" id="L-per_age_update" value="${birthDay}" name="L-per_age_update" autocomplete="off"/>
                             </div><br/>
                             <label class="stu-rigin" for="L-per_origin_update">生源地：</label>
                             <div class="stu-pop-up-body-input-box">
-                                <input type="text" id="L-per_origin_update" value="四川南充" name="title" autocomplete="off" placeholder="此项为必填项"/>
+                                <input type="text" id="L-per_origin_update" value="${studentUpdate.getOrigin()}" name="L-per_origin_update" autocomplete="off" placeholder="此项为必填项"/>
                             </div><span class="warning-span">**</span><br/>
                             <label class="stu-phone" for="L-per_phone_update">手机号：</label>
                             <div class="stu-pop-up-body-input-box">
-                                <input type="text" id="L-per_phone_update" value="13568921658" name="title" autocomplete="off" placeholder="必填"/>
+                                <input type="text" id="L-per_phone_update" value="${studentUpdate.getPhone()}" name="L-per_phone_update" autocomplete="off" placeholder="必填"/>
                             </div><span class="warning-span">**</span><br/>
                             <label class="stu-id_number" for="L-per_id_number_update">身份证号：</label>
                             <div class="stu-pop-up-body-input-box">
-                                <input type="text" id="L-per_id_number_update" value="514648199505258672" readonly="readonly" name="title" autocomplete="off" placeholder="必填"/>
+                                <input type="text" id="L-per_id_number_update" value="${studentUpdate.getIdNumber()}" readonly="readonly" name="L-per_id_number_update" autocomplete="off" placeholder="必填"/>
                             </div><span class="warning-span">**</span><br/>
                             <label class="stu-university" for="L-per_grade_update">高考成绩：</label>
                             <div class="stu-pop-up-body-input-box">
-                                <input type="text" id="L-per_grade_update" value="560" readonly="readonly" name="title" autocomplete="off" placeholder="必填"/>
+                                <input type="text" id="L-per_grade_update" value="${studentUpdate.getAchievement()}" readonly="readonly" name="L-per_grade_update" autocomplete="off" placeholder="必填"/>
                             </div><span class="warning-span">**</span><br/>
                             <label class="stu-father_name" for="L-per_father_update">父亲姓名：</label>
                             <div class="stu-pop-up-body-input-box">
-                                <input type="text" id="L-per_father_update" value="张鼎" name="title" autocomplete="off"/>
+                                <input type="text" id="L-per_father_update" value="${studentUpdate.getFatherName()}" name="L-per_father_update" autocomplete="off"/>
                             </div><br/>
                             <label class="stu-father_phone" for="L-per_father_phone_update">父亲联系方式：</label>
                             <div class="stu-pop-up-body-input-box">
-                                <input type="text" id="L-per_father_phone_update" value="13789652288" name="title" autocomplete="off"/>
+                                <input type="text" id="L-per_father_phone_update" value="${studentUpdate.getFatherPhone()}" name="L-per_father_phone_update" autocomplete="off"/>
                             </div><br/>
                             <label class="stu-mother_name" for="L-per_mother_update">母亲姓名：</label>
                             <div class="stu-pop-up-body-input-box">
-                                <input type="text" id="L-per_mother_update" value="李秀颖" name="title" autocomplete="off"/>
+                                <input type="text" id="L-per_mother_update" value="${studentUpdate.getMotherName()}" name="L-per_mother_update" autocomplete="off"/>
                             </div><br/>
                             <label class="stu-mother_phone" for="L-per_mother_phone_update">母亲联系方式：</label>
                             <div class="stu-pop-up-body-input-box">
-                                <input type="text" id="L-per_mother_phone_update" value="15526855354" name="title" autocomplete="off"/>
+                                <input type="text" id="L-per_mother_phone_update" value="${studentUpdate.getMotherPhone()}" name="L-per_mother_phone_update" autocomplete="off"/>
                             </div><br/>
                             <div class="content-per-button-box">
-                                <button type="submit" class="update-button" id="update_per_sure" value="确认修改">
+                                <button type="submit" class="update-button" id="update_per_sure" onclick="updatePer()" value="确认修改">
                                     <span>确认修改</span>
                                 </button>
                             </div>
@@ -244,19 +245,19 @@
             <!-- 密码修改content -->
             <div class="content-update-box" id="d2" name="dv" style="display: none">
                 <div class="content-update-password-box">
-                    <form method="post" class="content-update-password-form">
+                    <form method="post" class="content-update-password-form" action="${pageContext.request.contextPath}/action/passwordUpdate!updatePwd.do">
                         <div class="content-update-box-1">
-                            <label>用户名：</label><input type="text" id="update-username" value="" placeholder="必填" required="required"/><span class="char">*</span><span>请输入正确的用户名(不超过18个字符)</span><br/>
+                            <label>用户名：</label><input type="text" id="update_username" name="update_username" value="" placeholder="必填" required="required"/><span class="char">*</span><span>请输入正确的用户名(不超过18个字符)</span><br/>
                         </div>
                         <div class="content-update-box-1">
-                            <label>原密码：</label><input type="text" id="update-oldpassword" value="" placeholder="******" required="required"/><span class="char">*</span><span>请输入原密码</span><br/>
+                            <label>原密码：</label><input type="text" id="update_oldpassword" name="update_oldpassword" value="" placeholder="******" required="required"/><span class="char">*</span><span>请输入原密码</span><br/>
                         </div>
                         <div class="content-update-box-1">
-                            <label>新密码：</label><input type="text" id="update-newpassword" value="" placeholder="******" required="required"/><span class="char">*</span><span>请输入新密码(6~12位)</span><br/>
+                            <label>新密码：</label><input type="text" id="update_newpassword" name="update_newpassword" value="" placeholder="******" required="required"/><span class="char">*</span><span>请输入新密码(6~12位)</span><br/>
                         </div>
                         <div class="content-update-button-box">
                             <div class="content-update-submit-button-box">
-                                <button type="submit" value="">确认</button>
+                                <button type="submit" value="" onclick="sureUpPwd()">确认</button>
                             </div>
                         </div>
                     </form>
@@ -267,10 +268,10 @@
                 <form class="content-classinfo-form" action="">
                     <div class="classinfo-search-box">
                         <div class="classinfo-name-box">
-                            <input type="text" name="classname" placeholder="班级名字" autocomplete="off" class="classinfo-name" id="class_name">
+                            <input type="text" placeholder="班级名字" autocomplete="off" class="classinfo-name" id="class_name">
                         </div>
                         <div class="classinfo-search-button-box">
-                            <button class="classinfo-search-button" lay-submit="" lay-filter="sreach" type="submit"><span>查找</span></button>
+                            <button class="classinfo-search-button" onclick="findClass()" lay-submit="" lay-filter="sreach" type="submit"><span>查找</span></button>
                         </div>
                     </div>
                 </form>
@@ -312,45 +313,50 @@
                             </th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <u onclick="unique()">
-                                    002
-                                </u>
-                            </td>
-                            <td>
-                                信息14-2
-                            </td>
-                            <td>
-                                电气与电子信息学院
-                            </td>
-                            <td>
-                                30
-                            </td>
-                            <td>
-                                杨成柳
-                            </td>
-                            <td>
-                                信息工程
-                            </td>
-                            <td>
-                                2014
-                            </td>
-                            <td>
+                        <c:forEach items="${relationList}" var="classRelation">
+                            <tbody>
+                            <tr>
+                                <td id="classInfo_classNumber">
+                                    <u onclick="unique()">
+                                        ${classRelation.getClassInfoId().getNumber()}
+                                    </u>
+                                </td>
+                                <td id="classInfo_className">
+                                    <a id="class_name_show" href="${pageContext.request.contextPath}/action/classInfo!classInfoShow.do?class_currnt=${relation.getClassInfoId().getName()}">
+                                        ${classRelation.getClassInfoId().getName()}
+                                    </a>
+                                </td>
+                                <td id="classInfo_collegeName">
+                                    ${classRelation.getCollegeId().getName()}
+                                </td>
+                                <td id="classInfo_stuNumber">
+                                    ${classRelation.getClassInfoId().getStudentsNumber()}
+                                </td>
+                                <td id="classInfo_teacherName">
+                                    ${classRelation.getClassInfoId().getTeachersId().getName()}
+                                </td>
+                                <td id="classInfo_major">
+                                    ${classRelation.getClassInfoId().getMajor()}
+                                </td>
+                                <td id="classInfo_year">
+                                    ${classRelation.getGrade()}
+                                </td>
+                                <td>
 
-                            </td>
-                            <td class="classinfo-option">
-                                <a title="编辑" href="javascript:void(0);" onclick="update()" id="update_class">
-                                    <img src="${pageContext.request.contextPath}/img/look.png" class="option-img"/>
-                                </a>
-                                &emsp;|&emsp;
-                                <a title="删除" href="javascript:void(0);" id="delete_classinfo">
-                                    <img src="${pageContext.request.contextPath}/img/delete.jpg" class="option-img"/>
-                                </a>
-                            </td>
-                        </tr>
-                        </tbody>
+                                </td>
+                                <td class="classinfo-option">
+                                    <a title="编辑" href="javascript:void(0);" onclick="update()" id="update_class">
+                                        <img src="${pageContext.request.contextPath}/img/look.png" class="option-img"/>
+                                    </a>
+                                    &emsp;|&emsp;
+                                    <a title="删除" href="javascript:void(0);" id="delete_classinfo">
+                                        <img src="${pageContext.request.contextPath}/img/delete.jpg" class="option-img"/>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </c:forEach>
+
                     </table>
                 </div>
             </div>
@@ -1358,6 +1364,16 @@
                 bodys[k].style.color="blue";
             }
         };
+    }
+//    AJAX
+    //班级信息-查找
+    function findClass(){
+        $.ajax({
+            type:"POST",
+            url:"${pageContext.request.contextPath}/action/classInfo!classInfoShow.do",
+            data:{class_name:$("#class_name").val()},
+            dataType:'json'
+        });
     }
 </script>
 </body>

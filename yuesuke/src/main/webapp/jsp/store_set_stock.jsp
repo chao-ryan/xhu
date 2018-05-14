@@ -82,10 +82,10 @@
             data:{
                 stockNum:stockNum
             },
-            url:"${pageContext.request.contextPath}/storeSetStockAction!storeSetStock.do",
+            url:"${pageContext.request.contextPath}/action/storeSetStockAction!storeSetStock.do",
             success:function (x) {
                 alert("进货成功！！！");
-                window.location.replace("${pageContext.request.contextPath}/storeSetStockAction!storeSetStock.do");
+                window.location.replace("${pageContext.request.contextPath}/action/storeSetStockAction!storeSetStock.do");
             },
             error:function(XMLResponse){
                 alert("发货失败！！！")

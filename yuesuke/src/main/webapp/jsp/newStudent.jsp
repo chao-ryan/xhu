@@ -22,7 +22,7 @@
             </div>
             <div class="to-mainpage-box">
                 <span class="to-mainpage-button">
-                    <a href="mainPage.jsp">
+                    <a href="${pageContext.request.contextPath}/jsp/mainPage.jsp">
                         首页<<
                     </a>
                 </span>
@@ -32,16 +32,19 @@
         <div class="selection-box">
             <ul>
                 <li class="main-level-1">
-                    <a class="xhu-info" href="mainPage.jsp" target="_self">学校简介</a>
+                    <a class="xhu-info" href="${pageContext.request.contextPath}/jsp/mainPage.jsp" target="_self">学校简介</a>
                 </li>
                 <li class="main-level-1">
-                    <a class="xhu-new-method" href="newStudent.jsp" target="_self">报道流程</a>
+                    <a class="xhu-new-method" href="${pageContext.request.contextPath}/jsp/newStudent.jsp" target="_self">报道流程</a>
                 </li>
                 <li class="main-level-1">
-                    <a class="xhu-login" href="login.jsp" target="_self">新生报道</a>
+                    <a class="xhu-login" href="${pageContext.request.contextPath}/jsp/login.jsp" target="_self">新生报道</a>
                 </li>
                 <li class="main-level-1">
-                    <a class="xhu-setting" href="personSetting.jsp" target="_self">信息管理</a>
+                    <a class="xhu-setting" href="${pageContext.request.contextPath}/jsp/login.jsp" target="_self">信息管理</a>
+                </li>
+                <li class="main-level-1">
+                    <a class="old-market" href="${pageContext.request.contextPath}/jsp/main_page.jsp" target="_self">跳蚤市场</a>
                 </li>
             </ul>
         </div>

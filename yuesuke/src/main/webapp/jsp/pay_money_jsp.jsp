@@ -20,7 +20,7 @@
             <th><button id="pay-self">自己支付</button></th>
             <th>
                 <button id="pay-other">
-                    <a href="${pageContext.request.contextPath}/pay/pay.htm?peopleId=1&&orderNum=${orderNum}">
+                    <a href="${pageContext.request.contextPath}/action/payMoneyAction!PayGoodsOrderShow.do?peopleId=1&&orderNum=${orderNum}">
                         替他人支付
                     </a>
                 </button>

@@ -23,16 +23,16 @@
                 </div>
             </div>
             <div class="store_home_delivery">
-                <a href="${pageContext.request.contextPath}/storeSetStockAction!selectStoreGoods.do?storeId=${stores[0].id}"><h4>我要进货</h4></a>
+                <a href="${pageContext.request.contextPath}/action/storeSetStockAction!selectStoreGoods.do?storeId=${stores[0].id}"><h4>我要进货</h4></a>
             </div>
             <div class="store_home_delivery">
-                <a href="${pageContext.request.contextPath}/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>我要发货</h4></a>
+                <a href="${pageContext.request.contextPath}/action//orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>我要发货</h4></a>
             </div>
             <div class="store_home_delivery">
-                <a href="${pageContext.request.contextPath}/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>历史订单</h4></a>
+                <a href="${pageContext.request.contextPath}/action/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>历史订单</h4></a>
             </div>
             <div class="store_home_delivery">
-                <a href="${pageContext.request.contextPath}/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>最近订单</h4></a>
+                <a href="${pageContext.request.contextPath}/action/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>最近订单</h4></a>
             </div>
         </div>
         <div class="store_home-right">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="store_home_goodInfo">
                         <div class="store_home_goodName">
-                        <a href="${pageContext.request.contextPath}/storeAction!offLoading.do?peopleId=${person.id}&&inventoryId=${mainPages.inventoryId}">
+                        <a href="${pageContext.request.contextPath}/action/storeAction!offLoading.do?peopleId=${person.id}&&inventoryId=${mainPages.inventoryId}">
                             <input type="button" value="商品下架" />
                             </a>
                             <a href="javascript:void(0)"

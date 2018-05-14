@@ -17,7 +17,7 @@
     <div class="div">
         <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YS跳蚤市场</span>
 
-        <form id="login" name="Login" action="${pageContext.request.contextPath}/servlet/loginPage.htm" method="post" class="form">
+        <form id="login" name="Login" action="${pageContext.request.contextPath}/action/loginPage!doPost.do" method="post" class="form">
             <table border="0" class="table">
                 <tr>
                     <td>账号：</td>
@@ -64,7 +64,7 @@
                 data: {
                     username: username, password: password
                 },
-                url: "${pageContext.request.contextPath}/servlet/loginPage.htm",
+                url: "${pageContext.request.contextPath}/action/loginPage!doPost.do",
                 //                contentType:"text",
                 success: function (x) {
                     alert("登陆成功！！！");

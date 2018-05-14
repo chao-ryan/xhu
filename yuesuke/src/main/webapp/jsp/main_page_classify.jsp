@@ -25,7 +25,7 @@
     <ul class="goods-display">
         <%--//循环输出一个商品框，数据由数据库查询包含名字.价格.库存--%>
         <c:forEach items="${mainList}" var="entry">
-            <form id="cratGoods" name="cratGoods" action="${pageContext.request.contextPath}/mainAction!cart.do?op=add" target="posthere" method="post">
+            <form id="cratGoods" name="cratGoods" action="${pageContext.request.contextPath}/action/mainAction!cart.do?op=add" target="posthere" method="post">
                 <ui class="view">
                     <div class="imgLink">
                         <img src="${pageContext.request.contextPath}/img/beauty.jpg"/></div>
@@ -64,7 +64,7 @@
         var goodsCart = "商品:" + nameStr + "\n添加到购物车成功!";
         alert(goodsCart);
         //将数据传到另一个页面
-        var url = '${pageContext.request.contextPath}/mainAction!cart.do?op=add';
+        var url = '${pageContext.request.contextPath}/action/mainAction!cart.do?op=add';
         var data = {
             'nameStr': entry.name,
             'priceStr': entry.price,
@@ -84,14 +84,14 @@
 
 <div class="wit">
     <div class="limit">
-        <form class="form" name="f1" method="POST" action="${pageContext.request.contextPath}/mainAction!classifyLimit.do?present=${present}&&type=${type}">
+        <form class="form" name="f1" method="POST" action="${pageContext.request.contextPath}/action/mainAction!classifyLimit.do?present=${present}&&type=${type}">
             <table border="0" align="center" class="tb">
                 <tr>
                     <td><span class="page-size">当前第 ${present} 页       共 ${total} 页</span>></td>
-                    <td><a href="${pageContext.request.contextPath}/mainAction!classifyLimit.do?page=start&&present=${present}&&type=${type}">首页</a></td>
-                    <td><a href="${pageContext.request.contextPath}/mainAction!classifyLimit.do?page=last&&present=${present}&&type=${type}"> 上一页</a></td>
-                    <td><a href="${pageContext.request.contextPath}/mainAction!classifyLimit.do?page=next&&present=${present}&&type=${type}"> 下一页</a></td>
-                    <td><a href="${pageContext.request.contextPath}/mainAction!classifyLimit.do?page=end&&present=${present}&&type=${type}">最后一页</a></td>
+                    <td><a href="${pageContext.request.contextPath}/action/mainAction!classifyLimit.do?page=start&&present=${present}&&type=${type}">首页</a></td>
+                    <td><a href="${pageContext.request.contextPath}/action/mainAction!classifyLimit.do?page=last&&present=${present}&&type=${type}"> 上一页</a></td>
+                    <td><a href="${pageContext.request.contextPath}/action/mainAction!classifyLimit.do?page=next&&present=${present}&&type=${type}"> 下一页</a></td>
+                    <td><a href="${pageContext.request.contextPath}/action/mainAction!classifyLimit.do?page=end&&present=${present}&&type=${type}">最后一页</a></td>
                     <td>转到第:<input type="text" name="page" size="8"
                                    onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/"/>页
                         <input type="submit" value="GO" name="GO"></td>

@@ -83,7 +83,7 @@
         alert(id+" "+name);
         $.ajax({
             type:'POST',
-            url:"${pageContext.request.contextPath}/test/updatePeople.htm",
+            url:"${pageContext.request.contextPath}/action/updatePeopleAction!updatePeople.do",
             data:{peopleId:id,name:name,cardId:cardId,sex:sex,age:age},
             data:{peopleId:id},
             data:{peopleId:id,name:name,cardId:cardId,sex:sex,
@@ -91,7 +91,7 @@
                 password:password},
             dataType:'json',
             success:function(){
-                window.location.href="administrator_page.jsp";
+                window.location.href="${pageContext.request.contextPath}/jsp/administrator_page.jsp";
             },
             error:function(){
                 alert("修改失败");

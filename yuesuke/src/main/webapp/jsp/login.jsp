@@ -25,20 +25,25 @@
         <!--form-stars-here-->
         <div class="form-agile">
             <h2 class="sub-agileits-layouts">登录</h2>
-            <form action="${pageContext.request.contextPath}/jsp/login.jsp" method="post">
-                <div class="username-box">
-                    <label>学生学号：</label><input type="text" name="username" placeholder="用户名" required=""/>
-                </div>
-                <div class="password-box">
-                    <label>身份证号：</label><input type="password" name="password" placeholder="密码" required=""/>
-                </div>
-                <div class="login-button-box">
-                    <button type="submit" name="login" value="">登 录</button>
-                </div>
-                <p class="siginup-button-box">
-                    <a href="${pageContext.request.contextPath}/jsp/mainPage.jsp">点击这里</a>返回主页。
-                </p>
-            </form>
+            <div id="form-box">
+                <form action="${pageContext.request.contextPath}/login!loginPage.do" method="post">
+                    <label for="stuAccount">学生学号：</label>
+                    <div class="username-box">
+                        <input type="text" id="stuAccount" name="stuAccount" value="${stuAccount}" placeholder="用户名" required=""/>
+                    </div>
+                    <label for="stuIdNumber">身份证号：</label>
+                    <div class="password-box">
+                        <input type="password" id="stuIdNumber" name="stuIdNumber" value="${stuIdNumber}" placeholder="密码" required=""/>
+                    </div>
+                    <div class="login-button-box">
+                        <button type="submit" name="login" value="">登 录</button>
+                    </div>
+                    <p class="siginup-button-box">
+                        <a href="${pageContext.request.contextPath}/jsp/mainPage.jsp">点击这里</a>返回主页。
+                    </p>
+                </form>
+            </div>
+
         </div>
     </div>
 </div>
