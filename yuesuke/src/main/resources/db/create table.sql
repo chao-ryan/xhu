@@ -44,12 +44,13 @@ CREATE TABLE ROOM(
 
 
 -- -- 创建班级信息表class_info:
--- -- 	ID主键,number班级编号,name班级名称,student_number学生人数,teachers_id辅导员（外键，一对一）,college_id学院（外键，多对一）,
+-- -- 	ID主键,number班级编号,name班级名称,major班级专业,student_number学生人数,teachers_id辅导员（外键，一对一）,college_id学院（外键，多对一）,
 -- -- 	,save_time添加时间,update_time更新时间
 CREATE TABLE CLASS_INFO(
 	ID BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '主键',
 	NUMBER VARCHAR(30) NOT NULL COMMENT '班级编号',
 	`NAME` VARCHAR(30) NOT NULL COMMENT '班级名称',
+	MAJOR VARCHAR(30) COMMENT '班级专业',
 	STUDENTS_NUMBER INT COMMENT '学生人数',
 	TEACHERS_ID BIGINT COMMENT '辅导员外键（一对一）' REFERENCES TEACHERS(ID),
 	SAVE_TIME DATETIME NOT NULL COMMENT '添加时间 yyyy-MM-dd HH:mm:ss',
@@ -80,7 +81,7 @@ CREATE TABLE COLLEGE(
 
 
 -- -- 创建教师信息表teachers:
--- -- 	ID主键,name教师姓名,sex教师性别,age教师年龄,origin籍贯,enthnic民族,id_number身份证号,phone手机号,salary工资,
+-- -- 	ID主键,name教师姓名,sex教师性别,age教师年龄,origin籍贯,nation民族,id_number身份证号,phone手机号,salary工资,
 -- -- 	college_id学院（外键，多对一）,job_title教师职称（多对一）, save_time入职时间,update_time更新时间
 CREATE TABLE TEACHERS(
 	ID BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '主键',
@@ -88,7 +89,7 @@ CREATE TABLE TEACHERS(
 	SEX TINYINT(1) COMMENT '教师性别 0-女，1-男',
 	AGE INT COMMENT '教师年龄',
 	ORIGIN VARCHAR(50) COMMENT '籍贯',
-	ENTHNIC VARCHAR(30) COMMENT '民族',
+	NATION VARCHAR(30) COMMENT '民族',
 	ID_NUMBER VARCHAR(50) COMMENT '身份证号',
 	PHONE VARCHAR(30) COMMENT '手机号',
 	SALARY DOUBLE COMMENT '工资',
