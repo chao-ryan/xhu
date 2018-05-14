@@ -30,6 +30,10 @@ public class ClassInfo {
      */
     private String name;
     /**
+     * 班级专业
+     */
+    private String major;
+    /**
      * studentsNumber 学生人数
      */
     private Integer studentsNumber;
@@ -56,10 +60,11 @@ public class ClassInfo {
 
     }
 
-    public ClassInfo(Long id, String number, String name, Integer studentsNumber, Teachers teachersId, Date saveTime, Date updateTime) {
+    public ClassInfo(Long id, String number, String name, String major, Integer studentsNumber, Teachers teachersId, Date saveTime, Date updateTime) {
         this.id = id;
         this.number = number;
         this.name = name;
+        this.major = major;
         this.studentsNumber = studentsNumber;
         this.teachersId = teachersId;
         this.saveTime = saveTime;
@@ -126,5 +131,13 @@ public class ClassInfo {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
     }
 }
