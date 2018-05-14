@@ -193,6 +193,16 @@ li{
     color: aliceblue;
     background-color: royalblue;
 }
+#d1 .content-per-box-update a{
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+}
+#d1 .content-per-box-update a span{
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+}
 /*修改个人信息页面弹出层*/
 #per-update-pop-up-box{
     width: 60%;
@@ -284,11 +294,17 @@ li{
     margin-left: 16%;
 }
 .content-update-submit-button-box button{
-    height: 30px;
+    height: 36px;
+    width: 120px;
     font-size: 18px;
     border: hidden;
     color: aliceblue;
     background-color: royalblue;
+}
+.content-update-submit-button-box span{
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
 }
 /* 班级信息content */
 .content-classinfo-box{

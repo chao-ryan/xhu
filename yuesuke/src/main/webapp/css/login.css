@@ -26,6 +26,16 @@ body{
     /*background-image: url("../image/xhu_img.jpg");*/
     border-radius: 10px;
 }
+#form-box{
+    float: left;
+}
+#form-box label{
+    width: 80px;
+    float: left;
+}
+.username-box {
+    float: left;
+}
 .form-agile{
     width: 350px;
     height: 130px;
@@ -52,7 +62,7 @@ body{
 }
 .login-button-box{
     padding-top: 34px;
-    padding-left: 118px;
+    padding-left: 114px;
 }
 .login-button-box button{
     background-color: #accbff;
