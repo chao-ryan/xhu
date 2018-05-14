@@ -83,6 +83,28 @@
         <!--<global-allowed-methods>regex:.*</global-allowed-methods>-->
         <global-allowed-methods>regex:.*</global-allowed-methods>
    </package>
+
+    <!-- 设置LoginAction带参转发到PersonSettingAction-->
+    <package name="action" extends="struts-default" namespace="/action">
+        <!-- 第一个Action 登录（LoginAction）-->
+        <action name="login_*" class="com.action.LoginAction" method="loginPage">
+            <result name="login_loginPage" type="redirectAction">
+                login.action?stuIdNum=${stuIdNum}
+            </result>
+        </action>
+        <!-- 第二个Action 个人信息（PersonSettingAction）-->
+        <action name="result_*" class="com.action.PersonSettingAction" method="{1}">
+            <result name="result_person" type="redirectAction">
+                person.action?stuIdNum=${stuIdNum}
+            </result>
+        </action>
+        <action name="login" class="com.action.LoginAction" method="loginPage">
+            <result>/jsp/login.jsp</result>
+        </action>
+        <action name="person" class="com.action.PersonSettingAction" method="person">
+            <result>/jsp/personSettingPage.jsp</result>
+        </action>
+    </package>
     <!--配置struts-->
     <!--<package name="basePackage" extends="struts-default" namespace="/">-->
         <!--<action name="test" class="com.controller.TestAction" method="test">-->
