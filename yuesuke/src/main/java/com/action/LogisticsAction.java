@@ -51,9 +51,7 @@ public class LogisticsAction extends BaseAction {
      * @Description: 物流页，传入一个订单详情的id
      * @author dengchao
      * @date 2018/5/5
-     * @param
      * @return
-     *
      */
     public String logisticsPage(){
          req.setAttribute("orderDetailId","1");
@@ -77,9 +75,6 @@ public class LogisticsAction extends BaseAction {
      * @Description: 添加物流信息，需要传入一个订单详情的id
      * @author dengchao
      * @date 2018/5/5
-     * @param
-     * @return
-     *
      */
     public void addLogistics() throws IOException {
         // 获取表单提交过来的数据

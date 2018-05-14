@@ -12,14 +12,12 @@ import com.domain.People;
 import com.domain.Store;
 import com.service.PeopleService;
 import com.service.StoreService;
-import com.util.SpringContextUtil;
 import com.util.base.BaseAction;
-
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
-
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
@@ -41,7 +39,14 @@ import java.util.List;
 })
 @AllowedMethods({"findPeopleAll","findStoreAll","deletePeople","deleteStore","updatePeople","updateStore"})
 public class AdminUserAction extends BaseAction {
+    @Autowired
+    private PeopleService peopleService;
+    @Autowired
+    private StoreService storeService;
 
+    private String command;
+    private String peopleId;
+    private String storeId;
     /**
      * @Title: findPeopleAll
      * @Description: 查找所有人员信息
@@ -58,8 +63,6 @@ public class AdminUserAction extends BaseAction {
         }
         resp.setCharacterEncoding("utf-8");
 //        String command=req.getParameter("command");
-        //获取peopleService
-        PeopleService peopleService= (PeopleService) SpringContextUtil.getBean("peopleService");
         //获取人员信息集合
         List<People> peopleList=new ArrayList<People>();
         peopleList=peopleService.getAllPeople();
@@ -78,16 +81,11 @@ public class AdminUserAction extends BaseAction {
      * @date 2018/5/5
      * @return: SUCCESS
      */
-    public String findStoreAll(){
+    public String findStoreAll() throws UnsupportedEncodingException {
         //修改编码方式
-        try {
-            req.setCharacterEncoding("utf-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
-        //获取storeService
-        StoreService storeService= (StoreService) SpringContextUtil.getBean("storeService");
+
         //获取人员信息店铺集合
         List<Store> storeList=new ArrayList<Store>();
         try {
@@ -108,7 +106,6 @@ public class AdminUserAction extends BaseAction {
      * @date 2018/5/5
      * @return: SUCCESS
      */
-
     public void deletePeople(){
         //修改编码方式
         try {
@@ -117,13 +114,9 @@ public class AdminUserAction extends BaseAction {
             e.printStackTrace();
         }
         resp.setCharacterEncoding("utf-8");
-        //获取需要删除的人员id
-        String strId=req.getParameter("peopleId");
-        Long peopleId=Long.valueOf(strId);
-        //获取peopleService
-        PeopleService peopleService= (PeopleService) SpringContextUtil.getBean("peopleService");
+
         //删除人员信息
-        peopleService.deletePeopleById(peopleId);
+        peopleService.deletePeopleById(Long.valueOf(peopleId));
         //替换session peopleList信息
         HttpSession session=req.getSession();
         List<People> peopleList=new ArrayList<People>();
@@ -149,16 +142,12 @@ public class AdminUserAction extends BaseAction {
             e.printStackTrace();
         }
         resp.setCharacterEncoding("utf-8");
-        //获取id
-        String strId=req.getParameter("storeId");
-        Long storeId=Long.valueOf(strId);
-        //获取storeService
-        StoreService storeService= (StoreService) SpringContextUtil.getBean("storeService");
+
         //获取人员信息店铺集合
         List<Store> storeList=new ArrayList<Store>();
 
         //删除store信息
-        storeService.deleteStoreById(storeId);
+        storeService.deleteStoreById(Long.valueOf(storeId));
         //替换session storeList信息
         HttpSession session=req.getSession();
         try {
@@ -178,7 +167,6 @@ public class AdminUserAction extends BaseAction {
      * @date 2018/5/5
      * @return: String structs删选值
      */
-
     public String updatePeople(){
         //修改编码方式
         try {
@@ -187,16 +175,9 @@ public class AdminUserAction extends BaseAction {
             e.printStackTrace();
         }
         resp.setCharacterEncoding("utf-8");
-        //获取需要删除的人员id
-        String strId=req.getParameter("peopleId");
-        Long peopleId=Long.valueOf(strId);
-        //获取peopleService
-        PeopleService peopleService= (PeopleService) SpringContextUtil.getBean("peopleService");
-
-//        HttpSession session=req.getSession();
         //获取需要修改 people信息
         HttpSession session=req.getSession();
-        People updPeople=peopleService.findPeopleById(peopleId);
+        People updPeople=peopleService.findPeopleById(Long.valueOf(peopleId));
         session.setAttribute("updPeople",updPeople);
         return "updatePeople";
     }
@@ -208,7 +189,6 @@ public class AdminUserAction extends BaseAction {
      * @date 2018/5/5
      * @return: String structs删选值
      */
-
     public String updateStore(){
         //修改编码方式
         try {
@@ -217,20 +197,36 @@ public class AdminUserAction extends BaseAction {
             e.printStackTrace();
         }
         resp.setCharacterEncoding("utf-8");
-        //获取id
-        String strId=req.getParameter("storeId");
-        Long storeId=Long.valueOf(strId);
-        //获取storeService
-        StoreService storeService= (StoreService) SpringContextUtil.getBean("storeService");
         //获取人员信息店铺集合
         List<Store> storeList=new ArrayList<Store>();
         //修改store信息
         HttpSession session=req.getSession();
-        Store updStore=storeService.findStoreById(storeId);
+        Store updStore=storeService.findStoreById(Long.valueOf(storeId));
         session.setAttribute("updStore",updStore);
         return "updateStore";
-
-
     }
 
+    public String getCommand() {
+        return command;
+    }
+
+    public void setCommand(String command) {
+        this.command = command;
+    }
+
+    public String getPeopleId() {
+        return peopleId;
+    }
+
+    public void setPeopleId(String peopleId) {
+        this.peopleId = peopleId;
+    }
+
+    public String getStoreId() {
+        return storeId;
+    }
+
+    public void setStoreId(String storeId) {
+        this.storeId = storeId;
+    }
 }
