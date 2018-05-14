@@ -15,7 +15,7 @@ package com.tools;/*************************************************************
  * @date 2018/4/20
  */
 public enum SexEnum {
-    MAN((byte) 0, "男"), WOMAN((byte) 1, "女");
+    WOMAN((byte) 0, "女"), MAN((byte) 1, "男");
 
     /**
      * sex 性别
