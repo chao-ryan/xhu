@@ -6,6 +6,7 @@
         <id property="id" column="ID"/>
         <result property="number" column="NUMBER"/>
         <result property="name" column="NAME"/>
+        <result property="major" column="MAJOR"/>
         <result property="studentsNumber" column="STUDENTS_NUMBER"/>
         <result property="saveTime" column="SAVE_TIME"/>
         <result property="updateTime" column="UPDATE_TIME"/>
@@ -37,7 +38,7 @@
     </resultMap>
     <!-- 定义sql查询列-->
     <sql id="columns">
-        ID,`NUMBER`,`NAME`,STUDENTS_NUMBER,TEACHERS_ID,SAVE_TIME,UPDATE_TIME
+        ID,`NUMBER`,`NAME`,MAJOR,STUDENTS_NUMBER,TEACHERS_ID,SAVE_TIME,UPDATE_TIME
     </sql>
     <!-- 根据id删除 -->
     <delete id="deleteById" parameterType="java.lang.Long">
@@ -53,12 +54,12 @@
     <!-- 保存 -->
     <insert id="save" parameterType="com.domain.ClassInfo">
         INSERT INTO class_info(<include refid="columns"/> )
-        VALUES (DEFAULT ,#{number},#{name},#{studentsNumber},#{teachersId.id},#{saveTime},#{updateTime})
+        VALUES (DEFAULT ,#{number},#{name},#{major},#{studentsNumber},#{teachersId.id},#{saveTime},#{updateTime})
     </insert>
     <!-- 修改 -->
     <update id="update" parameterType="com.domain.ClassInfo">
         UPDATE class_info
-        SET `NUMBER`=#{number},`NAME`=#{name},STUDENTS_NUMBER=#{studentsNumber},TEACHERS_ID=#{teachersId.id},SAVE_TIME=#{saveTime},UPDATE_TIME=#{updateTime}
+        SET `NUMBER`=#{number},`NAME`=#{name},MAJOR=#{major},STUDENTS_NUMBER=#{studentsNumber},TEACHERS_ID=#{teachersId.id},SAVE_TIME=#{saveTime},UPDATE_TIME=#{updateTime}
         WHERE ID=#{id}
     </update>
     <!-- 根据id查询 -->
@@ -67,9 +68,9 @@
         FROM class_info
         WHERE ID=#{id}
     </select>
-    <!-- 根据条件（班级编号，班级名称，辅导员）查询 -->
+    <!-- 根据条件（班级编号，班级名称，班级专业，辅导员）查询 -->
     <select id="findByCondition" parameterType="java.util.Map" resultMap="classInfoMap">
-        SELECT CI.ID,CI.NUMBER,CI.NAME,CI.STUDENTS_NUMBER,CI.SAVE_TIME,CI.UPDATE_TIME,CI.TEACHERS_ID,
+        SELECT CI.ID,CI.NUMBER,CI.NAME,CI.MAJOR,CI.STUDENTS_NUMBER,CI.SAVE_TIME,CI.UPDATE_TIME,CI.TEACHERS_ID,
         T.ID T_ID,T.NAME T_NAME,T.SEX T_SEX,T.AGE T_AGE,T.ORIGIN T_ORIGIN,T.NATION T_NATION,T.ID_NUMBER T_ID_NUMBER,T.PHONE T_PHONE,T.SALARY T_SALARY,T.SAVE_TIME T_SAVE_TIME,T.UPDATE_TIME T_UPDATE_TIME,
         CO.ID CO_ID,CO.NAME CO_NAME,CO.STUDENTS_NUMBER CO_STUDENTS_NUMBER,CO.TEACHERS_NUMBER CO_TEACHERS_NUMBER,CO.SAVE_TIME CO_SAVE_TIME,CO.UPDATE_TIME CO_UPDATE_TIME,
         J.ID J_ID,J.JOB_NAME J_JOB_NAME
@@ -84,14 +85,17 @@
             <if test="CLASS_NAME != null">
                 AND CI.`NAME`=#{CLASS_NAME}
             </if>
+            <if test="MAJOR != null">
+                AND CI.MAJOR=#{MAJOR}
+            </if>
             <if test="TEACHERS_ID != null">
                 AND CI.TEACHERS_ID=#{TEACHERS_ID}
             </if>
         </where>
     </select>
-    <!-- 根据条件（班级编号，班级名称，辅导员）查询 -->
+    <!-- 根据条件（班级编号，班级名称，班级专业，辅导员）查询 -->
     <select id="findByConditionForPage" parameterType="java.util.Map" resultMap="classInfoMap">
-        SELECT CI.ID,CI.NUMBER,CI.NAME,CI.STUDENTS_NUMBER,CI.SAVE_TIME,CI.UPDATE_TIME,CI.TEACHERS_ID,
+        SELECT CI.ID,CI.NUMBER,CI.NAME,CI.MAJOR,CI.STUDENTS_NUMBER,CI.SAVE_TIME,CI.UPDATE_TIME,CI.TEACHERS_ID,
         T.ID T_ID,T.NAME T_NAME,T.SEX T_SEX,T.AGE T_AGE,T.ORIGIN T_ORIGIN,T.ENTHNIC T_ENTHNIC,T.ID_NUMBER T_ID_NUMBER,T.PHONE T_PHONE,T.SALARY T_SALARY,T.SAVE_TIME T_SAVE_TIME,T.UPDATE_TIME T_UPDATE_TIME,
         CO.ID CO_ID,CO.NAME CO_NAME,CO.STUDENTS_NUMBER CO_STUDENTS_NUMBER,CO.TEACHERS_NUMBER CO_TEACHERS_NUMBER,CO.SAVE_TIME CO_SAVE_TIME,CO.UPDATE_TIME CO_UPDATE_TIME,
         J.ID J_ID,J.JOB_NAME J_JOB_NAME
@@ -105,6 +109,9 @@
             </if>
             <if test="NAME != null">
                 AND CI.`NAME`=#{NAME}
+            </if>
+            <if test="MAJOR != null">
+                AND CI.MAJOR=#{MAJOR}
             </if>
             <if test="TEACHERS_ID != null">
                 AND CI.TEACHERS_ID=#{TEACHERS_ID}

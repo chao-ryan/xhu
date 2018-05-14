@@ -40,28 +40,34 @@
         WHERE ID=#{id}
     </update>
     <!-- 根据id查询 -->
-    <select id="findById" parameterType="java.lang.Long">
+    <select id="findById" parameterType="java.lang.Long" resultMap="roomMap">
         SELECT <include refid="columns"/>
         FROM room
-        WHERE id=#{id}
+        WHERE ID=#{id}
     </select>
-    <!-- 根据条件（宿舍区域）查询 -->
+    <!-- 根据条件（宿舍ID，舍区域）查询 -->
     <select id="findByCondition" parameterType="java.util.Map" resultMap="roomMap">
         SELECT <include refid="columns"/>
         FROM room
         <where>
+            <if test="ROOM_ID != null">
+                ID = #{ROOM_ID}
+            </if>
             <if test="AREA != null">
-                AREA LIKE #{AREA}
+               AND AREA LIKE #{AREA}
             </if>
         </where>
     </select>
-    <!-- 根据条件（宿舍地址）分页查询 -->
+    <!-- 根据条件（宿舍ID，宿舍区域）分页查询 -->
     <select id="findByConditionForPage" parameterType="java.util.Map" resultMap="roomMap">
         SELECT <include refid="columns"/>
         FROM room
         <where>
+            <if test="ROOM_ID != null">
+                ID = #{ROOM_ID}
+            </if>
             <if test="AREA != null">
-                AREA LIKE #{AREA}
+                AND AREA LIKE #{AREA}
             </if>
         </where>
     </select>
