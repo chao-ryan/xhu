@@ -32,13 +32,13 @@ import java.util.Map;
  */
 @Action(value = "mainAction")
 @Results({
-        @Result(name = "main", location = "/main_page.jsp"),
-        @Result(name = "limit", location = "/main_page.jsp"),
-        @Result(name = "cart", location = "/cart.jsp"),
-        @Result(name = "search", location = "/main_page_search.jsp"),
-        @Result(name = "searchLimit", location = "/main_page_search.jsp"),
-        @Result(name = "classify", location = "/main_page_classify.jsp"),
-        @Result(name = "classifyLimit", location = "/main_page_classify.jsp"),
+        @Result(name = "main", location = "/jsp/main_page.jsp"),
+        @Result(name = "limit", location = "/jsp/main_page.jsp"),
+        @Result(name = "cart", location = "/jsp/cart.jsp"),
+        @Result(name = "search", location = "/jsp/main_page_search.jsp"),
+        @Result(name = "searchLimit", location = "/jsp/main_page_search.jsp"),
+        @Result(name = "classify", location = "/jsp/main_page_classify.jsp"),
+        @Result(name = "classifyLimit", location = "/jsp/main_page_classify.jsp"),
 })
 
 public class MainAction extends BaseAction {

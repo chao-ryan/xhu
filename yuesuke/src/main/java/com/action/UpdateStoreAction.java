@@ -12,7 +12,6 @@ import com.domain.Store;
 import com.service.StoreService;
 import com.util.base.BaseAction;
 import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +32,7 @@ import java.util.List;
 @Results({
         @Result(name = "adminUser",location = "/administrator_page.jsp")
 })
-@AllowedMethods({"updateStore"})
+//@AllowedMethods({"updateStore"})
 public class UpdateStoreAction extends BaseAction {
     @Autowired
     private StoreService storeService;
@@ -79,6 +78,7 @@ public class UpdateStoreAction extends BaseAction {
             e.printStackTrace();
         }
         session.setAttribute("storeList",storeList);
+        req.setAttribute("updStore",store);
         return "adminUser";
     }
 }

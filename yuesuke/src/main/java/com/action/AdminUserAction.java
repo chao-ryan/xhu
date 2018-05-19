@@ -14,7 +14,6 @@ import com.service.PeopleService;
 import com.service.StoreService;
 import com.util.base.BaseAction;
 import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,11 +32,11 @@ import java.util.List;
  */
 @Action(value = "adminUserAction")
 @Results({
-        @Result(name = "updatePeople",location = "/update_people.jsp"),
-        @Result(name = "updateStore",location = "/update_store.jsp"),
-        @Result(name = "success",location = "/administrator_page.jsp")
+        @Result(name = "updatePeople",location = "/jsp/update_people.jsp"),
+        @Result(name = "updateStore",location = "/jsp/update_store.jsp"),
+        @Result(name = "success",location = "/jsp/administrator_page.jsp")
 })
-@AllowedMethods({"findPeopleAll","findStoreAll","deletePeople","deleteStore","updatePeople","updateStore"})
+//@AllowedMethods({"findPeopleAll","findStoreAll","deletePeople","deleteStore","updatePeople","updateStore"})
 public class AdminUserAction extends BaseAction {
     @Autowired
     private PeopleService peopleService;

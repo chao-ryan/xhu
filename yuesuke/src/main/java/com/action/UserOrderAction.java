@@ -15,7 +15,6 @@ import com.service.GoodsOrderService;
 import com.service.OrderDetailService;
 import com.util.base.BaseAction;
 import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +31,9 @@ import java.util.List;
  */
 @Action(value = "userOrderAction")
 @Results({
-        @Result(name = "success",location = "/user_order_message.jsp")
+        @Result(name = "success",location = "/jsp/user_order_message.jsp")
 })
-@AllowedMethods({"findOrderAll","findNotPayOrder","findNotDeliveryOrder","findNotReceiveOrder"})
+//@AllowedMethods({"findOrderAll","findNotPayOrder","findNotDeliveryOrder","findNotReceiveOrder"})
 public class UserOrderAction extends BaseAction {
 
     @Autowired

@@ -38,7 +38,7 @@ import java.util.Map;
 @Action( value = "storeAction")
 
 @Results({
-        @Result( name="storeHome",location="/store_home_page.jsp"),
+        @Result( name="storeHome",location="/jsp/store_home_page.jsp"),
         @Result( name="offLoadingSuccess",location="storeAction",type = "chain",params = {"method","storeHome"})
 })
 public class StoreAction extends BaseAction{
@@ -62,9 +62,9 @@ public class StoreAction extends BaseAction{
 
         HttpSession session = req.getSession();
         Long  peopleId =Long.valueOf(req.getParameter("peopleId"));
-        if (peopleId == null){
-            peopleId = (Long) req.getAttribute("peopleId");
-        }
+//        if (peopleId == null){
+//            peopleId = (Long) req.getAttribute("peopleId");
+//        }
         String result = "";
 
         try {
