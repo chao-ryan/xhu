@@ -20,37 +20,38 @@
 <div class="divFormFather">
 <div class="divForm">
 
-        <a>id:${person.id}</a>
-        <a>姓名:${person.name}</a>
-        <a>身份证号:${person.cardId}</a>
-        <a>账户:${person.usreName}</a>
+        <a>id:${person.getId()}</a><br/>
+        <a>姓名:${person.getName()}</a><br/>
+        <a>身份证号:${person.getCardId()}</a><br/>
+        <a>账户:${person.getUsreName()}</a><br/>
 
-        <form id="people" name="People" action="person.jsp" method="post">
+        <form id="people" name="People" action="${pageContext.request.contextPath}/jsp/person.jsp" method="post">
             <table border="0">
-
                 <tr>
                     <td>性别：</td>
-                    <td><input type="text" name="sex" value="${person.sex}"></td>
+                    <td><input type="text" name="sex" value="${person.getSex()}"></td>
                 </tr>
                 <tr>
                     <td>年龄：</td>
-                    <td><input type="text" name="age" value="${person.age}"></td>
+                    <td><input type="text" name="age" value="${person.getAge()}"></td>
                 </tr>
                 <tr>
-                    <td>持有金额：${person.money}</td>
+                    <td>持有金额：${person.getMoney()}</td>
                 </tr>
                 <tr>
                     <td>收货地址：</td>
-                    <td><input type="text" name="address" value="${person.address}"></td>
+                    <td><input type="text" name="address" value="${person.getAddress()}"></td>
                 </tr>
                 <tr>
                     <td>密码：</td>
-                    <td><input type="password" name="password" value="${person.passWord}"></td>
+                    <td><input type="password" name="password" value="${person.getPassWord()}"></td>
                 </tr>
                 <tfoot>
-                <tr>账户充值：</tr><tr>
-                <button type="button">修改账户</button>
-                <button type="button">退出账户</button></tr>
+                <tr>账户充值：</tr>
+                <tr>
+                    <button type="button">修改账户</button>
+                    <button type="button">退出账户</button>
+                </tr>
                 </tfoot>
             </table>
         </form>

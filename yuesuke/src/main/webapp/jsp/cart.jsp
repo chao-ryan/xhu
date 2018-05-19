@@ -16,7 +16,7 @@
 <jsp:include page="head_page.jsp" flush="true"/>
 
 <div class="cart_div">
-    <form action="${pageContext.request.contextPath}/action/payMoneyAction!PayGoodsOrderShow.do?orderNum="+order_num method="post" class="form">
+    <form action="${pageContext.request.contextPath}/action/payMoneyAction!PayGoodsOrderShow.do?orderNum=${order_num}" method="post" class="form">
     <form class="form">
         <fieldset>
             <legend><img src="${pageContext.request.contextPath}/img/cart.jpg"></legend>
@@ -35,15 +35,15 @@
 
                 </thead>
                 <tbody>
-                <input type="hidden" name="peopleName" value="${person.id}">
+                <input type="hidden" name="peopleName" value="${person.getId()}">
                 <c:forEach items="${cartList}" var="cart">
                     <tr>
                         <td>
-                            <p class="name">${cart.name}</p>
-                            <span class="price">${cart.price}</span>
+                            <p class="name">${cart.getName()}</p>
+                            <span class="price">${cart.getPrice()}</span>
                                 <%--为JS获取值--%>
-                            <input type="hidden" name="idName" value="${cart.inventoryId}">
-                            <input type="hidden" name="numberName" value="${cart.number}">
+                            <input type="hidden" name="idName" value="${cart.getinventoryId()}">
+                            <input type="hidden" name="numberName" value="${cart.getNumber()}">
                                 <%--加减按钮--%>
                             <input class="product_id" type="hidden" name="product_id" value="value"/>
                             <input class="min" name="" type="button" value="-"/>
@@ -58,7 +58,7 @@
             <tfoot>
             <p class="to">所有商品价格总计：<label id="total" class="total" name="total"></label> 元</p>
             <input type="reset" value="数量重置" class="reset"/>
-            <input type="submit" value="全部提交" class="submit" id="submit" onclick="submit"/>
+            <input type="submit" value="全部提交" class="submit" id="submit" onclick="submit()"/>
             </tfoot>
         </fieldset>
     </form>
@@ -163,7 +163,7 @@
                 );
                 $.ajax({
                     type: "POST",
-                    url: '${pageContext.request.contextPath}/action/payMoneyAction!PayGoodsOrderShow.do?orderNum="+order_num;',
+                    url: '${pageContext.request.contextPath}/action/payMoneyAction!PayGoodsOrderShow.do?orderNum=${order_num};',
                     data: {
                         peopleId: peopleStr,
                         idName: idStr,

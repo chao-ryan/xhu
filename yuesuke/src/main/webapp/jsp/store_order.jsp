@@ -46,51 +46,51 @@
                 <c:forEach items="${orderDetail}" var="od">
                     <tr>
                         <td width="100">
-                                ${od.storeId}
+                                ${od.getStoreId()}
                         </td>
-                        <input type="hidden" value="${od.storeId}" name="storeId1"/>
+                        <input type="hidden" value="${od.getStoreId()}" name="storeId1"/>
                         <td width="100">
-                                ${od.people.name}
-                        </td>
-                        <td width="100">
-                                ${od.store.storeName}
+                                ${od.getPeople().getName()}
                         </td>
                         <td width="100">
-                                ${od.goods.name}
+                                ${od.getStore().getStoreName()}
                         </td>
                         <td width="100">
-                                ${od.goodsOrder.orderNum}
+                                ${od.getGoods().getName()}
                         </td>
                         <td width="100">
-                                ${od.number}
+                                ${od.getGoodsOrder().getOrderNum()}
                         </td>
                         <td width="100">
-                                ${od.goodsPrice}
+                                ${od.getNumber()}
                         </td>
                         <td width="100">
-                                ${od.goodsAmount}
+                                ${od.getGoodsPrice()}
                         </td>
                         <td width="100">
-                                ${od.addTime}
+                                ${od.getGoodsAmount()}
                         </td>
                         <td width="100">
-                                ${od.successTime}
+                                ${od.getAddTime()}
                         </td>
                         <td width="100">
-                                ${od.deliveryTime}
+                                ${od.getSuccessTime()}
+                        </td>
+                        <td width="100">
+                                ${od.getDeliveryTime()}
                         </td>
                         <td width="100">
                             <c:choose>
-                                <c:when test="${od.orderStatus==0}">
+                                <c:when test="${od.getOrderStatus()==0}">
                                     <p>未支付</p>
                                 </c:when>
-                                <c:when test="${od.orderStatus==1}">
+                                <c:when test="${od.getOrderStatus()==1}">
                                     <p>支付成功</p>
                                 </c:when>
-                                <c:when test="${od.orderStatus==2}">
+                                <c:when test="${od.getOrderStatus()==2}">
                                     <p>支付失败</p>
                                 </c:when>
-                                <c:when test="${od.orderStatus==3}">
+                                <c:when test="${od.getOrderStatus()==3}">
                                     <p>等待收货</p>
                                 </c:when>
                                 <c:otherwise>
@@ -100,7 +100,7 @@
                         </td>
                         <td width="100">
                             <c:choose>
-                                <c:when test="${od.isInvalid==true}">
+                                <c:when test="${od.getIsInvalid()==true}">
                                     <p>订单正常</p>
                                 </c:when>
                                 <c:otherwise>
@@ -110,10 +110,10 @@
                         </td>
                         <td width="100" align="center">
                             <c:choose>
-                                <c:when test="${od.orderStatus > 1}">
+                                <c:when test="${od.getOrderStatus() > 1}">
                                     <p>已发货</p>
                                 </c:when>
-                                <c:when test="${od.orderStatus ==0}">
+                                <c:when test="${od.getOrderStatus() ==0}">
                                     <p>买家未付款</p>
                                 </c:when>
                                 <c:otherwise>
@@ -121,7 +121,7 @@
                                         <%--<input type="text" name="odId" value="${od.id}" hidden="hidden"/>--%>
                                         <%--<input type="submit" value="点击发货">--%>
                                     <%--</form>--%>
-                                    <button type="submit" class="orderDetail_id" value="${od.id}">点击发货</button>
+                                    <button type="submit" class="orderDetail_id" value="${od.getId()}">点击发货</button>
                                 </c:otherwise>
                             </c:choose>
                         </td>

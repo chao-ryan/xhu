@@ -25,26 +25,26 @@
                     <div class="imgLink">
                         <img src="${pageContext.request.contextPath}/img/beauty.jpg"/></div>
                     <div class="info">
-                        <span class="price">¥  <strong class="price_st">${entry.price}</strong></span>
+                        <span class="price">¥  <strong class="price_st">${entry.getPrice()}</strong></span>
 
                         <div class="button">
                             <input type='submit' id='cart' value='添加购物车'>
                         </div>
                         <br/>
 
-                        <div class="goodsName"><span class="name">商品名称:${entry.name}</span></div>
+                        <div class="goodsName"><span class="name">商品名称:${entry.getName()}</span></div>
                         <ul class="nameNum">
-                            <li><span class="storeName">${entry.storeName}</span></li>
-                            <li><span class="num">库存:${entry.number}</span></li>
+                            <li><span class="storeName">${entry.getStoreName()}</span></li>
+                            <li><span class="num">库存:${entry.getNumber()}</span></li>
                         </ul>
                     </div>
                 </ui>
                     <%--//为JS获取数据--%>
-                <input type="hidden" name="priceName" value="${entry.price}">
-                <input type="hidden" name="nameName" value="${entry.name}">
-                <input type="hidden" name="numberName" value="${entry.number}">
-                <input type="hidden" name="storeNameName" value="${entry.storeName}">
-                <input type="hidden" name="idName" value="${entry.inventoryId}">
+                <input type="hidden" name="priceName" value="${entry.getPrice()}">
+                <input type="hidden" name="nameName" value="${entry.getName()}">
+                <input type="hidden" name="numberName" value="${entry.getNumber()}">
+                <input type="hidden" name="storeNameName" value="${entry.getStoreName()}">
+                <input type="hidden" name="idName" value="${entry.getinventoryId()}">
             </form>
         </c:forEach>
         <iframe name="posthere" frameborder=0 width=0 height=0></iframe>
@@ -61,11 +61,11 @@
         //将数据传到另一个页面
         var url = '${pageContext.request.contextPath}/action/cartPage!doPost.do?op=add';
         var data = {
-            'nameStr': entry.name,
-            'priceStr': entry.price,
-            'numberStr': entry.number,
-            'storeNameStr': entry.storeName,
-            'idStr': entry.inventoryId,
+            'nameStr': entry.getName(),
+            'priceStr': entry.getPrice(),
+            'numberStr': entry.getNumber(),
+            'storeNameStr': entry.getStoreName(),
+            'idStr': entry.getinventoryId(),
             'op': 'add'
         };
         var success = function (response) {

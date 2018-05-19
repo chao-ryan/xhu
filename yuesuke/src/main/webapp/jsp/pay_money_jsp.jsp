@@ -29,13 +29,13 @@
             </thead>
             <tbody>
             <tr bgcolor="silver">
-                <td width="30%">订单编号:${goodsOrderPay.orderNum}</td>
+                <td width="30%">订单编号:${goodsOrderPay.getOrderNum()}</td>
                 <c:choose>
                     <%--0--未支付，1--支付成功，2--支付失败"--%>
-                    <c:when test="${goodsOrderPay.orderStatus ==0}">
+                    <c:when test="${goodsOrderPay.getOrderStatus() ==0}">
                         <td width="30%">订单状态: 未支付</td>
                     </c:when>
-                    <c:when test="${goodsOrderPay.orderStatus ==1}">
+                    <c:when test="${goodsOrderPay.getOrderStatus() ==1}">
                         <td width="30%">订单状态: 支付成功</td>
                     </c:when>
                     <c:otherwise>
@@ -43,17 +43,17 @@
                     </c:otherwise>
                 </c:choose>
                 <%--<td width="30%">订单状态:${order.orderStatus}</td>--%>
-                <td width="30%">总金额:${goodsOrderPay.totalMoney}</td>
+                <td width="30%">总金额:${goodsOrderPay.getTotalMoney()}</td>
                 <td colspan="2">订单详情数：${fn:length(orderDetailListPay)}</td>
             </tr>
             <tr></tr>
             <c:forEach var="detailPay" items="${orderDetailListPay}" varStatus="detail_index">
                 <tr>
-                    <td>订单详情编号：${detailPay.orderNum}</td>
-                    <td>商品名:${detailPay.goods.name}</td>
-                    <td>价格:${detailPay.goodsPrice}</td>
-                    <td>数量:${detailPay.number}</td>
-                    <td>商品总价:${detailPay.goodsAmount}</td>
+                    <td>订单详情编号：${detailPay.getOrderNum()}</td>
+                    <td>商品名:${detailPay.getGoods().getName()}</td>
+                    <td>价格:${detailPay.getGoodsPrice()}</td>
+                    <td>数量:${detailPay.getNumber()}</td>
+                    <td>商品总价:${detailPay.getGoodsAmount()}</td>
                 </tr>
             </c:forEach>
             <tr>

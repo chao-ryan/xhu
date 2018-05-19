@@ -15,24 +15,24 @@
     <div class="store_home">
         <div class="store_home_left">
             <div class="store_home_storeInfo">
-                <h4>${stores[0].storeName} </h4>
+                <h4>${stores[0].getStoreName()} </h4>
                 <br><br>
 
                 <div class="storeInfo_font">
-                    店主：${person.name}
+                    店主：${person.getName()}
                 </div>
             </div>
             <div class="store_home_delivery">
-                <a href="${pageContext.request.contextPath}/action/storeSetStockAction!selectStoreGoods.do?storeId=${stores[0].id}"><h4>我要进货</h4></a>
+                <a href="${pageContext.request.contextPath}/action/storeSetStockAction!selectStoreGoods.do?storeId=${stores[0].getId()}"><h4>我要进货</h4></a>
             </div>
             <div class="store_home_delivery">
-                <a href="${pageContext.request.contextPath}/action//orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>我要发货</h4></a>
+                <a href="${pageContext.request.contextPath}/action//orderDetailAction!storeOrder.do?storeId=${stores[0].getId()}"><h4>我要发货</h4></a>
             </div>
             <div class="store_home_delivery">
-                <a href="${pageContext.request.contextPath}/action/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>历史订单</h4></a>
+                <a href="${pageContext.request.contextPath}/action/orderDetailAction!storeOrder.do?storeId=${stores[0].getId()}"><h4>历史订单</h4></a>
             </div>
             <div class="store_home_delivery">
-                <a href="${pageContext.request.contextPath}/action/orderDetailAction!storeOrder.do?storeId=${stores[0].id}"><h4>最近订单</h4></a>
+                <a href="${pageContext.request.contextPath}/action/orderDetailAction!storeOrder.do?storeId=${stores[0].getId()}"><h4>最近订单</h4></a>
             </div>
         </div>
         <div class="store_home-right">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="store_home_goodInfo">
                         <div class="store_home_goodName">
-                        <a href="${pageContext.request.contextPath}/action/storeAction!offLoading.do?peopleId=${person.id}&&inventoryId=${mainPages.inventoryId}">
+                        <a href="${pageContext.request.contextPath}/action/storeAction!offLoading.do?peopleId=${person.getId()}&&inventoryId=${mainPages.getinventoryId()}">
                             <input type="button" value="商品下架" />
                             </a>
                             <a href="javascript:void(0)"
@@ -57,10 +57,10 @@
                                 <input type="button" value="商品调价" /></a>
                         </div>
                         <div class="store_home_goodName">
-                                ${mainPages.name}
+                                ${mainPages.getName()}
                         </div>
                         <div class="store_home_goodPrice">
-                                ${mainPages.price}
+                                ${mainPages.getPrice()}
                         </div>
                     </div>
                 </div>

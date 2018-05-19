@@ -25,23 +25,23 @@
             <tbody>
             <tr>
                 <td>ID</td>
-                <td><input type="text" name="storeId" class="store_id" value="${updStore.id}"/></td>
+                <td><input type="text" name="storeId" class="store_id" value="${updStore.getId()}"/></td>
             </tr>
             <tr>
                 <td>STORE_NUM</td>
-                <td><input type="text" name="storeNum" class="store_store_num" value="${updStore.storeNum}"/></td>
+                <td><input type="text" name="storeNum" class="store_store_num" value="${updStore.getStoreNum()}"/></td>
             </tr>
             <tr>
                 <td>STORE_NAME</td>
-                <td><input type="text" name="storeName" class="store_store_name" value="${updStore.storeName}"/></td>
+                <td><input type="text" name="storeName" class="store_store_name" value="${updStore.getStoreName()}"/></td>
             </tr>
             <tr>
                 <td>CREDIT</td>
-                <td><input type="text" name="credit" class="store_credit" value="${updStore.credit}"/></td>
+                <td><input type="text" name="credit" class="store_credit" value="${updStore.getCredit()}"/></td>
             </tr>
             <tr>
                 <td>PEOPLE_ID</td>
-                <td><input type="text" name="peopleId" class="store_people_id" value="${updStore.peopleId}"/></td>
+                <td><input type="text" name="peopleId" class="store_people_id" value="${updStore.getPeopleId()}"/></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"><button type="submit" id="upd_store_btn">确认修改</button> </td>

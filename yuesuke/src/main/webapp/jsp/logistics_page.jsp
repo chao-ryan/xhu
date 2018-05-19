@@ -17,31 +17,31 @@
                     <table>
                         <tr>
                             <td>物流单号：</td>
-                            <td>${logisticsInfo.logisticsNum}</td>
+                            <td>${logisticsInfo.getLogisticsNum()}</td>
                         </tr>
                         <tr>
                             <td>创建时间：</td>
-                            <td>${logisticsInfo.logisticsTime}</td>
+                            <td>${logisticsInfo.getLogisticsTime()}</td>
                         </tr>
                         <tr>
                             <td>物流状态：</td>
-                            <td>${logisticsInfo.logisticsState}</td>
+                            <td>${logisticsInfo.getLogisticsState()}</td>
                         </tr>
                         <tr>
                             <td>发货方：</td>
-                            <td>${logisticsInfo.deliverName}</td>
+                            <td>${logisticsInfo.getDeliverName()}</td>
                         </tr>
                         <tr>
                             <td>收货方：</td>
-                            <td>${logisticsInfo.consigneeName}</td>
+                            <td>${logisticsInfo.getConsigneeName()}</td>
                         </tr>
                         <tr>
                             <td>收货方电话：</td>
-                            <td>${logisticsInfo.consigneePhone}</td>
+                            <td>${logisticsInfo.getConsigneePhone()}</td>
                         </tr>
                         <tr>
                             <td>收货地址：</td>
-                            <td>${logisticsInfo.consigneeAddress}</td>
+                            <td>${logisticsInfo.getConsigneeAddress()}</td>
                         </tr>
                     </table>
                 </div>
@@ -52,8 +52,8 @@
                     <div style="width: 300px;float: left">时间</div>
                     <div style="width: 300px;float:left;">到达地</div>
                     <c:forEach items="${gobyList}" var="goby" >
-                        <div style="width: 300px;float: left">${goby.gobyTime}</div>
-                        <div style="width: 300px;float:left;">${goby.gobyAddress}</div>
+                        <div style="width: 300px;float: left">${goby.getGobyTime()}</div>
+                        <div style="width: 300px;float:left;">${goby.getGobyAddress()}</div>
                     </c:forEach>
                 </div>
             </div>

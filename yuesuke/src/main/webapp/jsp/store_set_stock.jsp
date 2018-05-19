@@ -38,28 +38,28 @@
                     <c:forEach items="${map}" var="iAndGoods">
                         <tr>
                             <td>
-                                ${iAndGoods[1].goodsNum}
+                                ${iAndGoods[1].getGoodsNum()}
                             </td>
                             <td>
-                                ${iAndGoods[1].name}
+                                ${iAndGoods[1].getName()}
                             </td>
                             <td>
-                                ${iAndGoods[1].type}
+                                ${iAndGoods[1].getType()}
                             </td>
                             <td>
-                                ${iAndGoods[1].unit}
+                                ${iAndGoods[1].getUnit()}
                             </td>
                             <td>
-                                ${iAndGoods[1].procedureDate}
+                                ${iAndGoods[1].getProcedureDate()}
                             </td>
                             <td>
-                                ${iAndGoods[1].shelfLife}
+                                ${iAndGoods[1].getShelfLife()}
                             </td>
                             <td>
-                                ${iAndGoods[1].shelfLifeUnit}
+                                ${iAndGoods[1].getShelfLifeUnit()}
                             </td>
                             <td>
-                                ${iAndGoods[0].number}
+                                ${iAndGoods[0].getNumber()}
                             </td>
                             <td>
                                 <input type="text" name="inNumber">

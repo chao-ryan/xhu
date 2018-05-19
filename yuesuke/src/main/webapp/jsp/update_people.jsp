@@ -25,39 +25,39 @@
             <tbody>
             <tr>
                 <td>ID</td>
-                <td><input type="text" name="peopleId" class="people_id" value="${updPeople.id}"></td>
+                <td><input type="text" name="peopleId" class="people_id" value="${updPeople.getId()}"></td>
             </tr>
             <tr>
                 <td>NAME</td>
-                <td><input type="text" name="name" class="people_name" value="${updPeople.name}"></td>
+                <td><input type="text" name="name" class="people_name" value="${updPeople.getName()}"></td>
             </tr>
             <tr>
                 <td>CARD_ID</td>
-                <td><input type="text" name="cardId" class="people_card_id" value="${updPeople.cardId}"></td>
+                <td><input type="text" name="cardId" class="people_card_id" value="${updPeople.getCardId()}"></td>
             </tr>
             <tr>
                 <td>SEX</td>
-                <td><input type="text" name="sex" class="people_sex" value="${updPeople.sex}"></td>
+                <td><input type="text" name="sex" class="people_sex" value="${updPeople.getSex()}"></td>
             </tr>
             <tr>
                 <td>AGE</td>
-                <td><input type="text" name="age" class="people_age" value="${updPeople.age}"></td>
+                <td><input type="text" name="age" class="people_age" value="${updPeople.getAge()}"></td>
             </tr>
             <tr>
                 <td>MONEY</td>
-                <td><input type="text" name="money" class="people_money" value="${updPeople.money}"></td>
+                <td><input type="text" name="money" class="people_money" value="${updPeople.getMoney()}"></td>
             </tr>
             <tr>
                 <td>ADDRESS</td>
-                <td><input type="text" name="address" class="people_address" value="${updPeople.address}"></td>
+                <td><input type="text" name="address" class="people_address" value="${updPeople.getAddress()}"></td>
             </tr>
             <tr>
                 <td>USERNAME</td>
-                <td><input type="text" name="username" class="people_user_name" value="${updPeople.usreName}"></td>
+                <td><input type="text" name="username" class="people_user_name" value="${updPeople.getUsreName()}"></td>
             </tr>
             <tr>
                 <td>PASSWORD</td>
-                <td><input type="text" name="password" class="people_password" value="${updPeople.passWord}"></td>
+                <td><input type="text" name="password" class="people_password" value="${updPeople.getPassWord()}"></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"><button type="submit" id="upd_people_btn">确认修改</button> </td>

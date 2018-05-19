@@ -32,7 +32,7 @@
             <br>&nbsp;&nbsp;
             <input type="button" onclick='location.href=("${pageContext.request.contextPath}/jsp/registration_page.jsp")' value="注册"/>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <input type="button" name="login" value="登录" id="submit" onclick="submit"/>
+            <input type="button" name="login" value="登录" id="submit" onclick="submit()"/>
         </form>
         <%--<c:choose>--%>
         <%--<c:when test="${LoginMessage eq 'error'}">--%>
@@ -68,7 +68,7 @@
                 //                contentType:"text",
                 success: function (x) {
                     alert("登陆成功！！！");
-                    window.location.replace("${pageContext.request.contextPath}/mainAction!main.do");
+                    window.location.replace("${pageContext.request.contextPath}/action/mainAction!main.do");
                 },
                 error: function (XMLResponse) {
                     alert("登陆失败！用户名或者密码错误！或者该账户未注册！")

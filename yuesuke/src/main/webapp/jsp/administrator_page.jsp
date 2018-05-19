@@ -41,14 +41,14 @@
                     <c:forEach var="people" items="${peopleList}" varStatus="people_index">
                         <tr>
                             <td class="people_id">${people.id}</td>
-                            <td>${people.name}</td>
-                            <td>${people.cardId}</td>
-                            <td>${people.sex}</td>
-                            <td>${people.age}</td>
-                            <td>${people.money}</td>
-                            <td>${people.address}</td>
-                            <td>${people.usreName}</td>
-                            <td>${people.passWord}</td>
+                            <td>${people.getName()}</td>
+                            <td>${people.getCardId()}</td>
+                            <td>${people.getSex()}</td>
+                            <td>${people.getAge()}</td>
+                            <td>${people.getMoney()}</td>
+                            <td>${people.getAddress()}</td>
+                            <td>${people.getUsreName()}</td>
+                            <td>${people.getPassWord()}</td>
                             <td><button class="del_btn">删除</button><button class="upd_btn">修改</button></td>
                         </tr>
                     </c:forEach>
@@ -76,10 +76,10 @@
                     <c:forEach var="store" items="${storeList}" varStatus="store_index">
                         <tr>
                             <td class="store_id">${store.id}</td>
-                            <td>${store.storeNum}</td>
-                            <td>${store.storeName}</td>
-                            <td>${store.credit}</td>
-                            <td>${store.peopleId}</td>
+                            <td>${store.getStoreNum()}</td>
+                            <td>${store.getStoreName()}</td>
+                            <td>${store.getCredit()}</td>
+                            <td>${store.getPeopleId()}</td>
                             <td><button class="del_btn">删除</button><button class="upd_btn">修改</button></td>
                         </tr>
                     </c:forEach>

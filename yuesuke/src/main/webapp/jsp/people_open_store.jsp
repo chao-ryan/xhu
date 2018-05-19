@@ -10,7 +10,7 @@
 <div class="people_open_store">
     <form name="openStore" action="${pageContext.request.contextPath}/action/openStore!doPost.do" method="post" align="center">
         <p>您还未开通店铺，如果需要开通店铺请输入店铺名，点击确认开通即可开通店铺</p>
-        <input type="hidden" name="peopleId" value="${person.id}">
+        <input type="hidden" name="peopleId" value="${person.getId()}">
         <input type="text" name="storeName">
         <input type="submit" value="开通">
         <a href="${pageContext.request.contextPath}/action/storeHome!doPost.do"> <input type="button" value="返回"></a>

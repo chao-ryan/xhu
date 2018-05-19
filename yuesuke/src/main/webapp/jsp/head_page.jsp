@@ -11,12 +11,14 @@
     <div id="K_SiteNavBd" class="site-nav-bd">
         <ul class="site-nav-bd-one">
             <li><a href="${pageContext.request.contextPath}/jsp/login_page.jsp" target="_top">登录/注册</a></li>
-            <li><a href="${pageContext.request.contextPath}/jsp/person.jsp" target="_blank">用户：${person.name}</a></li>
+            <li><a href="${pageContext.request.contextPath}/jsp/person.jsp" target="_blank">用户：${person.getName()}</a></li>
             <li>
-                <a href="${pageContext.request.contextPath}/action/userOrderAction!findOrderAll.do?peopleId=${person.id}"
-                   target="_blank">查看订单</a></li>
-            <li><a href="${pageContext.request.contextPath}/action/storeAction!storeHome.do?peopleId=${person.id}" target="_blank">卖家中心</a></li>
-            <li><a href="${pageContext.request.contextPath}/action/mainAction!main.do" target="_blank">商品分类</a></li>
+                <a href="${pageContext.request.contextPath}/action/userOrderAction!findOrderAll.do?peopleId=${person.getId()}" target="_blank">
+                    查看订单
+                </a>
+            </li>
+            <li><a href="${pageContext.request.contextPath}/action/storeAction!storeHome.do?peopleId=${person.getId()}" target="_blank">卖家中心</a></li>
+            <%--<li><a href="${pageContext.request.contextPath}/action/mainAction!main.do" target="_blank">商品分类</a></li>--%>
             <li><a href="javascript:void(0)"
                onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
                 商品分类</a></li>
@@ -49,7 +51,7 @@
 <!--搜索框-->
 <div class="search-entirety">
     <div class="search-logo">
-        <img src="${pageContext.request.contextPath}/img/logo.jpg"/>
+        <img src="${pageContext.request.contextPath}/img/xhu_logo.jpg"/>
     </div>
     <div class="search-container">
         <!--搜索框表单-->
