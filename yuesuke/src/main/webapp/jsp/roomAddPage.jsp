@@ -76,6 +76,11 @@
                                 <span class="column-name">宿舍信息</span>
                             </a>
                         </li>
+                        <li class="column-list-item-7">
+                            <a href="${pageContext.request.contextPath}/action/schooling!show.do" title="学费详情" class="column-item-link" name="by" id="b7" onclick="show(7)">
+                                <span class="column-name">学费详情</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -101,7 +106,7 @@
                         <form>
                             <label class="room-area" for="L-room_area_add">宿舍区域</label>
                             <div class="pop-up-body-input-box">
-                                <input type="text" id="L-room_area_add" value="" required="required" name="roomAreaAdd" autocomplete="off" placeholder="此项为必填项"/>
+                                <input type="text" id="L-room_area_add" value="" required="required" name="roomAreaAdd" autocomplete="off" autofocus="autofocus" placeholder="此项为必填项"/>
                             </div><br/>
                             <label class="room-loudong" for="L-room_loudong_add">楼栋号</label>
                             <div class="pop-up-body-input-box">

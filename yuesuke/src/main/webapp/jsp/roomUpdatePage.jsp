@@ -76,6 +76,11 @@
                                 <span class="column-name">宿舍信息</span>
                             </a>
                         </li>
+                        <li class="column-list-item-7">
+                            <a href="${pageContext.request.contextPath}/action/schooling!show.do" title="学费详情" class="column-item-link" name="by" id="b7" onclick="show(7)">
+                                <span class="column-name">学费详情</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -101,7 +106,7 @@
                         <form>
                             <label class="room-area" for="L-room_area_update">宿舍区域</label>
                             <div class="pop-up-body-input-box">
-                                <input type="text" id="L-room_area_update" value="${roomUp.getArea()}" required="required" name="roomAreaUp" autocomplete="off" placeholder="此项为必填项"/>
+                                <input type="text" id="L-room_area_update" value="${roomUp.getArea()}" required="required" name="roomAreaUp" autocomplete="off" autofocus="autofocus" placeholder="此项为必填项"/>
                             </div><br/>
                             <label class="room-loudong" for="L-room_loudong_update">楼栋号</label>
                             <div class="pop-up-body-input-box">
@@ -109,7 +114,7 @@
                             </div><br/>
                             <label class="room-floor-number" for="L-room_floor_number_update">楼层号</label>
                             <div class="pop-up-body-input-box">
-                                <input type="text" id="L-room_floor_number_update" value="${roomUp.getFloorNumber()}" required="required" name="roomFlooeUp" autocomplete="off" placeholder="此项为必填项"/>
+                                <input type="text" id="L-room_floor_number_update" value="${roomUp.getFloorNumber()}" required="required" name="roomFloorUp" autocomplete="off" placeholder="此项为必填项"/>
                             </div><br/>
                             <label class="room-room-number" for="L-room_room_number_update">房间号</label>
                             <div class="pop-up-body-input-box">
@@ -117,7 +122,7 @@
                             </div><br/>
                             <label class="room-auntie-name" for="L-room_auntie_name_update">宿管阿姨</label>
                             <div class="pop-up-body-input-box">
-                                <input type="text" id="L-room_auntie_name_update" value="${roomUp.getAuntieName()}" name="roomAuntieUp" autocomplete="off"/>
+                                <input type="text" id="L-room_auntie_name_update" value="${roomUp.getAuntieName()}" required="required" name="roomAuntieUp" autocomplete="off" placeholder="此项为必填项"/>
                             </div><br/>
                             <label class="room-students-number" for="L-room_students_number_update">学生人数</label>
                             <div class="pop-up-body-input-box">

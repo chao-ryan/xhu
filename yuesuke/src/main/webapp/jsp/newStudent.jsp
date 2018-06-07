@@ -44,7 +44,12 @@
                     <a class="xhu-setting" href="${pageContext.request.contextPath}/jsp/login.jsp" target="_self">信息管理</a>
                 </li>
                 <li class="main-level-1">
-                    <a class="old-market" href="${pageContext.request.contextPath}/jsp/main_page.jsp" target="_self">跳蚤市场</a>
+                    <a class="old-market" href="http://localhost:8088/chatroom/" target="_self">YS聊天室</a>
+                </li>
+                <li class="main-level-1">
+                    <a href="${pageContext.request.contextPath}/jsp/adminLoginPage.jsp" title="管理员" class="column-item-link" name="by" id="b8" onclick="show(8)">
+                        <span class="column-name">管理员</span>
+                    </a>
                 </li>
             </ul>
         </div>

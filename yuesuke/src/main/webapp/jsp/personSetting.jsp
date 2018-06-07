@@ -47,7 +47,7 @@
                 <div class="column-list-box">
                     <ul class="column-list-item-person">
                         <li class="column-list-item-1">
-                            <a href="${pageContext.request.contextPath}/action/personSetting!person.do" onclick="show(1)" name="by" id="b1">
+                            <a href="${pageContext.request.contextPath}/personSetting!person.do" onclick="show(1)" name="by" id="b1">
                                 <span class="column-name">个人信息</span>
                             </a>
                         </li>
@@ -76,6 +76,11 @@
                                 <span class="column-name">宿舍信息</span>
                             </a>
                         </li>
+                        <li class="column-list-item-7">
+                            <a href="${pageContext.request.contextPath}/action/schooling!show.do" title="学费详情" class="column-item-link" name="by" id="b7" onclick="show(7)">
+                                <span class="column-name">学费详情</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -84,7 +89,7 @@
         <div class="content-box" id="content_box">
             <!-- 欢迎信息 -->
             <div class="content-wecome-box" id="d0" name="dv" style="display: block">
-                <h2>欢迎<span> </span><span id="student-name">邓超</span><span> </span>童鞋来到西华大学！</h2>
+                <h2>欢迎<span> </span><span id="student-name"></span><span> </span>童鞋来到西华大学！</h2>
             </div>
             <!-- 个人信息content -->
             <div class="content-person-box" id="d1" name="dv" style="display: none">
@@ -96,7 +101,7 @@
                     <br/>
                     <label class="per-sex" for="L-per_sex">性 别：</label>
                     <div class="content-per-input-box">
-                        <input id="L-per_sex" value="${personStudent.getSex()}" readonly="readonly" type="text"/>
+                        <input id="L-per_sex" value="${personStudent.getGender()}" readonly="readonly" type="text"/>
                     </div><br/>
                     <label class="per-enthnic" for="L-per_enthnic">民 族：</label>
                     <div class="content-per-input-box">
