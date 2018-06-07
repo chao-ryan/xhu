@@ -1,0 +1,80 @@
+html body{
+    width: 100%;
+    background-color: midnightblue;
+    font-family: 微软雅黑;
+}
+body{
+    background-size: auto 1000px;
+}
+.adminLogin-body-box{
+    width: 30%;
+    height: 300px;
+    float: left;
+    background-color: aliceblue;
+    margin-top: 10%;
+    margin-left: 30%;
+}
+.top-return-box{
+    width: 12px;
+    float: left;
+    padding-top: 2px;
+    padding-left: 96%;
+    background-color: #F2F2F2;
+}
+.top-return-box a{
+    font-size: 18px;
+    color: darkgrey;
+    text-decoration: none;
+}
+.top-return-box a:hover{
+    color: chocolate;
+}
+h2{
+    text-align: center;
+    padding-top: 18px;
+}
+.form-box{
+    float: left;
+}
+.form-box form{
+    float: left;
+    padding-left: 10%;
+}
+.username-box{
+    width: 320px;
+    float: left;
+    padding-top: 12px;
+}
+.form-box label{
+    width: 60px;
+    float: left;
+    padding-top: 12px;
+}
+#password_lable{
+    padding-top: 32px;
+}
+.password-box{
+    width: 320px;
+    float: left;
+    padding-top: 32px;
+}
+.form-box input{
+    line-height: 20px;
+    width: 260px;
+}
+.login-button-box{
+    width: 120px;
+    float: left;
+    padding-top: 8%;
+    padding-left: 23%;
+}
+.login-button-box button{
+    width: 100px;
+    height: 32px;
+    background-color: #88a3ff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+}
+

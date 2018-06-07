@@ -1,0 +1,134 @@
+a {
+    font-size: 9pt;	text-decoration: none;	color: #3C404D;
+}
+td{
+    font-size:14px;
+    color: blue;
+}
+.btn_grey {
+    font-family: "����";	font-size: 9pt;color: #333333;
+    background-color: #eeeeee;cursor: hand;padding:1px;height:19px;
+    border-top: 1px solid #FFFFFF;border-right:1px solid #666666;
+    border-bottom: 1px solid #666666;border-left: 1px solid #FFFFFF;
+}
+/*.btn_bg {*/
+/*!*background-image:url(../images/button.jpg); border:#436E9B thin 0px;*!*/
+/*width:86px;*/
+/*height: 64px;*/
+/*height:20px;padding:4px;*/
+/*color:#FFFFFF;*/
+/*}*/
+
+input {
+    font-family: 微软雅黑;
+    /*font-family: "����";*/
+    font-size: 9pt;
+    color: blue;
+    border: 2px solid blue;
+}
+input.login {
+    font-family: "����";
+    font-size: 9pt;
+    color: #333333;
+    border: 1px solid #6f9c61;
+    width:150px;
+    height:22px;
+}
+.wenbenkuang {
+    font-family: "����";
+    font-size: 9pt;
+    color: #333333;
+    border: 1px solid #444444;
+}
+
+
+.noborder{
+    border-style:none;
+}
+/*chat_login.jsp*/
+html{
+    font-family: 微软雅黑;
+    background-color: lemonchiffon;
+}
+#index_body{
+    width: 100%;
+    height: 600px;
+    float: left;
+    background-size: auto 1100px;
+}
+#index_welcome_td{
+    font-size: 18px;
+    color: white;
+    padding-left: 26%;
+}
+#index_form_box{
+    float: left;
+    width: 80%;
+    margin-left: 5%;
+}
+#index_username_lable{
+    font-family: 微软雅黑;
+    color: blue;
+    font-size: 24px;
+    float: left;
+    margin-top: 4%;
+}
+#index_username_input{
+    width: 180px;
+    height: 30px;
+    float: left;
+    /*margin-left: 1%;*/
+    /*margin-top: 5%;*/
+    background-color: white;
+}
+#index_login_button_box{
+    width: 80%;
+    float: left;
+    /*margin-left: 7%;*/
+    /*margin-top: 52%;*/
+}
+#index_login_button{
+    background-color: blue;
+    width: 80px;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+}
+#index_login_button span{
+    font-family: 微软雅黑;
+    font-size: 18px;
+    color: white;
+}
+
+/* main  */
+/*#main_body{*/
+/*width: auto;*/
+/*height: 900px;*/
+/*}*/
+#main_send_input{
+    width: 80%;
+    height: 40px;
+}
+#main_send_button{
+    width: 80px;
+    height: 38px;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+}
+#main_exit_button{
+    width: 120px;
+    height: 38px;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+}
+#main_word_dark_span{
+    font-size: 16px;
+    color: chocolate;
+}
+
+/*-->*/
+/*<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">*/

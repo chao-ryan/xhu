@@ -1,0 +1,27 @@
+html body{
+    font-family: 微软雅黑;
+    background-color: lightblue;
+}
+h2{
+    color: chocolate;
+    text-align: center;
+    padding-top: 5%;
+}
+ul li{
+    list-style: none;
+}
+.return-button-box{
+    width: 200px;
+    padding-top: 2%;
+    margin-left: 42%;
+}
+a{
+    font-size: 18px;
+    text-decoration: none;
+}
+a:hover{
+    color: chocolate;
+}
+a:visited{
+    color: dodgerblue;
+}
