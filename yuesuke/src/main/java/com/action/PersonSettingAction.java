@@ -62,7 +62,7 @@ public class PersonSettingAction extends BaseAction{
         resp.setCharacterEncoding("UTF-8");
         HttpServletRequest request= (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
         String result="";
-//        stuIdNumber=req.getParameter("stuIdNumber");
+        //接收用户登录成功的身份证号idNumber
         stuIdNum= String.valueOf(request.getSession().getAttribute("stuIdNum"));
         Map<String,Object> mapStu=new HashMap<String, Object>();
         if (newStuIdNumber != null){
@@ -78,7 +78,7 @@ public class PersonSettingAction extends BaseAction{
             if (studentsList.size() == 1 ){
                 req.setAttribute("personStudent",studentsList.get(0));
                 req.setAttribute("birthDay",FormatUtils.dateFormat(studentsList.get(0).getBirthday()));
-                req.setAttribute("sex", SexEnum.findSexByIndex(studentsList.get(0).getSex()));
+                req.setAttribute("sex", SexEnum.findSexByIndex(studentsList.get(0).getGender()));
 //                ActionContext.getContext().put("personStudent",studentsList.get(0));
 //                ServletActionContext.getRequest().setAttribute("personStudent", studentsList.get(0));
 //                result="personPage";
@@ -105,7 +105,7 @@ public class PersonSettingAction extends BaseAction{
             if (studentsList.size() > 0){
                 req.setAttribute("studentUpdate", studentsList.get(0));
                 req.setAttribute("birthDay",FormatUtils.dateFormat(studentsList.get(0).getBirthday()));
-                req.setAttribute("sex", SexEnum.findSexByIndex(studentsList.get(0).getSex()));
+                req.setAttribute("sex", SexEnum.findSexByIndex(studentsList.get(0).getGender()));
             }
         }
         return "personUpdate";
@@ -136,7 +136,7 @@ public class PersonSettingAction extends BaseAction{
                 //判断是否有数据
                 if (studentsList.size() >0 ){
                     studentsList.get(0).setBirthday(birthDay);
-                    studentsList.get(0).setSex(Sex);
+                    studentsList.get(0).setGender(Sex);
                     studentsList.get(0).setEnthnic(enthnic);
                     studentsList.get(0).setOrigin(L_per_origin_update);
                     studentsList.get(0).setPhone(L_per_phone_update);
@@ -147,7 +147,7 @@ public class PersonSettingAction extends BaseAction{
                     studentsService.update(studentsList.get(0));
                     req.setAttribute("studentUpdate", studentsList.get(0));
                     req.setAttribute("birthDay",FormatUtils.dateFormat(studentsList.get(0).getBirthday()));
-                    req.setAttribute("sex", SexEnum.findSexByIndex(studentsList.get(0).getSex()));
+                    req.setAttribute("sex", SexEnum.findSexByIndex(studentsList.get(0).getGender()));
                     stuIdNumber=studentsList.get(0).getIdNumber();
                 }
             }

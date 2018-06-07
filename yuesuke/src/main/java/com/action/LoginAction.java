@@ -37,7 +37,7 @@ import java.util.Map;
         @Result(name = "mainPage",location = "/jsp/mainPage.jsp"),
         @Result(name = "loginPage",location = "/jsp/login.jsp"),
         @Result(name = "personSetting",location = "/jsp/personSetting.jsp"),
-        @Result(name = "failed",location = "/jsp/404.jsp")
+        @Result(name = "404",location = "/jsp/404.jsp")
 })
 public class LoginAction extends BaseAction {
     @Autowired
@@ -61,31 +61,44 @@ public class LoginAction extends BaseAction {
         HttpServletRequest request= (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
 
         String result="";
+        String state="success";
         Map<String,Object> mapAccount=new HashMap<String, Object>();
         Map<String,Object> mapStudent=new HashMap<String, Object>();
+        //判断Service是否为null
         if (accountService != null && studentsService != null){
             mapAccount.put("ACCOUNT_NUMBER",stuAccount);
             mapStudent.put("ID_NUMBER",stuIdNumber);
             List<Account> accountList=accountService.findByCondition(mapAccount);
+            //查找账号结果有效
             if (accountList.size() > 0){
                 List<Students> studentsList=studentsService.findByCondition(mapStudent);
+                //身份证号匹配正确
                 if (studentsList.size() == 1){
                     req.setAttribute("stuAccount",stuAccount);
                     req.setAttribute("stuIdNumber",stuIdNumber);
                     stuIdNum=studentsList.get(0).getIdNumber();
+                    //保存登录用户身份证号idNumber
                     request.getSession().setAttribute("stuIdNum",stuIdNum);
-//                    request.setAttribute("stuIdNum",studentsList.get(0).getIdNumber());
-//                        req.getRequestDispatcher("/personSetting!person.do").forward(req,resp);
+                    //保存登录成功状态state为success
+                    state="success";
                     result="personSetting";
                 }else {
-                    result="failed";
+                 //保存登录失败状态state为failed
+                    state="failed";
+                    result="404";
                 }
             }else {
-                result="failed";
+                //保存登录失败状态state为failed
+                state="failed";
+                result="404";
             }
         }else {
+            //保存登录失败状态state为failed
+            state="failed";
             result="loginPage";
         }
+        //保存用户登录状态到session
+        request.getSession().setAttribute("state",state);
         return result;
     }
 
@@ -112,4 +125,5 @@ public class LoginAction extends BaseAction {
     public void setStuIdNum(String stuIdNum) {
         this.stuIdNum = stuIdNum;
     }
+
 }

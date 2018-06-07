@@ -9,14 +9,20 @@ package com.action;/************************************************************
  */
 
 import com.domain.*;
-import com.service.*;
+import com.opensymphony.xwork2.ActionContext;
+import com.service.AccountService;
+import com.service.ClassRelationService;
+import com.service.RoomService;
+import com.service.StudentsService;
 import com.util.FormatUtils;
 import com.util.base.BaseAction;
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.util.HashMap;
@@ -33,7 +39,9 @@ import java.util.Map;
 @Results({
         @Result(name = "student",location = "/jsp/studentPage.jsp"),
         @Result(name = "studentAdd",location = "/jsp/studentAddPage.jsp"),
-        @Result(name = "studentUpdate",location = "/jsp/studentUpdatePage.jsp")
+        @Result(name = "studentUpdate",location = "/jsp/studentUpdatePage.jsp"),
+        @Result(name = "failed",location = "/jsp/failed.jsp"),
+        @Result(name = "404",location = "/jsp/404.jsp")
 })
 public class StudentAction extends BaseAction {
     @Autowired
@@ -51,6 +59,9 @@ public class StudentAction extends BaseAction {
     private String toUpStuAccount;
     private String method;
     private String delStuId;
+    private String state;
+    private String stuIdNum;
+
     /**
      * @Title: classInfoShow
      * @Description: 信息管理-班级信息
@@ -67,9 +78,11 @@ public class StudentAction extends BaseAction {
         if (this.stuAccount != null && !("".equals(this.stuAccount))){
             mapStu.put("STU_ACCOUNT",this.stuAccount);
         }
+        //判断需要修改的账号是否有效
         if (toUpStuAccount != null){
             mapStu.put("STU_ACCOUNT",toUpStuAccount);
         }
+        //根据学生账号查询
         if (classRelationService != null){
             relationList=classRelationService.findByCondition(mapStu);
             if (relationList.size() > 0){
@@ -81,17 +94,20 @@ public class StudentAction extends BaseAction {
 
     /**
      * @Title: delClass
-     * @Description: 删除操作
+     * @Description: 删除操作（权限-2）
      * @author dengchao
      * @date 2018/5/13
      */
     public void delStu(){
         Students studentsDel=null;
         Integer rows1=0;
+        //判断是否需要执行删除操作
         if ("del".equals(this.method) && this.delStuId != null){
             if (studentsService != null){
                 studentsDel=studentsService.findById(Long.valueOf(this.delStuId));
-                if (studentsDel != null){
+                //判断操作权限是否为 2
+                if (studentsDel != null && studentsDel.getAuthority() == 2){
+                    //只有权限为 2 的人员才能执行此操作
                     rows1=studentsService.deleteById(Long.valueOf(this.delStuId));
                 }
             }
@@ -111,6 +127,24 @@ public class StudentAction extends BaseAction {
         Integer rowsAccount=0;
         Integer rowsStu=0;
         Integer rowsRelation=0;
+
+        HttpServletRequest request= (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+        state= String.valueOf(request.getSession().getAttribute("state"));
+        //接收用户登录成功的身份证号idNumber
+        stuIdNum= String.valueOf(request.getSession().getAttribute("stuIdNum"));
+        Map<String,Object> mapStu=new HashMap<String, Object>();
+        List<Students> studentsList=null;
+        Students studentsLogin=null;
+        if (stuIdNum != null){
+            mapStu.put("ID_NUMBER",stuIdNum);
+        }
+        if (studentsService != null){
+            studentsList=studentsService.findByCondition(mapStu);
+        }
+        if (studentsList.size() == 1){
+            studentsLogin=studentsList.get(0);
+        }
+
 
         Students students=null;
         Account account=null;
@@ -154,45 +188,50 @@ public class StudentAction extends BaseAction {
             }
         }
         //添加学生信息
-        if (students == null && room != null && rowsAccount > 0){
-            try {
-                students=new Students();
-                students.setName(stuNameAdd);
-                students.setBirthday(FormatUtils.dateFormStrYmd(stuBirthAdd));
-                students.setOrigin(stuOriginAdd);
-                students.setEnthnic(stuEnthnicAdd);
-                students.setIdNumber(stuIdNumAdd);
-                students.setSex(Byte.valueOf(stuSexAdd));
-                students.setPhone(stuPhoneAdd);
-                students.setUniversity(stuUniversityAdd);
-                students.setFamilyPopulation(Integer.valueOf(stuFamilyAdd));
-                students.setFatherName(stuFatherNameAdd);
-                students.setFatherPhone(stuFatherPhoneAdd);
-                students.setFatherAddress(stuFatherAddressAdd);
-                students.setMotherName(stuMotherNameAdd);
-                students.setMotherPhone(stuMotherPhoneAdd);
-                students.setMotherAddress(stuMotherAddressAdd);
-                students.setSaveTime(FormatUtils.now());
-                students.setUpdateTime(FormatUtils.now());
-                students.setAccountId(account);
-                students.setRoomId(room);
-                if (studentsService != null){
-                    rowsStu=studentsService.save(students);
+        //判断当前用户是否登录成功，判断登录用户权限是否为 2
+        if ("success".equals(state) && studentsLogin.getAuthority() == 2){
+            if (students == null && room != null && rowsAccount > 0){
+                try {
+                    students=new Students();
+                    students.setName(stuNameAdd);
+                    students.setBirthday(FormatUtils.dateFormStrYmd(stuBirthAdd));
+                    students.setOrigin(stuOriginAdd);
+                    students.setEnthnic(stuEnthnicAdd);
+                    students.setIdNumber(stuIdNumAdd);
+                    students.setGender(Byte.valueOf(stuSexAdd));
+                    students.setPhone(stuPhoneAdd);
+                    students.setUniversity(stuUniversityAdd);
+                    students.setFamilyPopulation(Integer.valueOf(stuFamilyAdd));
+                    students.setFatherName(stuFatherNameAdd);
+                    students.setFatherPhone(stuFatherPhoneAdd);
+                    students.setFatherAddress(stuFatherAddressAdd);
+                    students.setMotherName(stuMotherNameAdd);
+                    students.setMotherPhone(stuMotherPhoneAdd);
+                    students.setMotherAddress(stuMotherAddressAdd);
+                    students.setSaveTime(FormatUtils.now());
+                    students.setUpdateTime(FormatUtils.now());
+                    students.setAccountId(account);
+                    students.setRoomId(room);
+                    if (studentsService != null){
+                        rowsStu=studentsService.save(students);
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
                 }
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            //添加关系表
-            if (rowsStu > 0 && classRelation == null){
-                classRelation.setStudentsId(students);
-                if (classRelationService != null){
-                    rowsRelation=classRelationService.save(classRelation);
+                //添加关系表
+                if (rowsStu > 0 && classRelation == null){
+                    classRelation.setStudentsId(students);
+                    if (classRelationService != null){
+                        rowsRelation=classRelationService.save(classRelation);
+                    }
+                }
+                //确定返回页面
+                if (rowsRelation > 0){
+                    result="student";
                 }
             }
-            //确定返回页面
-            if (rowsRelation > 0){
-                result="student";
-            }
+        }else {
+            result="failed";
         }
         return result;
     }
@@ -221,7 +260,7 @@ public class StudentAction extends BaseAction {
 
     /**
      * @Title: classUpdate
-     * @Description: 信息管理-班级信息-修改
+     * @Description: 信息管理-学生信息-修改
      * @author dengchao
      * @date 2018/5/13
      */
@@ -274,11 +313,11 @@ public class StudentAction extends BaseAction {
             }
         }
 
-        //修改学生信息
-        if (students != null && room != null){
+        //修改学生信息,只有权限为 2 时可以修改
+        if (students != null && room != null && students.getAuthority() == 2 ){
             try {
                 students.setName(stuNameUp);
-                students.setSex(Byte.valueOf(stuSexUp));
+                students.setGender(Byte.valueOf(stuSexUp));
                 students.setBirthday(FormatUtils.dateFormStrYmd(stuBirthDayUp));
                 students.setOrigin(stuOriginUp);
                 students.setEnthnic(stuEnthnicUp);
@@ -302,6 +341,8 @@ public class StudentAction extends BaseAction {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
+        }else {
+            result="failed";
         }
         return result;
     }
@@ -339,4 +380,22 @@ public class StudentAction extends BaseAction {
     public void setDelStuId(String delStuId) {
         this.delStuId = delStuId;
     }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getStuIdNum() {
+        return stuIdNum;
+    }
+
+    public void setStuIdNum(String stuIdNum) {
+        this.stuIdNum = stuIdNum;
+    }
+
+
 }

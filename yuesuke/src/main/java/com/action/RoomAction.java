@@ -9,13 +9,18 @@ package com.action;/************************************************************
  */
 
 import com.domain.Room;
+import com.domain.Students;
+import com.opensymphony.xwork2.ActionContext;
 import com.service.RoomService;
+import com.service.StudentsService;
 import com.util.base.BaseAction;
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
@@ -32,11 +37,14 @@ import java.util.Map;
         @Result(name = "room",location = "/jsp/roomPage.jsp"),
         @Result(name = "roomAddPage",location = "/jsp/roomAddPage.jsp"),
         @Result(name = "roomUpdatePage",location = "/jsp/roomUpdatePage.jsp"),
-        @Result(name = "failed",location = "/jsp/404.jsp")
+        @Result(name = "404",location = "/jsp/404.jsp"),
+        @Result(name = "failed",location = "/jsp/failed.jsp")
 })
 public class RoomAction extends BaseAction {
     @Autowired
     private RoomService roomService;
+    @Autowired
+    private StudentsService studentsService;
 
     private List<Room> roomList;
 
@@ -46,6 +54,10 @@ public class RoomAction extends BaseAction {
     private String stuToRoomId;
     private String method;
     private String delRoomId;
+    private String stuIdNum;
+
+    HttpServletRequest request= (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);
+
     /**
      * @Title: roomShow
      * @Description: 信息管理-宿舍信息
@@ -80,7 +92,23 @@ public class RoomAction extends BaseAction {
      */
     public void delRoom(){
         Integer rows1=0;
-        if ("del".equals(this.method) && this.delRoomId != null) {
+        //接收用户登录成功的身份证号idNumber
+        stuIdNum= String.valueOf(request.getSession().getAttribute("stuIdNum"));
+        Map<String,Object> mapStu=new HashMap<String, Object>();
+        List<Students> studentsList=null;
+        Students students=null;
+        if (stuIdNum != null){
+            mapStu.put("ID_NUMBER",stuIdNum);
+        }
+        if (studentsService != null){
+            studentsList=studentsService.findByCondition(mapStu);
+        }
+        if (studentsList.size() == 1){
+            students=studentsList.get(0);
+        }
+
+        //判断登录学生操作权限为 2
+        if ("del".equals(this.method) && this.delRoomId != null && students.getAuthority() == 2) {
             if (roomService != null) {
                 rows1 = roomService.deleteById(Long.valueOf(this.delRoomId));
             }
@@ -97,6 +125,21 @@ public class RoomAction extends BaseAction {
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
 
+        //接收用户登录成功的身份证号idNumber
+        stuIdNum= String.valueOf(request.getSession().getAttribute("stuIdNum"));
+        Map<String,Object> mapStu=new HashMap<String, Object>();
+        List<Students> studentsList=null;
+        Students students=null;
+        if (stuIdNum != null){
+            mapStu.put("ID_NUMBER",stuIdNum);
+        }
+        if (studentsService != null){
+            studentsList=studentsService.findByCondition(mapStu);
+        }
+        if (studentsList.size() == 1){
+            students=studentsList.get(0);
+        }
+
         String result="roomAddPage";
         Integer rows=0;
         Room room=null;
@@ -109,8 +152,8 @@ public class RoomAction extends BaseAction {
         String roomStuNumAdd=req.getParameter("roomStuNumAdd");
         String roomEmptyAdd=req.getParameter("roomEmptyAdd");
 
-        //添加宿舍
-        if (room == null){
+        //添加宿舍，判断学生操作权限为 2
+        if (room == null && students.getAuthority() == 2){
                 room=new Room();
                 room.setArea(roomAreaAdd);
                 room.setStudentsNumber(Integer.valueOf(roomStuNumAdd));
@@ -167,12 +210,27 @@ public class RoomAction extends BaseAction {
         resp.setCharacterEncoding("UTF-8");
         String result="roomUpdatePage";
 
+        //接收用户登录成功的身份证号idNumber
+        stuIdNum= String.valueOf(request.getSession().getAttribute("stuIdNum"));
+        Map<String,Object> mapStu=new HashMap<String, Object>();
+        List<Students> studentsList=null;
+        Students students=null;
+        if (stuIdNum != null){
+            mapStu.put("ID_NUMBER",stuIdNum);
+        }
+        if (studentsService != null){
+            studentsList=studentsService.findByCondition(mapStu);
+        }
+        if (studentsList.size() == 1){
+            students=studentsList.get(0);
+        }
+
         Integer rows=0;
         Room roomUp=null;
 
         String roomAreaUp=req.getParameter("roomAreaUp");
         String roomLouDongUp=req.getParameter("roomLouDongUp");
-        String roomFlooeUp=req.getParameter("roomFlooeUp");
+        String roomFlooeUp=req.getParameter("roomFloorUp");
         String roomNumberUp=req.getParameter("roomNumberUp");
         String roomAuntieUp=req.getParameter("roomAuntieUp");
         String roomStuNumUp=req.getParameter("roomStuNumUp");
@@ -192,11 +250,14 @@ public class RoomAction extends BaseAction {
         }else {
             roomUp.setIsFull((byte) 1);
         }
-        if (roomService != null){
+        //判断登录学生操作权限为 2
+        if (roomService != null && students.getAuthority() == 2){
             rows=roomService.update(roomUp);
         }
         if (rows > 0 && roomUp != null){
             result="room";
+        }else {
+            result="failed";
         }
         return result;
     }
@@ -240,5 +301,13 @@ public class RoomAction extends BaseAction {
 
     public void setStuToRoomId(String stuToRoomId) {
         this.stuToRoomId = stuToRoomId;
+    }
+
+    public String getStuIdNum() {
+        return stuIdNum;
+    }
+
+    public void setStuIdNum(String stuIdNum) {
+        this.stuIdNum = stuIdNum;
     }
 }
