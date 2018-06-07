@@ -28,7 +28,11 @@ public class Teachers {
     /**
      * sex 教师性别 0-女，1-男
      */
-    private Byte sex;
+    private Byte gender;
+    /**
+     * authority 操作权限
+     */
+    private Byte authority;
     /**
      * age 教师年龄
      */
@@ -80,11 +84,11 @@ public class Teachers {
 
     }
 
-    public Teachers(Long id, String name, Byte sex, Integer age, String origin, String idNumber, String nation,
+    public Teachers(Long id, String name, Byte gender, Integer age, String origin, String idNumber, String nation,
                     String phone, Double salary, College collegeId, JobTitle jobTitleId, Date saveTime, Date updateTime) {
         this.id = id;
         this.name = name;
-        this.sex = sex;
+        this.gender = gender;
         this.age = age;
         this.origin = origin;
         this.idNumber = idNumber;
@@ -119,12 +123,20 @@ public class Teachers {
         this.name = name;
     }
 
-    public Byte getSex() {
-        return sex;
+    public Byte getGender() {
+        return gender;
     }
 
-    public void setSex(Byte sex) {
-        this.sex = sex;
+    public void setGender(Byte gender) {
+        this.gender = gender;
+    }
+
+    public Byte getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(Byte authority) {
+        this.authority = authority;
     }
 
     public Integer getAge() {

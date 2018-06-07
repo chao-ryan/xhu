@@ -28,7 +28,11 @@ public class Students {
     /**
      * sex 学生性别 0-女,1-男
      */
-    private Byte sex;
+    private Byte gender;
+    /**
+     * authority 操作权限
+     */
+    private Byte authority;
     /**
      * birthday 出生年月日 yyyy-MM-dd
      */
@@ -86,6 +90,10 @@ public class Students {
      */
     private Integer familyPopulation;
     /**
+     * isPay 是否已缴纳学费 0-否，1-是
+     */
+    private Byte isPay;
+    /**
      * roomId 宿舍外键（多对一）
      */
     private Room roomId;
@@ -93,6 +101,10 @@ public class Students {
      * accountId 学生学号/账号外键（一对一）
      */
     private Account accountId;
+    /**
+     * schoolingId 学杂费表外键（多对一）
+     */
+    private Schooling schoolingId;
     /**
      * saveTime 保存时间 yyyy-MM-dd HH:mm:ss
      */
@@ -112,10 +124,10 @@ public class Students {
 
     }
 
-    public Students(Long id, String name, Byte sex, Date birthday, String origin, String enthnic, String idNumber, String university, Double achievement, String phone, String fatherName, String fatherPhone, String fatherAddress, String motherName, String motherPhone, String motherAddress, Integer familyPopulation, Room roomId, Account accountId, Date saveTime, Date updateTime) {
+    public Students(Long id, String name, Byte gender, Date birthday, String origin, String enthnic, String idNumber, String university, Double achievement, String phone, String fatherName, String fatherPhone, String fatherAddress, String motherName, String motherPhone, String motherAddress, Integer familyPopulation, Room roomId, Account accountId, Date saveTime, Date updateTime) {
         this.id = id;
         this.name = name;
-        this.sex = sex;
+        this.gender = gender;
         this.birthday = birthday;
         this.origin = origin;
         this.enthnic = enthnic;
@@ -166,12 +178,20 @@ public class Students {
         this.birthday = birthday;
     }
 
-    public Byte getSex() {
-        return sex;
+    public Byte getGender() {
+        return gender;
     }
 
-    public void setSex(Byte sex) {
-        this.sex = sex;
+    public void setGender(Byte gender) {
+        this.gender = gender;
+    }
+
+    public Byte getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(Byte authority) {
+        this.authority = authority;
     }
 
     public String getOrigin() {
@@ -278,6 +298,14 @@ public class Students {
         this.familyPopulation = familyPopulation;
     }
 
+    public Byte getIsPay() {
+        return isPay;
+    }
+
+    public void setIsPay(Byte isPay) {
+        this.isPay = isPay;
+    }
+
     public Room getRoomId() {
         return roomId;
     }
@@ -308,5 +336,13 @@ public class Students {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Schooling getSchoolingId() {
+        return schoolingId;
+    }
+
+    public void setSchoolingId(Schooling schoolingId) {
+        this.schoolingId = schoolingId;
     }
 }
