@@ -5,7 +5,8 @@
     <resultMap id="studentsMap" type="com.domain.Students">
         <id property="id" column="ID"/>
         <result property="name" column="NAME"/>
-        <result property="sex" column="SEX"/>
+        <result property="gender" column="GENDER"/>
+        <result property="authority" column="AUTHORITY"/>
         <result property="birthday" column="BIRTHDAY"/>
         <result property="origin" column="ORIGIN"/>
         <result property="enthnic" column="ENTHNIC"/>
@@ -20,6 +21,7 @@
         <result property="motherPhone" column="MOTHER_PHONE"/>
         <result property="motherAddress" column="MOTHER_ADDRESS"/>
         <result property="familyPopulation" column="FAMILY_POPULATION"/>
+        <result property="isPay" column="IS_PAY"/>
         <result property="saveTime" column="SAVE_TIME"/>
         <result property="updateTime" column="UPDATE_TIME"/>
         <association property="roomId" column="ROOM_ID" javaType="com.domain.Room">
@@ -40,10 +42,18 @@
             <result property="saveTime" column="A_SAVE_TIME"/>
             <result property="updateTime" column="A_UPDATE_TIME"/>
         </association>
+        <association property="schoolingId" column="SCHOOLING_ID" javaType="com.domain.Schooling">
+            <id property="id" column="SCH_ID"/>
+            <result property="bookFee" column="SCH_BOOK_FEE"/>
+            <result property="tuitionFee" column="SCH_TUITION_FEE"/>
+            <result property="boardingFee" column="SCH_BOARDING_FEE"/>
+            <result property="otherFee" column="SCH_OTHER_FEE"/>
+            <result property="totalMoney" column="SCH_TOTAL_MONEY"/>
+        </association>
     </resultMap>
     <!-- 定义sql查询列 -->
     <sql id="columns">
-        ID,`NAME`,SEX,BIRTHDAY,ORIGIN,ENTHNIC,ID_NUMBER,UNIVERSITY,ACHIEVEMENT,PHONE,FATHER_NAME,FATHER_PHONE,FATHER_ADDRESS,MOTHER_NAME,MOTHER_PHONE,MOTHER_ADDRESS,FAMILY_POPULATION,SAVE_TIME,UPDATE_TIME,ROOM_ID,ACCOUNT_ID
+        ID,`NAME`,GENDER,AUTHORITY,BIRTHDAY,ORIGIN,ENTHNIC,ID_NUMBER,UNIVERSITY,ACHIEVEMENT,PHONE,FATHER_NAME,FATHER_PHONE,FATHER_ADDRESS,MOTHER_NAME,MOTHER_PHONE,MOTHER_ADDRESS,FAMILY_POPULATION,IS_PAY,SAVE_TIME,UPDATE_TIME,ROOM_ID,ACCOUNT_ID,SCHOOLING_ID
     </sql>
     <!-- 根据id删除 -->
     <delete id="deleteById" parameterType="java.lang.Long">
@@ -59,12 +69,12 @@
     <!-- 保存 -->
     <insert id="save" parameterType="com.domain.Students">
         INSERT INTO students(<include refid="columns"/> )
-        VALUES (DEFAULT ,#{name},#{sex},#{birthday},#{origin},#{enthnic},#{idNumber},#{university},#{achievement},#{phone},#{fatherName},#{fatherPhone},#{fatherAddress},#{motherName},#{motherPhone},#{motherAddress},#{familyPopulation},#{saveTime},#{updateTime},#{roomId.id},#{accountId.id})
+        VALUES (DEFAULT ,#{name},#{gender},#{authority},#{birthday},#{origin},#{enthnic},#{idNumber},#{university},#{achievement},#{phone},#{fatherName},#{fatherPhone},#{fatherAddress},#{motherName},#{motherPhone},#{motherAddress},#{familyPopulation},#{isPay},#{saveTime},#{updateTime},#{roomId.id},#{accountId.id}),#{schoolingId.id}
     </insert>
     <!-- 修改 -->
     <update id="update" parameterType="com.domain.Students">
         UPDATE students
-        SET `NAME`=#{name},SEX=#{sex},BIRTHDAY=#{birthday},ORIGIN=#{origin},ENTHNIC=#{enthnic},ID_NUMBER=#{idNumber},UNIVERSITY=#{university},ACHIEVEMENT=#{achievement},PHONE=#{phone},FATHER_NAME=#{fatherName},FATHER_PHONE=#{fatherPhone},FATHER_ADDRESS=#{fatherAddress},MOTHER_NAME=#{motherName},MOTHER_PHONE=#{motherPhone},MOTHER_ADDRESS=#{motherAddress},FAMILY_POPULATION=#{familyPopulation},SAVE_TIME=#{saveTime},UPDATE_TIME=#{updateTime},ROOM_ID=#{roomId.id},ACCOUNT_ID=#{accountId.id}
+        SET `NAME`=#{name},GENDER=#{gender},AUTHORITY=#{authority},BIRTHDAY=#{birthday},ORIGIN=#{origin},ENTHNIC=#{enthnic},ID_NUMBER=#{idNumber},UNIVERSITY=#{university},ACHIEVEMENT=#{achievement},PHONE=#{phone},FATHER_NAME=#{fatherName},FATHER_PHONE=#{fatherPhone},FATHER_ADDRESS=#{fatherAddress},MOTHER_NAME=#{motherName},MOTHER_PHONE=#{motherPhone},MOTHER_ADDRESS=#{motherAddress},FAMILY_POPULATION=#{familyPopulation},IS_PAY=#{isPay},SAVE_TIME=#{saveTime},UPDATE_TIME=#{updateTime},ROOM_ID=#{roomId.id},ACCOUNT_ID=#{accountId.id},SCHOOLING_ID=#{schoolingId.id}
         WHERE ID=#{id}
     </update>
     <!-- 根据id查询 -->
@@ -75,19 +85,21 @@
     </select>
     <!-- 根据条件（学生姓名，性别，籍贯，民族，身份证号，学校名字，手机号，宿舍（外键），学号（外键））查询-->
     <select id="findByCondition" parameterType="java.util.Map" resultMap="studentsMap">
-        SELECT S.ID,S.NAME,S.SEX,S.BIRTHDAY,S.ORIGIN,S.ENTHNIC,S.ID_NUMBER,S.UNIVERSITY,S.ACHIEVEMENT,S.PHONE,S.FATHER_NAME,S.FATHER_PHONE,S.FATHER_ADDRESS,
-        S.MOTHER_NAME,S.MOTHER_PHONE,S.MOTHER_ADDRESS,S.FAMILY_POPULATION,S.SAVE_TIME,S.UPDATE_TIME,S.ROOM_ID,S.ACCOUNT_ID,
+        SELECT S.ID,S.NAME,S.GENDER,S.AUTHORITY,S.BIRTHDAY,S.ORIGIN,S.ENTHNIC,S.ID_NUMBER,S.UNIVERSITY,S.ACHIEVEMENT,S.PHONE,S.FATHER_NAME,S.FATHER_PHONE,S.FATHER_ADDRESS,S.SCHOOLING_ID,
+        S.MOTHER_NAME,S.MOTHER_PHONE,S.MOTHER_ADDRESS,S.FAMILY_POPULATION,S.IS_PAY,S.SAVE_TIME,S.UPDATE_TIME,S.ROOM_ID,S.ACCOUNT_ID,
         R.ID R_ID,R.AREA R_AREA,R.LOUDONG R_LOUDONG,R.FLOOR_NUMBER R_FLOOR_NUMBER,R.ROOM_NUMBER R_ROOM_NUMBER,R.AUNTIE_NAME R_AUNTIE_NAME,R.STUDENTS_NUMBER R_STUDENTS_NUMBER,R.EMPTY_ROOM R_EMPTY_ROOM,R.IS_FULL R_IS_FULL,
-        A.ID A_ID,A.ACCOUNT_NUMBER A_ACCOUNT_NUMBER,A.PASSWORD A_PASSWORD,A.SAVE_TIME A_SAVE_TIME,A.UPDATE_TIME A_UPDATE_TIME
+        A.ID A_ID,A.ACCOUNT_NUMBER A_ACCOUNT_NUMBER,A.PASSWORD A_PASSWORD,A.SAVE_TIME A_SAVE_TIME,A.UPDATE_TIME A_UPDATE_TIME,
+        SCH.ID SCH_ID,SCH.BOOK_FEE SCH_BOOK_FEE,SCH.TUITION_FEE SCH_TUITION_FEE,SCH.BOARDING_FEE SCH_BOARDING_FEE,SCH.OTHER_FEE SCH_OTHER_FEE,SCH.TOTAL_MONEY SCH_TOTAL_MONEY
         FROM students S
         LEFT JOIN room R ON R.ID=S.ROOM_ID
         LEFT JOIN account A ON A.ID=S.ACCOUNT_ID
+        LEFT JOIN schooling SCH ON SCH.ID=S.SCHOOLING_ID
         <where>
             <if test="NAME != null">
                 S.`NAME` LIKE #{NAME}
             </if>
             <if test="SEX != null">
-                AND S.SEX=#{SEX}
+                AND S.GENDER=#{SEX}
             </if>
             <if test="ORIGIN != null">
                 AND S.ORIGIN=#{ORIGIN}
@@ -114,19 +126,21 @@
     </select>
     <!-- 根据条件（学生姓名，性别，籍贯，民族，身份证号，学校名字，手机号，宿舍（外键），学号（外键））分页查询-->
     <select id="findByConditionForPage" parameterType="java.util.Map" resultMap="studentsMap">
-        SELECT S.ID,S.NAME,S.SEX,S.BIRTHDAY,S.ORIGIN,S.ENTHNIC,S.ID_NUMBER,S.UNIVERSITY,S.ACHIEVEMENT,S.PHONE,S.FATHER_NAME,S.FATHER_PHONE,S.FATHER_ADDRESS,
-        S.MOTHER_NAME,S.MOTHER_PHONE,S.MOTHER_ADDRESS,S.FAMILY_POPULATION,S.SAVE_TIME,S.UPDATE_TIME,S.ROOM_ID,S.ACCOUNT_ID,
+        SELECT S.ID,S.NAME,S.GENDER,S.AUTHORITY,S.BIRTHDAY,S.ORIGIN,S.ENTHNIC,S.ID_NUMBER,S.UNIVERSITY,S.ACHIEVEMENT,S.PHONE,S.FATHER_NAME,S.FATHER_PHONE,S.FATHER_ADDRESS,S.SCHOOLING_ID,
+        S.MOTHER_NAME,S.MOTHER_PHONE,S.MOTHER_ADDRESS,S.FAMILY_POPULATION,S.IS_PAY,S.SAVE_TIME,S.UPDATE_TIME,S.ROOM_ID,S.ACCOUNT_ID,
         R.ID R_ID,R.AREA R_AREA,R.LOUDONG R_LOUDONG,R.FLOOR_NUMBER R_FLOOR_NUMBER,R.ROOM_NUMBER R_ROOM_NUMBER,R.AUNTIE_NAME R_AUNTIE_NAME,R.STUDENTS_NUMBER R_STUDENTS_NUMBER,R.EMPTY_ROOM R_EMPTY_ROOM,R.IS_FULL R_IS_FULL,
-        A.ID A_ID,A.ACCOUNT_NUMBER A_ACCOUNT_NUMBER,A.PASSWORD A_PASSWORD,A.SAVE_TIME A_SAVE_TIME,A.UPDATE_TIME A_UPDATE_TIME
+        A.ID A_ID,A.ACCOUNT_NUMBER A_ACCOUNT_NUMBER,A.PASSWORD A_PASSWORD,A.SAVE_TIME A_SAVE_TIME,A.UPDATE_TIME A_UPDATE_TIME,
+        SCH.ID SCH_ID,SCH.BOOK_FEE SCH_BOOK_FEE,SCH.TUITION_FEE SCH_TUITION_FEE,SCH.BOARDING_FEE SCH_BOARDING_FEE,SCH.OTHER_FEE SCH_OTHER_FEE,SCH.TOTAL_MONEY SCH_TOTAL_MONEY
         FROM students S
         LEFT JOIN room R ON R.ID=S.ROOM_ID
         LEFT JOIN account A ON A.ID=S.ACCOUNT_ID
+        LEFT JOIN schooling SCH ON SCH.ID=S.SCHOOLING_ID
         <where>
             <if test="NAME != null">
                 S.`NAME` LIKE #{NAME}
             </if>
             <if test="SEX != null">
-                AND S.SEX=#{SEX}
+                AND S.GENDER=#{SEX}
             </if>
             <if test="ORIGIN != null">
                 AND S.ORIGIN=#{ORIGIN}

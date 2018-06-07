@@ -13,7 +13,8 @@
         <association property="teachersId" column="TEACHERS_ID" javaType="com.domain.Teachers">
             <id property="id" column="T_ID"/>
             <result property="name" column="T_NAME"/>
-            <result property="sex" column="T_SEX"/>
+            <result property="gender" column="T_GENDER"/>
+            <result property="authority" column="T_AUTHORITY"/>
             <result property="age" column="T_AGE"/>
             <result property="origin" column="T_ORIFIN"/>
             <result property="nation" column="T_NATION"/>
@@ -71,7 +72,7 @@
     <!-- 根据条件（班级编号，班级名称，班级专业，辅导员）查询 -->
     <select id="findByCondition" parameterType="java.util.Map" resultMap="classInfoMap">
         SELECT CI.ID,CI.NUMBER,CI.NAME,CI.MAJOR,CI.STUDENTS_NUMBER,CI.SAVE_TIME,CI.UPDATE_TIME,CI.TEACHERS_ID,
-        T.ID T_ID,T.NAME T_NAME,T.SEX T_SEX,T.AGE T_AGE,T.ORIGIN T_ORIGIN,T.NATION T_NATION,T.ID_NUMBER T_ID_NUMBER,T.PHONE T_PHONE,T.SALARY T_SALARY,T.SAVE_TIME T_SAVE_TIME,T.UPDATE_TIME T_UPDATE_TIME,
+        T.ID T_ID,T.NAME T_NAME,T.GENDER T_GENDER,T.AUTHORITY T_AUTHORITY,T.AGE T_AGE,T.ORIGIN T_ORIGIN,T.NATION T_NATION,T.ID_NUMBER T_ID_NUMBER,T.PHONE T_PHONE,T.SALARY T_SALARY,T.SAVE_TIME T_SAVE_TIME,T.UPDATE_TIME T_UPDATE_TIME,
         CO.ID CO_ID,CO.NAME CO_NAME,CO.STUDENTS_NUMBER CO_STUDENTS_NUMBER,CO.TEACHERS_NUMBER CO_TEACHERS_NUMBER,CO.SAVE_TIME CO_SAVE_TIME,CO.UPDATE_TIME CO_UPDATE_TIME,
         J.ID J_ID,J.JOB_NAME J_JOB_NAME
         FROM CLASS_INFO CI
@@ -96,7 +97,7 @@
     <!-- 根据条件（班级编号，班级名称，班级专业，辅导员）查询 -->
     <select id="findByConditionForPage" parameterType="java.util.Map" resultMap="classInfoMap">
         SELECT CI.ID,CI.NUMBER,CI.NAME,CI.MAJOR,CI.STUDENTS_NUMBER,CI.SAVE_TIME,CI.UPDATE_TIME,CI.TEACHERS_ID,
-        T.ID T_ID,T.NAME T_NAME,T.SEX T_SEX,T.AGE T_AGE,T.ORIGIN T_ORIGIN,T.ENTHNIC T_ENTHNIC,T.ID_NUMBER T_ID_NUMBER,T.PHONE T_PHONE,T.SALARY T_SALARY,T.SAVE_TIME T_SAVE_TIME,T.UPDATE_TIME T_UPDATE_TIME,
+        T.ID T_ID,T.NAME T_NAME,T.GENDER T_GENDER,T.AUTHORITY T_AUTHORITY,T.AGE T_AGE,T.ORIGIN T_ORIGIN,T.ENTHNIC T_ENTHNIC,T.ID_NUMBER T_ID_NUMBER,T.PHONE T_PHONE,T.SALARY T_SALARY,T.SAVE_TIME T_SAVE_TIME,T.UPDATE_TIME T_UPDATE_TIME,
         CO.ID CO_ID,CO.NAME CO_NAME,CO.STUDENTS_NUMBER CO_STUDENTS_NUMBER,CO.TEACHERS_NUMBER CO_TEACHERS_NUMBER,CO.SAVE_TIME CO_SAVE_TIME,CO.UPDATE_TIME CO_UPDATE_TIME,
         J.ID J_ID,J.JOB_NAME J_JOB_NAME
         FROM CLASS_INFO CI

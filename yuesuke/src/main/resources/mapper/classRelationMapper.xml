@@ -24,7 +24,8 @@
             <association property="teachersId" column="CI_TEACHERS_ID" javaType="com.domain.Teachers">
                 <id property="id" column="T_ID"/>
                 <result property="name" column="T_NAME"/>
-                <result property="sex" column="T_SEX"/>
+                <result property="gender" column="T_GENDER"/>
+                <result property="authority" column="T_AUTHORITY"/>
                 <result property="age" column="T_AGE"/>
                 <result property="origin" column="T_ORIGIN"/>
                 <result property="nation" column="T_NATION"/>
@@ -50,7 +51,8 @@
         <association property="studentsId" column="STUDENTS_ID" javaType="com.domain.Students">
             <id property="id" column="S_ID"/>
             <result property="name" column="S_NAME"/>
-            <result property="sex" column="S_SEX"/>
+            <result property="gender" column="S_GENDER"/>
+            <result property="authority" column="S_AUTHORITY"/>
             <result property="birthday" column="S_BIRTHDAY"/>
             <result property="origin" column="S_ORIGIN"/>
             <result property="enthnic" column="S_ENTHNIC"/>
@@ -65,6 +67,7 @@
             <result property="motherPhone" column="S_MOTHER_PHONE"/>
             <result property="motherAddress" column="S_MOTHER_ADDRESS"/>
             <result property="familyPopulation" column="S_FAMILY_POPULATION"/>
+            <result property="isPay" column="S_IS_PAY"/>
             <result property="saveTime" column="S_SAVE_TIME"/>
             <result property="updateTime" column="S_UPDATE_TIME"/>
             <association property="roomId" column="S_ROOM_ID" javaType="com.domain.Room">
@@ -120,9 +123,9 @@
         SELECT CR.ID,CR.GRADE,CR.COLLEGE_ID,CR.CLASS_INFO_ID,CR.STUDENTS_ID,
         CO.ID CO_ID,CO.NAME CO_NAME,CO.STUDENTS_NUMBER CO_STUDENTS_NUMBER,CO.TEACHERS_NUMBER CO_TEACHERS_NUMBER,CO.SAVE_TIME CO_SAVE_TIME,CO.UPDATE_TIME CO_UPDATE_TIME,
         CI.ID CI_ID,CI.NUMBER CI_NUMBER,CI.NAME CI_NAME,CI.MAJOR CI_MAJOR,CI.STUDENTS_NUMBER CI_STUDENTS_NUMBER,CI.SAVE_TIME CI_SAVE_TIME,CI.UPDATE_TIME CI_UPDATE_TIME,CI.TEACHERS_ID CI_TEACHERS_ID,
-        T.ID T_ID,T.NAME T_NAME,T.SEX T_SEX,T.AGE T_AGE,T.ORIGIN T_ORIGIN,T.NATION T_NATION,T.ID_NUMBER T_ID_NUMBER,T.PHONE T_PHONE,T.SALARY T_SALARY,T.SAVE_TIME T_SAVE_TIME,T.UPDATE_TIME T_UPDATE_TIME,T.COLLEGE_ID T_COLLEGE_ID,T.JOB_TITLE_ID T_JOB_TITLE_ID,
+        T.ID T_ID,T.NAME T_NAME,T.GENDER T_GENDER,T.AUTHORITY T_AUTHORITY,T.AGE T_AGE,T.ORIGIN T_ORIGIN,T.NATION T_NATION,T.ID_NUMBER T_ID_NUMBER,T.PHONE T_PHONE,T.SALARY T_SALARY,T.SAVE_TIME T_SAVE_TIME,T.UPDATE_TIME T_UPDATE_TIME,T.COLLEGE_ID T_COLLEGE_ID,T.JOB_TITLE_ID T_JOB_TITLE_ID,
         J.ID J_ID,J.JOB_NAME J_JOB_NAME,
-        S.ID S_ID,S.NAME S_NAME,S.SEX S_SEX,S.BIRTHDAY S_BIRTHDAY,S.ORIGIN S_ORIGIN,S.ENTHNIC S_ENTHNIC,S.ID_NUMBER S_ID_NUMBER,S.UNIVERSITY S_UNIVERSITY,S.ACHIEVEMENT S_ACHIEVEMENT,S.PHONE S_PHONE,S.FATHER_NAME S_FATHER_NAME,S.FATHER_PHONE S_FATHER_PHONE,S.FATHER_ADDRESS S_FATHER_ADDRESS,S.MOTHER_NAME S_MOTHER_NAME,S.MOTHER_PHONE S_MOTHER_PHONE,S.MOTHER_ADDRESS S_MOTHER_ADDRESS,S.FAMILY_POPULATION S_FAMILY_POPULATION,S.SAVE_TIME S_SAVE_TIME,S.UPDATE_TIME S_UPDATE_TIME,S.ROOM_ID S_ROOM_ID,S.ACCOUNT_ID S_ACCOUNT_ID,
+        S.ID S_ID,S.NAME S_NAME,S.GENDER S_GENDER,S.AUTHORITY S_AUTHORITY,S.BIRTHDAY S_BIRTHDAY,S.ORIGIN S_ORIGIN,S.ENTHNIC S_ENTHNIC,S.ID_NUMBER S_ID_NUMBER,S.UNIVERSITY S_UNIVERSITY,S.ACHIEVEMENT S_ACHIEVEMENT,S.PHONE S_PHONE,S.FATHER_NAME S_FATHER_NAME,S.FATHER_PHONE S_FATHER_PHONE,S.FATHER_ADDRESS S_FATHER_ADDRESS,S.MOTHER_NAME S_MOTHER_NAME,S.MOTHER_PHONE S_MOTHER_PHONE,S.MOTHER_ADDRESS S_MOTHER_ADDRESS,S.FAMILY_POPULATION S_FAMILY_POPULATION,S.IS_PAY S_IS_PAY,S.SAVE_TIME S_SAVE_TIME,S.UPDATE_TIME S_UPDATE_TIME,S.ROOM_ID S_ROOM_ID,S.ACCOUNT_ID S_ACCOUNT_ID,
         R.ID R_ID,R.AREA R_AREA,R.LOUDONG R_LOUDONG,R.FLOOR_NUMBER R_FLOOR_NUMBER,R.ROOM_NUMBER R_ROOM_NUMBER,R.AUNTIE_NAME R_AUNTIE_NAME,R.STUDENTS_NUMBER R_STUDENTS_NUMBER,R.EMPTY_ROOM R_EMPTY_ROOM,R.IS_FULL R_IS_FULL,
         A.ID A_ID,A.ACCOUNT_NUMBER A_ACCOUNT_NUMBER,A.PASSWORD A_PASSWORD,A.SAVE_TIME A_SAVE_TIME,A.UPDATE_TIME A_UPDATE_TIME
         FROM class_relation CR
