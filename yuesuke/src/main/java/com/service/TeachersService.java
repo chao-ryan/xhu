@@ -85,4 +85,14 @@ public interface TeachersService {
      * @date 2018/3/28
      */
     public List<Teachers> findByConditionForPage(Map<String, Object> map, Integer start, Integer size);
+
+    /**
+     * @Title: updateStuAuthority
+     * @Description: 修改学生操作权限
+     * @param stuAccount 要修改操作权限的学生学号
+     * @author dengchao
+     * @return 返回受影响行数
+     * @date 2018/5/26
+     */
+    public Integer updateStuAuthority(String stuAccount,Byte authorityValue);
 }

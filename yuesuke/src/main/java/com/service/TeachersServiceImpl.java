@@ -8,11 +8,14 @@ package com.service;/***********************************************************
  * @version V1.0
  */
 
+import com.dao.StudentsDao;
 import com.dao.TeachersDao;
+import com.domain.Students;
 import com.domain.Teachers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,6 +30,9 @@ public class TeachersServiceImpl implements TeachersService {
     //注入 teachersDao
     @Autowired
     private TeachersDao teachersDao;
+    //注入studentsDao
+    @Autowired
+    private StudentsDao studentsDao;
     /**
      * @Title: deleteById
      * @Description: 根据id删除数据
@@ -105,5 +111,37 @@ public class TeachersServiceImpl implements TeachersService {
      */
     public List<Teachers> findByConditionForPage(Map<String, Object> map, Integer start, Integer size){
         return teachersDao.findByConditionForPage(map,start,size);
+    }
+
+    /**
+     * @Title: updateStuAuthority
+     * @Description: 修改学生操作权限
+     * @param stuIdNumber 要修改操作权限的学生身份证号
+     * @param authorityValue 操作权限等级
+     * @author dengchao
+     * @return 返回受影响行数
+     * @date 2018/5/26
+     */
+    @Override
+    public Integer updateStuAuthority(String stuIdNumber,Byte authorityValue) {
+        Integer rows=0;
+        Map<String,Object> upStuAuthorityMap=new HashMap<String, Object>();
+        upStuAuthorityMap.put("ID_NUMBER",stuIdNumber);
+        List<Students> studentsList=null;
+        //根据学生身份证号查询
+        if (studentsDao != null){
+            studentsList=studentsDao.findByCondition(upStuAuthorityMap);
+        }
+        //查询结果有效
+        if (studentsList.size() == 1){
+            Students students=studentsList.get(0);
+            //修改学生操作权限
+            students.setAuthority(authorityValue);
+            //执行修改
+            if (studentsDao != null){
+                rows=studentsDao.update(students);
+            }
+        }
+        return rows;
     }
 }
