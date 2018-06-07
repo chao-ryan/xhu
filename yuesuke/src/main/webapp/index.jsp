@@ -20,6 +20,7 @@
     function showTime() {
         t -= 1;
         document.getElementById("time_div").innerHTML=t;
+//        倒计时结束，跳转到主页
         if (t == 0){
             location.href="${pageContext.request.contextPath}/jsp/mainPage.jsp";
         }

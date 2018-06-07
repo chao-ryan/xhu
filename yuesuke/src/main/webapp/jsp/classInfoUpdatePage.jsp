@@ -76,6 +76,11 @@
                                 <span class="column-name">宿舍信息</span>
                             </a>
                         </li>
+                        <li class="column-list-item-7">
+                            <a href="${pageContext.request.contextPath}/action/schooling!show.do" title="学费详情" class="column-item-link" name="by" id="b7" onclick="show(7)">
+                                <span class="column-name">学费详情</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -26,10 +26,10 @@
         <div class="form-agile">
             <h2 class="sub-agileits-layouts">登录</h2>
             <div id="form-box">
-                <form action="${pageContext.request.contextPath}/login!loginPage.do" method="post">
+                <form name="loginForm" action="${pageContext.request.contextPath}/action/login!loginPage.do" method="post" onSubmit="return loginCheck()">
                     <label for="stuAccount">学生学号：</label>
                     <div class="username-box">
-                        <input type="text" id="stuAccount" name="stuAccount" value="${stuAccount}" placeholder="用户名" required=""/>
+                        <input type="text" id="stuAccount" name="stuAccount" value="${stuAccount}" placeholder="用户名" required="" autofocus="autofocus"/>
                     </div>
                     <label for="stuIdNumber">身份证号：</label>
                     <div class="password-box">
